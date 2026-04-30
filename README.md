@@ -1,29 +1,56 @@
 # Automatic Impedance Matcher
 
-Automatic impedance matcher for a RF sputtering chamber using gradient-descent SWR tuning on Teensy 4.1.  
-Developed for CMU Hacker Fab.
+Teensy 4.1 firmware and Python telemetry tools for an automatic RF impedance matcher.
 
-## Features
+## Components
 
-- **Manual Mode**: Direct servo control via potentiometers
-- **Auto Mode**: Gradient descent algorithm automatically tunes for optimal SWR
-- Real-time SWR measurement with noise filtering (20-sample averaging)
+- `impedance_matcher/impedance_matcher.ino`: main firmware entrypoint
+- `live.py`: live serial monitor + CSV logger + real-time plots
+- `plot.py`: offline plotting for saved CSV runs (Matplotlib or Plotly)
 
-## Hardware
+## Firmware (`impedance_matcher/impedance_matcher.ino`)
 
-- **Microcontroller**: Teensy 4.1
-- **Servos**: TX servo (pin 0), Antenna servo (pin 23)
-- **Inputs**: 
-  - SWR sensors on A0 (forward) and A1 (reverse)
-  - Manual dial potentiometers on pins 39 and 38
-  - Mode switch on pin 32 (HIGH = Manual, LOW = Auto)
+- Runs on Teensy 4.1 and starts motors, encoder, UART, and OLED display.
+- Uses a gradient-descent style matcher to move motors toward lower VSWR.
+- Main loop does three things: update matching logic, read encoder input, then update/draw UI.
+- Required Arduino libraries: Adafruit SSD1306, Adafruit GFX, TMCStepper.
 
-## Algorithm
+## Live Telemetry (`live.py`)
 
-The auto-tuning uses a one-way gradient descent search with ±2° steps, reversing direction when SWR increases.
+- Connects to the board over serial (`500000` baud by default).
+- Reads `VSWR_CSV,...` telemetry lines from firmware.
+- Shows live plots (recent VSWR, full VSWR history, and motor positions).
+- Saves all valid samples to CSV (`data/csv/latest.csv` by default).
+
+Example:
+
+```bash
+python live.py --port /dev/cu.usbmodemXXXX --baud 500000 --window-seconds 20 --csv data/csv/latest.csv
+```
+
+## Offline Analysis (`plot.py`)
+
+- Opens a saved telemetry CSV and cleans bad rows/outliers.
+- Default output is a static Matplotlib plot.
+- Optional interactive Plotly view (`--interactive`) or HTML export (`--html`).
+- Shows VSWR, motor traces, and match state.
+
+Examples:
+
+```bash
+python plot.py latest.csv
+python plot.py data/csv/latest.csv --max-plot-points 4000 --minutes
+python plot.py data/csv/latest.csv --interactive
+python plot.py data/csv/latest.csv --html
+```
+
+## Data Format
+
+CSV header written by `live.py`:
+
+`host_time_s,device_millis,vswr,forward_v,reverse_v,motor1_pos_rad,motor2_pos_rad,at_match`
 
 ## Authors
 
-- Miguel Salvacion  
-- William Gao  
-- Aiden Magee
+- Miguel Salvacion
+- William Gao
