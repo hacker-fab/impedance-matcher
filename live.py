@@ -12,6 +12,7 @@ from serial.tools import list_ports
 
 DEFAULT_BAUD = 500000
 DEFAULT_WINDOW_SECONDS = 20.0
+DEFAULT_CSV_PATH = os.path.join("data", "csv", "latest.csv")
 
 # Prevent MacOS matplotlib windows from stealing focus on redraw.
 plt.rcParams["figure.raise_window"] = False
@@ -33,7 +34,11 @@ def parse_args():
     parser.add_argument("--port", default=get_default_port(), help="Serial port")
     parser.add_argument("--baud", type=int, default=DEFAULT_BAUD, help="Serial baud rate")
     parser.add_argument("--window-seconds", type=float, default=DEFAULT_WINDOW_SECONDS, help="Time window for recent plots")
-    parser.add_argument("--csv", default="vswr_log.csv", help="CSV log output path")
+    parser.add_argument(
+        "--csv",
+        default=DEFAULT_CSV_PATH,
+        help=f"CSV log output path (default: {DEFAULT_CSV_PATH})",
+    )
     return parser.parse_args()
 
 
@@ -85,11 +90,25 @@ def main():
     t0_host = None
     last_plot_time = 0.0
     at_match = False
+    csv_dir = os.path.dirname(os.path.abspath(args.csv))
+    if csv_dir:
+        os.makedirs(csv_dir, exist_ok=True)
     csv_exists = os.path.exists(args.csv)
     with open(args.csv, "a", newline="") as csv_file:
         writer = csv.writer(csv_file)
         if not csv_exists or os.path.getsize(args.csv) == 0:
-            writer.writerow(["host_time_s", "device_millis", "vswr", "motor1_pos_rad", "motor2_pos_rad", "at_match"])
+            writer.writerow(
+                [
+                    "host_time_s",
+                    "device_millis",
+                    "vswr",
+                    "forward_v",
+                    "reverse_v",
+                    "motor1_pos_rad",
+                    "motor2_pos_rad",
+                    "at_match",
+                ]
+            )
 
         try:
             while True:
@@ -110,13 +129,15 @@ def main():
                     continue
 
                 parts = raw.split(",")
-                if len(parts) != 6:
+                if len(parts) != 8:
                     continue
 
-                _, millis_s, vswr_s, motor1_s, motor2_s, at_match_s = parts
+                _, millis_s, vswr_s, fwd_v_s, rev_v_s, motor1_s, motor2_s, at_match_s = parts
                 try:
                     t_ms = int(millis_s)
                     vswr = float(vswr_s)
+                    forward_v = float(fwd_v_s)
+                    reverse_v = float(rev_v_s)
                     motor1_pos = float(motor1_s)
                     motor2_pos = float(motor2_s)
                     at_match = int(at_match_s) != 0
@@ -141,7 +162,9 @@ def main():
                     motor1_vals.popleft()
                     motor2_vals.popleft()
 
-                writer.writerow([host_now, t_ms, vswr, motor1_pos, motor2_pos, int(at_match)])
+                writer.writerow(
+                    [host_now, t_ms, vswr, forward_v, reverse_v, motor1_pos, motor2_pos, int(at_match)]
+                )
                 csv_file.flush()
 
                 # --- redraw only at PLOT_INTERVAL, not on every sample ---

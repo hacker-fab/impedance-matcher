@@ -1,43 +1,14 @@
-#include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-#include <TMCStepper.h>
 
+// ─── Pin Definitions ─────────────────────────────────────────────────────────
 #define ENC_A    38
 #define ENC_B    39
 #define ENC_BTN  40
-
 #define SCROLL_DIR -1  // +1 normal, -1 reversed
-#define MOTOR_MIN_POS 0
-#define MOTOR_MAX_POS 180
-#define ENC_COUNTS_PER_CLICK 2 // lower for more sensitivity
 
-#define TRANSMIT_PIN 31
-#define STEP_PIN_1 2
-#define DIR_PIN_1 3
-#define STEP_PIN_2 9
-#define DIR_PIN_2 10
-#define FWD_PIN 25
-#define REV_PIN 24
-
-#define SERIAL_PORT Serial1
-#define R_SENSE 0.11f
-#define DRV_ADDRESS_1 0b00
-#define DRV_ADDRESS_2 0b01
-
-#define STALL_VALUE 140
-#define STEP_DELAY 200
-
-#define STEPS_PER_RAD 63.66197f
-#define MICROSTEPS_PER_STEP 16
-#define MAX_ROT 3.14159f
-#define GRAD_SCALE 0.005f
-#define MAX_STEPSIZE PI / 36
-#define MIN_STEPSIZE PI / 180
-
-const float samp_num = 1000.0f;
-
+// ─── Display ─────────────────────────────────────────────────────────────────
 #define SCREEN_W 128
 #define SCREEN_H  64
 Adafruit_SSD1306 oled(SCREEN_W, SCREEN_H, &Wire, -1);
@@ -51,27 +22,25 @@ enum MenuID {
   M_MOTOR2 = 2,
   M_ADV_METRICS = 3,
   M_BACK   = 4,
-  M_COUNT  = 5  
+  M_COUNT  = 5   // array size sentinel
 };
 
+// ─── Application State ───────────────────────────────────────────────────────
 AppState state     = S_HOME;
 OpMode   opMode    = MODE_AUTO;
 bool     radioTX   = false;
 long     motor1Pos = 0;
 long     motor2Pos = 0;
-float    motor1PosRad = PI / 2.0f;
-float    motor2PosRad = PI / 2.0f;
-float    dM1 = 0.1f;
-float    dM2 = 0.1f;
+#define MOTOR_MIN_POS 0
+#define MOTOR_MAX_POS 180
 
-TMC2209Stepper driver1(&SERIAL_PORT, R_SENSE, DRV_ADDRESS_1);
-TMC2209Stepper driver2(&SERIAL_PORT, R_SENSE, DRV_ADDRESS_2);
-
+// ─── Encoder ─────────────────────────────────────────────────────────────────
 volatile int encRaw = 0;
 int encAccum = 0;
 int lastEncA = HIGH;
 
 void readEncoder() {
+  digitalToggle(LED_BUILTIN); 
   int a = digitalRead(ENC_A);
   int b = digitalRead(ENC_B);
   if (a != lastEncA) {
@@ -80,8 +49,8 @@ void readEncoder() {
   }
 }
 
-
-
+// Returns net detent clicks since last call
+#define ENC_COUNTS_PER_CLICK 2  // lower for more sensitivity
 int consumeDelta() {
   noInterrupts();
   int d = encRaw;
@@ -94,6 +63,7 @@ int consumeDelta() {
   return clicks * SCROLL_DIR;
 }
 
+// ─── Button ──────────────────────────────────────────────────────────────────
 #define DEBOUNCE_MS 40
 bool     lastBtnRaw = HIGH;
 bool     btnPending = false;
@@ -113,132 +83,15 @@ bool consumeButton() {
   return false;
 }
 
-int round_up(float value) {
-  int truncated = static_cast<int>(value);
-  if (value > truncated) return truncated + 1;
-  return truncated;
-}
+// ─── Stubs — implement these in your own file or below ───────────────────────
+float getVSWR()               { return 1.00f;  /* replace with ADC read */ }
+float getForwardVoltage()     { return 0.00f;  /* replace with ADC read */ }
+float getReverseVoltage()     { return 0.00f;  /* replace with ADC read */ }
+void  setMotor1Step(long pos) { (void)pos;     /* STEP/DIR for motor 1  */ }
+void  setMotor2Step(long pos) { (void)pos;     /* STEP/DIR for motor 2  */ }
+void  setRadioTX(bool en)     { (void)en;      /* optoisolator KEY pin  */ }
 
-float stepsToRad(int steps) {
-  return steps / (STEPS_PER_RAD * MICROSTEPS_PER_STEP);
-}
-
-int radToSteps(float rads) {
-  return round_up(rads * (STEPS_PER_RAD * MICROSTEPS_PER_STEP));
-}
-
-void takeStep(int stepPin) {
-  digitalWrite(stepPin, HIGH);
-  delayMicroseconds(STEP_DELAY / 2);
-  digitalWrite(stepPin, LOW);
-  delayMicroseconds(STEP_DELAY / 2);
-}
-
-float analogReadMilliVolts(int pin) {
-  int rawValue = analogRead(pin);
-  return (rawValue / 4095.0f) * 3300.0f;
-}
-
-float readPinVoltage(int sensorPin) {
-  float sum = 0.0f;
-  for (int i = 0; i < samp_num; i++) {
-    sum += analogReadMilliVolts(sensorPin);
-    delayMicroseconds(30);
-  }
-  return (sum / samp_num) / 1000.0f;
-}
-
-float sampVSWR(int fwd, int rev) {
-  float sum_fwd = 0.0f;
-  float sum_rev = 0.0f;
-  for (int i = 0; i < samp_num; i++) {
-    sum_fwd += analogReadMilliVolts(fwd);
-    sum_rev += analogReadMilliVolts(rev);
-    delayMicroseconds(15);
-  }
-  float averageMv_fwd = sum_fwd / samp_num;
-  float averageMv_rev = sum_rev / samp_num;
-  return (averageMv_fwd + averageMv_rev) / (averageMv_fwd - averageMv_rev);
-}
-
-float clampMagnitude(float value, float minMagnitude, float maxMagnitude) {
-  float magnitude = (value < 0.0f) ? -value : value;
-  float sign = (value < 0.0f) ? -1.0f : 1.0f;
-  if (magnitude > maxMagnitude) return maxMagnitude * sign;
-  if (magnitude < minMagnitude) return minMagnitude * sign;
-  return value;
-}
-
-float turnByRad(TMC2209Stepper &driver, int stepPin, int dirPin, float rads, float &motor_pos, bool ignoreLimits = false) {
-  (void)driver;
-  if (rads == 0.0f) return 0.0f;
-
-  bool isNegativeDir = (rads < 0.0f);
-  digitalWrite(dirPin, isNegativeDir);
-
-  float abs_rads = isNegativeDir ? -rads : rads;
-  int total_steps = radToSteps(abs_rads);
-
-  float step_increment = stepsToRad(1);
-  float position_change = isNegativeDir ? -step_increment : step_increment;
-  int steps_taken = 0;
-
-  for (int i = 0; i < total_steps; i++) {
-    if (!ignoreLimits) {
-      bool hittingUpperLimit = (motor_pos >= MAX_ROT && position_change > 0.0f);
-      bool hittingLowerLimit = (motor_pos <= 0.0f && position_change < 0.0f);
-      if (hittingUpperLimit || hittingLowerLimit) break;
-    }
-    takeStep(stepPin);
-    motor_pos += position_change;
-    steps_taken++;
-  }
-  return steps_taken * position_change;
-}
-
-void calcGradAndStep(TMC2209Stepper &driver, int stepPin, int dirPin, float &gradient, float &motor_pos) {
-  float initialCost = sampVSWR(FWD_PIN, REV_PIN);
-  float commandedStepSize = clampMagnitude(gradient * GRAD_SCALE, MIN_STEPSIZE, MAX_STEPSIZE);
-  bool hittingUpperLimit = (motor_pos >= MAX_ROT - MIN_STEPSIZE);
-  bool hittingLowerLimit = (motor_pos <= MIN_STEPSIZE);
-  if (hittingUpperLimit) commandedStepSize = -MIN_STEPSIZE;
-  if (hittingLowerLimit) commandedStepSize = MIN_STEPSIZE;
-
-  float actualTravel = turnByRad(driver, stepPin, dirPin, commandedStepSize, motor_pos);
-  delay(25);
-  if (actualTravel != 0.0f) {
-    gradient = (initialCost - sampVSWR(FWD_PIN, REV_PIN)) / actualTravel;
-  }
-}
-
-void testUART(TMC2209Stepper &driver, int drivNum) {
-  uint8_t conn_result = driver.test_connection();
-  if (conn_result == 0) {
-    Serial.print("UART connection successful: ");
-    Serial.println(drivNum);
-  } else {
-    Serial.print("UART connection FAILED. Error code: ");
-    Serial.println(conn_result);
-    while (1) {}
-  }
-}
-
-void moveMotorToDeg(TMC2209Stepper &driver, int stepPin, int dirPin, float &motorPosRadRef, long targetDeg) {
-  float targetRad = constrain((float)targetDeg, (float)MOTOR_MIN_POS, (float)MOTOR_MAX_POS) * (PI / 180.0f);
-  float delta = targetRad - motorPosRadRef;
-  turnByRad(driver, stepPin, dirPin, delta, motorPosRadRef);
-}
-
-float getVSWR()           { return sampVSWR(FWD_PIN, REV_PIN); }
-float getForwardVoltage() { return readPinVoltage(FWD_PIN); }
-float getReverseVoltage() { return readPinVoltage(REV_PIN); }
-void  setMotor1Step(long pos) { moveMotorToDeg(driver1, STEP_PIN_1, DIR_PIN_1, motor1PosRad, pos); }
-void  setMotor2Step(long pos) { moveMotorToDeg(driver2, STEP_PIN_2, DIR_PIN_2, motor2PosRad, pos); }
-
-void  setRadioTX(bool en) {
-  if (en) digitalWrite(TRANSMIT_PIN, HIGH);
-  else digitalWrite(TRANSMIT_PIN, LOW);
-}
+// ─── Menu Helpers ────────────────────────────────────────────────────────────
 
 int menuSel = 0;
 int homeSel = 0;  // 0 = TX toggle, 1 = Settings
@@ -246,6 +99,7 @@ bool menuEditingMotor = false;
 int  editingMotorId   = -1;
 #define MOTOR_STEP_SIZE 10  // steps per encoder detent
 
+// Fill out[] with currently visible item IDs; return count
 int buildMenu(int* out) {
   int n = 0;
   out[n++] = M_MODE;
@@ -269,6 +123,7 @@ const char* menuLabel(int id) {
   }
 }
 
+// Returns value string for items that show one, nullptr otherwise
 const char* menuValue(int id) {
   switch (id) {
     case M_MODE:  return (opMode == MODE_AUTO) ? "AUTO" : "MANUAL";
@@ -276,16 +131,19 @@ const char* menuValue(int id) {
   }
 }
 
+// ─── Draw Routines ───────────────────────────────────────────────────────────
 void drawHome() {
   float vswr = getVSWR();
   oled.clearDisplay();
   oled.setTextColor(SSD1306_WHITE);
 
+  // Header
   oled.setTextSize(1);
   oled.setCursor(0, 0);
   oled.print("Impedance Matcher");
   oled.drawLine(0, 9, 127, 9, SSD1306_WHITE);
 
+  // Large VSWR readout
   oled.setTextSize(1);
   oled.setCursor(0, 13);
   oled.print("VSWR");
@@ -293,6 +151,7 @@ void drawHome() {
   oled.setCursor(0, 23);
   oled.print(vswr, 3);
 
+  // Status block
   oled.setTextSize(1);
   const char* modeStr = (opMode == MODE_AUTO) ? "AUTO" : "MANUAL";
   int modeLabelX = SCREEN_W - ((int)strlen("Mode") * 6);
@@ -302,6 +161,7 @@ void drawHome() {
   oled.setCursor(modeValueX, 22);
   oled.print(modeStr);
 
+  // Home actions as two buttons
   const int btnY = 49;
   const int btnW = 60;
   const int btnH = 14;
@@ -443,6 +303,7 @@ void drawAdvancedMetrics() {
   oled.display();
 }
 
+// ─── Input Handlers ──────────────────────────────────────────────────────────
 void handleHome(int delta, bool pressed) {
   if (delta != 0) {
     homeSel = (homeSel + delta) % 2;
@@ -475,6 +336,7 @@ void handleMenu(int delta, bool pressed) {
         setMotor2Step(motor2Pos);
       }
     } else if (count > 0) {
+      // Wrap selection so top and bottom connect
       menuSel = (menuSel + delta) % count;
       if (menuSel < 0) menuSel += count;
     }
@@ -495,6 +357,7 @@ void handleMenu(int delta, bool pressed) {
           menuEditingMotor = false;
           editingMotorId   = -1;
         }
+        // Re-clamp in case the list shrank
         { int v2[M_COUNT]; menuSel = constrain(menuSel, 0, buildMenu(v2) - 1); }
         break;
       case M_MOTOR1:
@@ -534,62 +397,17 @@ void handleMetrics(int delta, bool pressed) {
   if (pressed) state = S_MENU;
 }
 
+// ─── Arduino Entry Points ────────────────────────────────────────────────────
 void setup() {
-  analogReadResolution(12);
-  Serial.begin(500000);
-  while (!Serial && millis() < 3000) {}
-
   pinMode(ENC_A,   INPUT_PULLUP);
   pinMode(ENC_B,   INPUT_PULLUP);
   pinMode(ENC_BTN, INPUT_PULLUP);
-  pinMode(TRANSMIT_PIN, OUTPUT);
-  pinMode(STEP_PIN_1, OUTPUT);
-  pinMode(DIR_PIN_1, OUTPUT);
-  pinMode(STEP_PIN_2, OUTPUT);
-  pinMode(DIR_PIN_2, OUTPUT);
-
-  SERIAL_PORT.begin(500000, SERIAL_8N1);
-  delay(500);
-
-  driver1.begin();
-  driver1.toff(5);
-  driver1.rms_current(800);
-  driver1.microsteps(16);
-  driver1.en_spreadCycle(false);
-  driver1.pwm_autoscale(true);
-  driver1.TCOOLTHRS(0xFFFFF);
-  driver1.SGTHRS(STALL_VALUE);
-
-  driver2.begin();
-  driver2.toff(5);
-  driver2.rms_current(800);
-  driver2.microsteps(16);
-  driver2.en_spreadCycle(false);
-  driver2.pwm_autoscale(true);
-  driver2.TCOOLTHRS(0xFFFFF);
-  driver2.SGTHRS(STALL_VALUE);
-
-  // testUART(driver1, 1);
-  // testUART(driver2, 2);
-
-  turnByRad(driver1, STEP_PIN_1, DIR_PIN_1, -PI, motor1PosRad, true);
-  turnByRad(driver2, STEP_PIN_2, DIR_PIN_2, -PI, motor2PosRad, true);
-  motor1PosRad = 0.0f;
-  motor2PosRad = 0.0f;
-  turnByRad(driver1, STEP_PIN_1, DIR_PIN_1, PI / 2, motor1PosRad, true);
-  turnByRad(driver2, STEP_PIN_2, DIR_PIN_2, PI / 2, motor2PosRad, true);
-  motor1Pos = 90;
-  motor2Pos = 90;
 
   attachInterrupt(digitalPinToInterrupt(ENC_A), readEncoder, CHANGE);
 
   Wire.begin();
   if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-    pinMode(LED_BUILTIN, OUTPUT);
-    while (true) {
-      digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
-      delay(200);
-    }
+    while (true) {}
   }
 
   oled.clearDisplay();
@@ -597,14 +415,7 @@ void setup() {
 }
 
 void loop() {
-  if (opMode == MODE_AUTO) {
-    calcGradAndStep(driver1, STEP_PIN_1, DIR_PIN_1, dM1, motor1PosRad);
-    calcGradAndStep(driver2, STEP_PIN_2, DIR_PIN_2, dM2, motor2PosRad);
-    motor1Pos = (long)(motor1PosRad * 180.0f / PI);
-    motor2Pos = (long)(motor2PosRad * 180.0f / PI);
-    motor1Pos = constrain(motor1Pos, MOTOR_MIN_POS, MOTOR_MAX_POS);
-    motor2Pos = constrain(motor2Pos, MOTOR_MIN_POS, MOTOR_MAX_POS);
-  }
+
 
   pollButton();
   int  delta   = consumeDelta();
@@ -633,5 +444,5 @@ void loop() {
       break;
   }
 
-  delay(16);
+  delay(16);  // ~60 fps cap
 }

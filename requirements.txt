@@ -1,0 +1,7 @@
+# Live serial + plotting (live.py)
+matplotlib>=3.8
+numpy>=1.26
+pyserial>=3.5
+
+# Optional: interactive CSV plots (csvplot.py --interactive / --html)
+plotly>=5.18

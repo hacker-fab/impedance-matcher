@@ -261,11 +261,15 @@ float sampVSWR(int fwd, int rev){
   if (vswr < 1.2f) atMatch = true;
 
 #if STREAM_PLOT_DATA
-  // Machine-readable stream for host plotting: tag,millis,vswr,motor1_pos,motor2_pos,at_match
+  // Machine-readable stream: tag,millis,vswr,fwd_V,rev_V,motor1_pos,motor2_pos,at_match
   Serial.print("VSWR_CSV,");
   Serial.print(millis());
   Serial.print(",");
   Serial.print(vswr, 6);
+  Serial.print(",");
+  Serial.print(averageMv_fwd / 1000.0f, 6);
+  Serial.print(",");
+  Serial.print(averageMv_rev / 1000.0f, 6);
   Serial.print(",");
   Serial.print(motor1_pos, 6);
   Serial.print(",");
