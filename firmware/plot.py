@@ -28,6 +28,7 @@ DATA_MERMAID_DIR = os.path.join("data", "mermaid")
 
 # Drop VSWR outliers (garbage spikes)
 VSWR_MAX = 4.0
+MOTOR_MAX_ABS_RAD = float(np.pi)
 
 
 def resolve_input_csv(path: str) -> str:
@@ -71,6 +72,7 @@ def _write_mermaid_series_chart(
     tx: np.ndarray,
     series: np.ndarray,
     series_label: str,
+    y_axis_label: str | None,
     xlabel: str,
     title: str,
     y_axis_bounds: tuple[float, float] | None = None,
@@ -126,7 +128,7 @@ def _write_mermaid_series_chart(
         "xychart-beta",
         f'    title "{os.path.basename(title)} {series_label}"',
         f'    x-axis "{xlabel}" {x_start:g} --> {x_end:g}',
-        f'    y-axis "{series_label}" {y_lo:g} --> {y_hi:g}',
+        f'    y-axis "{(y_axis_label or series_label)}" {y_lo:g} --> {y_hi:g}',
         f'    {plot_stmt} [{", ".join(series_vals)}]',
     ]
 
@@ -246,18 +248,19 @@ def write_mermaid_xycharts(
         ext = ".mmd"
 
     targets = [
-        ("vswr", pack["vswr"], "VSWR", None, "line"),
-        ("motor1", pack["motor1"], "Motor1", None, "line"),
-        ("motor2", pack["motor2"], "Motor2", None, "line"),
+        ("vswr", pack["vswr"], "VSWR", "VSWR", None, "line"),
+        ("motor1", pack["motor1"], "Motor1", "Angle (rad)", None, "line"),
+        ("motor2", pack["motor2"], "Motor2", "Angle (rad)", None, "line"),
     ]
     written = []
-    for suffix, series, label, axis_bounds, render_mode in targets:
+    for suffix, series, label, y_label, axis_bounds, render_mode in targets:
         out_path = os.path.join(out_dir, f"{stem}_{suffix}{ext}")
         _write_mermaid_series_chart(
             out_path,
             tx,
             series,
             label,
+            y_label,
             xlabel,
             title,
             y_axis_bounds=axis_bounds,
@@ -282,6 +285,13 @@ def parse_float_or_nan(s: str) -> float:
     if t in ("", "nan", "none"):
         return float("nan")
     return float(s)
+
+
+def filter_motor_position(v: float) -> float:
+    """Keep finite motor positions within +/- pi radians; else mark as NaN."""
+    if not np.isfinite(v):
+        return float("nan")
+    return v if abs(v) <= MOTOR_MAX_ABS_RAD else float("nan")
 
 
 def parse_args():
@@ -356,8 +366,8 @@ def load_csv(path: str) -> Tuple[list, int, int]:
             try:
                 epoch = float(raw[0])
                 vswr = float(raw[2])
-                motor1 = parse_float_or_nan(raw[5])
-                motor2 = parse_float_or_nan(raw[6])
+                motor1 = filter_motor_position(parse_float_or_nan(raw[5]))
+                motor2 = filter_motor_position(parse_float_or_nan(raw[6]))
                 match = int(float(raw[7])) != 0
             except (ValueError, IndexError):
                 skipped_format += 1
