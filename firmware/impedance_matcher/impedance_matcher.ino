@@ -13,7 +13,7 @@
 #include "include/encoder.h"
 #include "include/ui.h"
 
-// ─── Global state (definitions; declarations in include/app_state.h) ────────
+// Global state
 AppState state   = S_HOME;
 OpMode   opMode  = MODE_AUTO;
 bool     radioTX = false;
@@ -29,6 +29,8 @@ bool  atMatch   = false;
 float lastVSWR  = 1.0f;
 float lastFwdV  = 0.0f;
 float lastRevV  = 0.0f;
+
+bool csvStreamEnabled = false;
 
 void setup() {
   analogReadResolution(12);
@@ -58,13 +60,16 @@ void loop() {
   bool pressed = false;
   encoder_poll(&delta, &pressed);
 
-  const bool inAutoHome = (opMode == MODE_AUTO && state == S_HOME);
+  const bool throttleDisplay =
+      (opMode == MODE_AUTO && (state == S_HOME || state == S_METRICS));
   const bool userInput  = (delta != 0) || pressed;
-  const bool doDraw     = ui_should_redraw(userInput, inAutoHome);
+  const bool doDraw     = ui_should_redraw(userInput, throttleDisplay);
 
   ui_tick(delta, pressed, doDraw);
 
-  if (inAutoHome && !doDraw) {
+  // OLED is throttled on AUTO home / metrics; skip fixed delay when not drawing
+  // so matching_tick stays tight.
+  if (throttleDisplay && !doDraw) {
     yield();
   } else {
     delay(SCHED_UI_FRAME_MS);

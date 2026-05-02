@@ -3,6 +3,9 @@
 #include "../include/app_state.h"
 #include "../include/matching.h"
 
+// OLED flows: home → settings menu → optional motor adjust / metrics. Encoder delta
+// moves selection or nudges motor1Pos/motor2Pos (degrees); matching keeps *_pos (rad) in sync.
+
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -26,6 +29,7 @@ static int buildMenu(int* out) {
     out[n++] = M_MOTOR1;
     out[n++] = M_MOTOR2;
   }
+  out[n++] = M_STREAM_CSV;
   out[n++] = M_ADV_METRICS;
   out[n++] = M_BACK;
   return n;
@@ -36,6 +40,7 @@ static const char* menuLabel(int id) {
     case M_MODE:        return "Mode";
     case M_MOTOR1:      return "Motor 1";
     case M_MOTOR2:      return "Motor 2";
+    case M_STREAM_CSV:  return "USB log";
     case M_ADV_METRICS: return "Advanced";
     case M_BACK:        return "< Back";
     default:            return "?";
@@ -44,8 +49,9 @@ static const char* menuLabel(int id) {
 
 static const char* menuValue(int id) {
   switch (id) {
-    case M_MODE: return (opMode == MODE_AUTO) ? "AUTO" : "MANUAL";
-    default:     return nullptr;
+    case M_MODE:        return (opMode == MODE_AUTO) ? "AUTO" : "MANUAL";
+    case M_STREAM_CSV:  return csvStreamEnabled ? "ON" : "OFF";
+    default:            return nullptr;
   }
 }
 
@@ -253,6 +259,9 @@ static void handleMenu(int delta, bool pressed) {
         break;
       case M_MOTOR1:      menuEditingMotor = true; editingMotorId = M_MOTOR1; break;
       case M_MOTOR2:      menuEditingMotor = true; editingMotorId = M_MOTOR2; break;
+      case M_STREAM_CSV:
+        csvStreamEnabled = !csvStreamEnabled;
+        break;
       case M_ADV_METRICS: state = S_METRICS; break;
       case M_BACK:
         menuEditingMotor = false;
@@ -286,14 +295,17 @@ bool ui_init_display() {
   return true;
 }
 
-bool ui_should_redraw(bool userInput, bool inAutoHome) {
+bool ui_should_redraw(bool userInput, bool throttleDisplay) {
   const bool slowRefreshDue =
       (lastDisplayMs == 0) ||
       ((millis() - lastDisplayMs) >= DISPLAY_THROTTLE_AUTO_HOME_MS);
-  return userInput || !inAutoHome || slowRefreshDue;
+  return userInput || !throttleDisplay || slowRefreshDue;
 }
 
 void ui_tick(int delta, bool pressed, bool doDraw) {
+  static uint32_t lastSettingsActivityMs = 0;
+  const AppState   stateAtEnter           = state;
+
   switch (state) {
     case S_HOME:
       handleHome(delta, pressed);
@@ -303,8 +315,16 @@ void ui_tick(int delta, bool pressed, bool doDraw) {
       }
       break;
     case S_MENU:
+      if (delta != 0 || pressed) lastSettingsActivityMs = millis();
       handleMenu(delta, pressed);
-      if (doDraw) {
+      if (state == S_MENU && (millis() - lastSettingsActivityMs) >= SETTINGS_MENU_AFK_MS) {
+        menuEditingMotor = false;
+        editingMotorId   = -1;
+        menuSel            = 0;
+        state               = S_HOME;
+        drawHome();
+        lastDisplayMs = millis();
+      } else if (doDraw) {
         drawMenu();
         lastDisplayMs = millis();
       }
@@ -331,4 +351,6 @@ void ui_tick(int delta, bool pressed, bool doDraw) {
       }
       break;
   }
+
+  if (state == S_MENU && stateAtEnter != S_MENU) lastSettingsActivityMs = millis();
 }

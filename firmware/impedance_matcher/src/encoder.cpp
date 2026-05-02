@@ -3,10 +3,11 @@
 
 #include <Arduino.h>
 
-// ─── Quadrature: ISR on A and B (same handler). Table gives ±1 per valid Gray step. ───
+// ISR on A and B (same handler)
 static volatile int   encRaw    = 0;
 static volatile uint8_t encLastAB = 0;
 
+// Table gives ±1 per valid Gray step
 static const int8_t kQuadTable[16] = {
     0, +1, -1, 0,
     -1, 0, 0, +1,
@@ -26,12 +27,12 @@ static void encoderIsr() {
   }
 }
 
-// Typical mechanical detent = 4 quadrature edges per click (full A/B tracking).
+// Typical mechanical detent
 #define ENC_COUNTS_PER_CLICK 4
 
 static int encAccum = 0;
 
-// ─── Button: FALLING counted in ISR; loop only debounces with millis (no delays). ───
+// Button: FALLING counted in ISR
 static volatile uint32_t btnFallEvents = 0;
 
 static void btnFallIsr() {
@@ -65,6 +66,7 @@ static bool consumeButton() {
 
   uint32_t now = millis();
   if ((now - lastBtnAcceptMs) <= DEBOUNCE_MS) {
+    // Re-queue edges so a long mechanical bounce still yields one press after quiet time.
     noInterrupts();
     btnFallEvents += falls;
     interrupts();

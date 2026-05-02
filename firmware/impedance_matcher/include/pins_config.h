@@ -26,3 +26,5 @@
 
 #define DISPLAY_THROTTLE_AUTO_HOME_MS 300u
 #define SCHED_UI_FRAME_MS             16u
+
+#define SETTINGS_MENU_AFK_MS 15000u

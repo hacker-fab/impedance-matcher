@@ -12,8 +12,8 @@ static TMC2209Stepper driver1(&MATCHING_SERIAL_PORT, R_SENSE, DRV_ADDRESS_1);
 static TMC2209Stepper driver2(&MATCHING_SERIAL_PORT, R_SENSE, DRV_ADDRESS_2);
 
 #define STEP_DELAY          200
-#define STREAM_PLOT_DATA    1
 
+// Mechanical: rad → full steps × microsteps (set MAX_ROT to half a turn of travel).
 #define STEPS_PER_RAD       63.66197f
 #define MICROSTEPS_PER_STEP 32
 #define MAX_ROT             3.14159f
@@ -92,21 +92,22 @@ static float sampVSWR(int fwd, int rev) {
   float vswr  = (denom != 0.0f) ? (avgFwd + avgRev) / denom : 99.0f;
   lastVSWR    = vswr;
 
+  // Cost minimized by coord descent; squared distance from ideal VSWR=1.
   float loss = (vswr - 1.0f) * (vswr - 1.0f);
 
   if (vswr > 1.4f) atMatch = false;
   if (vswr < 1.2f) atMatch = true;
 
-#if STREAM_PLOT_DATA
-  Serial.print("VSWR_CSV,");
-  Serial.print(millis());
-  Serial.print(",");  Serial.print(vswr, 6);
-  Serial.print(",");  Serial.print(lastFwdV, 6);
-  Serial.print(",");  Serial.print(lastRevV, 6);
-  Serial.print(",");  Serial.print(motor1_pos, 6);
-  Serial.print(",");  Serial.print(motor2_pos, 6);
-  Serial.print(",");  Serial.println(atMatch ? 1 : 0);
-#endif
+  if (csvStreamEnabled) {
+    Serial.print("VSWR_CSV,");
+    Serial.print(millis());
+    Serial.print(",");  Serial.print(vswr, 6);
+    Serial.print(",");  Serial.print(lastFwdV, 6);
+    Serial.print(",");  Serial.print(lastRevV, 6);
+    Serial.print(",");  Serial.print(motor1_pos, 6);
+    Serial.print(",");  Serial.print(motor2_pos, 6);
+    Serial.print(",");  Serial.println(atMatch ? 1 : 0);
+  }
 
   return loss;
 }
@@ -139,7 +140,7 @@ void matching_init_motor_pins() {
   pinMode(STEP_PIN_2,   OUTPUT);
   pinMode(DIR_PIN_2,    OUTPUT);
   pinMode(TRANSMIT_PIN, OUTPUT);
-  digitalWrite(TRANSMIT_PIN, HIGH);
+  digitalWrite(TRANSMIT_PIN, LOW);
 }
 
 void matching_init_uart() {
@@ -190,5 +191,5 @@ void setMotor2Step(long posDeg) {
 }
 
 void setRadioTX(bool en) {
-  digitalWrite(TRANSMIT_PIN, en ? LOW : HIGH);
+  digitalWrite(TRANSMIT_PIN, en ? HIGH : LOW);
 }

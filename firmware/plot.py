@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
+plot.py
+CSV VSWR plotter — Teensy 4.1
+
 Plot a saved VSWR telemetry CSV file.
 
 Expected format:
 
   host_time_s,device_millis,vswr,forward_v,reverse_v,motor1_pos_rad,motor2_pos_rad,at_match
 
-VSWR outside [0, 50] are dropped.
-
-For large files, plotting uses time-based downsampling (default every 0.5 s),
-keeping real samples instead of VSWR averages.
+Dependencies (pip):
+  numpy, matplotlib, plotly
 """
 from __future__ import annotations
 
@@ -26,7 +27,7 @@ DATA_CSV_DIR = os.path.join("data", "csv")
 DATA_HTML_DIR = os.path.join("data", "html")
 DATA_MERMAID_DIR = os.path.join("data", "mermaid")
 
-# Drop VSWR outliers (garbage spikes)
+# Drop outliers (garbage data)
 VSWR_MAX = 4.0
 MOTOR_MAX_ABS_RAD = float(np.pi)
 
@@ -101,7 +102,6 @@ def _write_mermaid_series_chart(
 
     series_vals = fmt_vals(series)
 
-    # Use numeric range axis to avoid huge categorical x-axis lists.
     x_start = float(tx[0])
     x_end = float(tx[-1])
     if x_end <= x_start:
@@ -153,7 +153,7 @@ def _write_mermaid_match_gantt(
 
     tm = np.asarray(tx, dtype=np.float64).copy()
     if time_unit == "seconds":
-        tm = tm / 60.0  # Mermaid gantt format below uses minute values.
+        tm = tm / 60.0
 
     state = np.asarray(matched >= 0.5, dtype=bool)
     change_idx = np.flatnonzero(np.diff(state.astype(np.int8)) != 0) + 1
@@ -205,16 +205,13 @@ def _write_mermaid_match_gantt(
         "    section .",
     ]
 
-    # Build a single monotonic boundary list so adjacent tasks do not overlap.
-    # Start boundary is floored, interior transition boundaries are rounded to nearest
-    # minute, and final boundary is ceiled to include the tail.
+    # Build a single monotonic boundary list so adjacent tasks do not overlap
     boundaries = [to_min_token(float(tm[starts[0]]))]
     if starts.size > 1:
         for idx in starts[1:]:
             boundaries.append(int(np.rint(float(tm[idx]))))
     boundaries.append(int(np.ceil(float(tm[-1]))))
 
-    # Enforce strictly increasing boundaries to satisfy Mermaid duration parsing.
     for i in range(1, len(boundaries)):
         if boundaries[i] <= boundaries[i - 1]:
             boundaries[i] = boundaries[i - 1] + 1
@@ -697,7 +694,7 @@ def main():
 
     fig.suptitle(csv_path, fontsize=9, color="#666666", y=0.995)
 
-    # --- VSWR (real samples; optionally downsampled in time) ---
+    # VSWR
     ax_vswr.plot(tx, pack["vswr"], color="#08519c", linewidth=0.8, alpha=0.9, label="VSWR")
 
     ax_vswr.axhline(1.2, color="#238b45", linestyle="--", linewidth=1.0, alpha=0.9, label="Match ≤ 1.2")
@@ -706,7 +703,7 @@ def main():
     ax_vswr.legend(loc="upper right", fontsize=8, framealpha=0.92)
     ax_vswr.grid(True)
 
-    # --- Motors (only when data exists) ---
+    # Motors
     if mid_panel == "motors":
         ax_motor.plot(tx, pack["motor1"], color="#756bb1", linewidth=1.1, label="Motor 1 (rad)")
         ax_motor.plot(tx, pack["motor2"], color="#31a354", linewidth=1.1, label="Motor 2 (rad)")
@@ -714,7 +711,7 @@ def main():
         ax_motor.legend(loc="upper right", fontsize=8, framealpha=0.92)
         ax_motor.grid(True)
 
-    # --- Match strip ---
+    # Matching
     ax_match.fill_between(tx, pack["matched"], step="post", alpha=0.45, color="#9ecae1", label="At match")
     ax_match.set_ylim(-0.12, 1.25)
     ax_match.yaxis.set_major_formatter(

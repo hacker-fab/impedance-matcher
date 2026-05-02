@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+live.py
+Live VSWR plotter (serial) — Teensy 4.1
+
+Dependencies (pip):
+  matplotlib, pyserial
+"""
+
 import argparse
 from collections import deque
 import csv
@@ -13,7 +21,7 @@ DEFAULT_BAUD = 500000
 DEFAULT_WINDOW_SECONDS = 20.0
 DEFAULT_CSV_PATH = os.path.join("data", "csv", "latest.csv")
 
-# Prevent MacOS matplotlib windows from stealing focus on redraw
+# Prevent macOS matplotlib windows from stealing focus on each redraw
 plt.rcParams["figure.raise_window"] = False
 
 def get_default_port():
@@ -83,7 +91,7 @@ def main():
     status_text = fig.text(0.02, 0.98, "Match: unknown", ha="left", va="top")
     plt.show(block=False)
 
-    PLOT_INTERVAL = 0.1  # redraw at 10 Hz regardless of data rate
+    PLOT_INTERVAL = 0.1  # Redraw at 10 Hz regardless of data rate
 
     t0_host = None
     last_plot_time = 0.0
@@ -110,7 +118,7 @@ def main():
 
         try:
             while True:
-                # --- drain all waiting serial lines before redrawing ---
+                # Drain all waiting serial lines before redrawing
                 try:
                     raw = ser.readline().decode("utf-8", errors="ignore").strip()
                 except serial.SerialException as exc:
@@ -142,6 +150,8 @@ def main():
                 except ValueError:
                     continue
 
+                # Plots use host wall clock
+                # CSV column 0 is absolute host epoch for alignment with plot.py
                 host_now = time.time()
                 if t0_host is None:
                     t0_host = host_now
@@ -165,7 +175,7 @@ def main():
                 )
                 csv_file.flush()
 
-                # --- redraw only at PLOT_INTERVAL, not on every sample ---
+                # Redraw only at PLOT_INTERVAL
                 if host_now - last_plot_time >= PLOT_INTERVAL:
                     last_plot_time = host_now
 
