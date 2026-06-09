@@ -2,15 +2,23 @@
 
 Teensy 4.1 firmware and Python telemetry tools for an automated RF impedance matcher.
 
-## Layout
+## Repository Layout
 
-| Path | Role |
-|------|------|
-| `firmware/impedance_matcher/` | GUI sketch: OLED, encoder, UART to TMC2209, matching loop |
-| `firmware/headless_matcher/` | Serial-only sketch: same matcher, no display |
-| `firmware/live.py` | Serial reader, live plots, CSV logger |
-| `firmware/plot.py` | Offline plots (Matplotlib / Plotly) and optional Mermaid export |
-| `hardware/` | CAD and PCB manufacturing outputs |
+```
+├── firmware/
+│   ├── impedance_matcher/               # Tuning loop, local UI, & motor controls
+│   ├── headless_matcher/                # Serial-only sketch
+│   ├── live.py                          # Serial reader, live plots, CSV logger
+│   └── plot.py                          # Offline plots & Mermaid export
+└── hardware/
+    ├── CAD/                             # Mechanical design & enclosure models
+    └── PCB/                             # KiCad project & manufacturing files
+        ├── impedance_matcher.kicad_pro  # KiCad project main file
+        └── production/                  # JLCPCB manufacturing & assembly
+            ├── imp_match.zip            # Gerbers
+            ├── imp_match_bom.csv        # SMT BOM
+            └── imp_match_positions.csv  # SMT CPL
+```
 
 **Arduino libraries:** Adafruit SSD1306, Adafruit GFX, and TMCStepper (GUI build); TMCStepper only for headless.
 
@@ -50,15 +58,6 @@ python firmware/plot.py path/to/run.csv --mermaid
 Written by `live.py` (and compatible with `plot.py`):
 
 `host_time_s,device_millis,vswr,forward_v,reverse_v,motor1_pos_rad,motor2_pos_rad,at_match`
-
-## Hardware
-
-| Path | Role |
-|------|------|
-| `hardware/CAD/` | Mechanical assets |
-| `hardware/PCB/impedance_matcher.kicad_pro` | KiCad project (schematic + PCB) |
-| `hardware/PCB/production/im_match.zip` | Fab Gerbers |
-| `hardware/PCB/production/im_match_bom.csv` / `im_match_positions.csv` | JLCPCB BOM and placement |
 
 ## Authors
 
