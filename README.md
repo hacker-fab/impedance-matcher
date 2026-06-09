@@ -56,12 +56,9 @@ Written by `live.py` (and compatible with `plot.py`):
 | Path | Role |
 |------|------|
 | `hardware/CAD/` | Mechanical assets |
-| `hardware/PCB/KiCad/impedance_matcher.kicad_pro` | KiCad source (schematic + PCB) |
-| `hardware/PCB/schematic.pdf` | Schematic export |
-| `hardware/PCB/Gerbers/Gerbers.zip` | Fab Gerbers |
-| `hardware/PCB/Gerbers/JLC_bom.csv` / `JLC_cpl.csv` | JLCPCB BOM and placement |
-
-Open the KiCad project via `impedance_matcher.kicad_pro`.
+| `hardware/PCB/impedance_matcher.kicad_pro` | KiCad project (schematic + PCB) |
+| `hardware/PCB/production/im_match.zip` | Fab Gerbers |
+| `hardware/PCB/production/im_match_bom.csv` / `im_match_positions.csv` | JLCPCB BOM and placement |
 
 ## Authors
 
