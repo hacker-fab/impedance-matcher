@@ -1,0 +1,245 @@
+(footprint "JST-4-PTH-VERT"
+		(layer "F.Cu")
+		(uuid "adf02875-e9fb-44d9-9ece-44af22be81fa")
+		(at 0 0)
+		(descr "JST Vertical 4 Pin Plated Through Hole\n\nSpecifications:\n\n• Pin count: 4\n• Pin pitch: 2mm\n\nhttp://www.jst-mfg.com/product/pdf/eng/ePH.pdf Datasheet referenced for footprint\n\nExample device(s):\n\n• CONN_04")
+		(property "Reference" "REF**"
+			(at -5.1911 -2.6114 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "cb7454d6-50c3-4ee6-98f8-30cf40c81622")
+			(effects
+				(font
+					(size 0.57912 0.57912)
+					(thickness 0.23368)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "JST-4-PTH-VERT"
+			(at -1.651 3.302 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "264c8ecb-9945-46e9-aba4-46d6063bbc9a")
+			(effects
+				(font
+					(size 0.48768 0.48768)
+					(thickness 0.12192)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2cf261a6-1ef8-470d-af7e-bab81eb658a4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bed01609-2c50-4ad1-84e6-f1e76bd96100")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
+		
+		
+		
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -4.95 -2.25)
+			(end 4.95 -2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e24c84d5-88ea-42e9-825e-edeeae7458fc")
+		)
+		(fp_line
+			(start -4.95 2.25)
+			(end -4.95 -2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ffdae7a1-cfa6-4ba7-91cf-4a6b1d782ba0")
+		)
+		(fp_line
+			(start -1 1.75)
+			(end -1 2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "81c621f3-5ba5-4d17-9f6c-15f314b30afa")
+		)
+		(fp_line
+			(start -1 1.75)
+			(end 1 1.75)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2fc5bb56-4db1-49a7-a9c2-e3c95e64be2b")
+		)
+		(fp_line
+			(start -1 2.25)
+			(end -4.95 2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4d956d4d-efcf-4a2e-85bc-301f1e2b248c")
+		)
+		(fp_line
+			(start 1 1.75)
+			(end 1 2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9c4b26b9-07f5-4769-ba4f-8b3828abae7f")
+		)
+		(fp_line
+			(start 4.95 -2.25)
+			(end 4.95 2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fd482c5a-31b3-40f2-83dd-317b9ac25701")
+		)
+		(fp_line
+			(start 4.95 2.25)
+			(end 1 2.25)
+			(stroke
+				(width 0.2032)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "8d56a3e4-476a-46e1-b6df-c9636c2213ca")
+		)
+		(fp_text user "B"
+			(at -3.3 -0.95 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "d0a023ae-0a25-4549-bd5a-75a29e953a44")
+			(effects
+				(font
+					(size 0.736 0.736)
+					(thickness 0.064)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "+"
+			(at -1.4 -0.75 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "f3d1164e-fd40-48dd-9224-c94a4d81176a")
+			(effects
+				(font
+					(size 1.1684 1.1684)
+					(thickness 0.1016)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "-"
+			(at 0.6 -0.75 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "69eb03aa-62e5-4c2b-a4d0-7fb2e8530c43")
+			(effects
+				(font
+					(size 1.1684 1.1684)
+					(thickness 0.1016)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "Y"
+			(at 2.7 -0.95 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "55f5b867-5998-44f5-9364-0f9f77cb400d")
+			(effects
+				(font
+					(size 0.736 0.736)
+					(thickness 0.064)
+				)
+				(justify left bottom)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at -3 0.55)
+			(size 1.6 1.6)
+			(drill 0.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_1_1")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "ac7f039e-02c8-4bf6-92b2-5fd7a25372b1")
+		)
+		(pad "2" thru_hole circle
+			(at -1 0.55)
+			(size 1.6 1.6)
+			(drill 0.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_2_2")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "ec85b44c-3b2b-4e43-97f7-d670dfc02053")
+		)
+		(pad "3" thru_hole circle
+			(at 1 0.55)
+			(size 1.6 1.6)
+			(drill 0.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_3_3")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "ef2ff6b4-84b1-4687-802f-3693b5d03664")
+		)
+		(pad "4" thru_hole circle
+			(at 3 0.55)
+			(size 1.6 1.6)
+			(drill 0.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_4_4")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "bf2d9e0d-6707-4b62-b57c-be7ab2bf12dc")
+		)
+		(embedded_fonts no)
+	)

@@ -1,0 +1,184 @@
+(footprint "SOT95P240X110-3N"
+		(layer "F.Cu")
+		(uuid "b687b89a-742b-4c6f-9756-819f8e17ec88")
+		(at 0 0)
+		(descr "3-SOT23, 0.95 mm pitch, 2.40 mm span, 2.90 X 1.30 X 1.10 mm body\n\n3-pin SOT23 package with 0.95 mm pitch, 2.40 mm span with body size 2.90 X 1.30 X 1.10 mm")
+		(property "Reference" "REF**"
+			(at -0.2826 2.6404 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "56c46366-a5c1-4a86-844a-1a0fa8c53f13")
+			(effects
+				(font
+					(size 0.57912 0.57912)
+					(thickness 0.23368)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "SOT95P240X110-3N"
+			(at 0 2.2051 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "ae3574a4-3a0b-45f7-89b1-0bffb1d341a1")
+			(effects
+				(font
+					(size 1.1684 1.1684)
+					(thickness 0.1016)
+				)
+				(justify top)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "15047c27-1a55-4ddc-82b7-de08d4a434ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca7ba6fb-4210-4e6a-9eb1-11c4e741a13d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		
+		
+		
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -0.7 -1.5701)
+			(end 0.7 -1.5701)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "039799af-d606-4bd6-b40e-1ad4ace617b4")
+		)
+		(fp_line
+			(start -0.7 1.5701)
+			(end 0.7 1.5701)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5923f75d-64b3-4d7d-8ae7-8273aa82d671")
+		)
+		(fp_line
+			(start 0.7 -1.5701)
+			(end 0.7 -0.5601)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "69cc0233-e32e-4561-81eb-ec8c94362872")
+		)
+		(fp_line
+			(start 0.7 1.5701)
+			(end 0.7 0.5601)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e7ca7856-5caf-40f5-9262-b388173cc8e1")
+		)
+		(fp_circle
+			(center -1.204 -1.7601)
+			(end -1.079 -1.7601)
+			(stroke
+				(width 0.25)
+				(type solid)
+			)
+			(fill yes)
+			(layer "F.SilkS")
+			(uuid "cd70d1ee-9956-4608-a243-b5be409ae158")
+		)
+		(fp_line
+			(start -0.7 -1.5)
+			(end 0.7 -1.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "2aa0c527-56ff-4562-b03f-9b89588f54fd")
+		)
+		(fp_line
+			(start -0.7 1.5)
+			(end -0.7 -1.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "f1676245-7ecd-473f-be16-0239f80f495b")
+		)
+		(fp_line
+			(start 0.7 -1.5)
+			(end 0.7 1.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "e2992f39-8e17-43db-95de-d634da98855d")
+		)
+		(fp_line
+			(start 0.7 1.5)
+			(end -0.7 1.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "0e0f5d98-ab3d-4b24-aed5-224d0342a67b")
+		)
+		(pad "1" smd rect
+			(at -1.0247 -0.95)
+			(size 1.1821 0.6122)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			
+			(pinfunction "1_1")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "aac9d99f-be44-460d-b66a-2bf7ffdaf680")
+		)
+		(pad "2" smd rect
+			(at -1.0247 0.95)
+			(size 1.1821 0.6122)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			
+			(pinfunction "2_2")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "ff117fa5-20d6-42fd-9728-29d6f891e28e")
+		)
+		(pad "3" smd rect
+			(at 1.0247 0)
+			(size 1.1821 0.6122)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			
+			(pinfunction "3_3")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "3717dda9-f904-48b8-92a1-879aa90e22c9")
+		)
+		(embedded_fonts no)
+	)

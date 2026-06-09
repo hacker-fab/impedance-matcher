@@ -1,0 +1,139 @@
+(footprint "B3B-XH-A"
+		(layer "F.Cu")
+		(uuid "ea8f9f20-fa10-4f5e-9236-bece5357c907")
+		(at 0 0)
+		(property "Reference" "REF**"
+			(at -2.832996 -2.5 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "e1049cfb-1c19-4e59-b9d5-443971785c9f")
+			(effects
+				(font
+					(size 0.57912 0.57912)
+					(thickness 0.23368)
+				)
+				(justify top)
+			)
+		)
+		(property "Value" "B3B-XH-A"
+			(at 2.54 3.81 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "8c52d825-dbf9-47f2-86a8-95356a08eee3")
+			(effects
+				(font
+					(size 1.1684 1.1684)
+					(thickness 0.1016)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c07fa03a-dc30-4eab-a4d9-b8d346df0b5f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a7d21c61-5fce-448f-9fe7-aff04f010d44")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
+		
+		
+		
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 7.45 -3.45)
+			(end 7.45 2.3)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ffb4f91f-c3c0-42ba-a855-3b73c6c816d3")
+		)
+		(fp_line
+			(start -2.45 -3.45)
+			(end 7.45 -3.45)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "999a5f69-61fb-4503-b425-f5d5d0344f82")
+		)
+		(fp_line
+			(start -2.45 -3.45)
+			(end -2.45 2.3)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c0eaa8f6-6f4a-4972-b5aa-ac27fa21c666")
+		)
+		(fp_line
+			(start -2.45 2.3)
+			(end 7.45 2.3)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "18dd3cd8-7105-4452-95a7-992785afbf78")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0 270)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_1_1")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "43365584-3007-4af2-8db2-008e91192b81")
+		)
+		(pad "2" thru_hole circle
+			(at 2.5 0 270)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_2_2")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "080412ac-302c-480b-a323-ebfb660222ce")
+		)
+		(pad "3" thru_hole circle
+			(at 5 0 270)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_3_3")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "60cbcb8e-fad7-43e2-8378-b081509eb734")
+		)
+		(embedded_fonts no)
+	)

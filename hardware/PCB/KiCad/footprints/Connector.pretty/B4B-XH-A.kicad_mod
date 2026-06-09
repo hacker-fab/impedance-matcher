@@ -1,0 +1,152 @@
+(footprint "B4B-XH-A"
+		(layer "F.Cu")
+		(uuid "43c198bc-b02c-4150-8e82-18b882ec1216")
+		(at 0 0)
+		(property "Reference" "REF**"
+			(at -1.238289 -4.547863 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "8fa00f02-7f67-4caa-b47e-4518301cdb30")
+			(effects
+				(font
+					(size 0.57912 0.57912)
+					(thickness 0.23368)
+				)
+				(justify top)
+			)
+		)
+		(property "Value" "B4B-XH-A"
+			(at 3.81 3.81 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "c02e5b36-b1fa-424c-8d4b-d717f0b83da8")
+			(effects
+				(font
+					(size 1.1684 1.1684)
+					(thickness 0.1016)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "656c9569-500d-466c-903d-9fd2463dd5d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f277c02b-593b-43ae-9e6b-cf7ac98e6369")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
+		
+		
+		
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -2.45 -3.45)
+			(end -2.45 2.3)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "da00b202-39ba-45b9-bb59-507f94199016")
+		)
+		(fp_line
+			(start -2.45 -3.45)
+			(end 9.95 -3.45)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "640fe014-53a0-41d9-9f78-d7e5a9f987ec")
+		)
+		(fp_line
+			(start -2.45 2.3)
+			(end 9.95 2.3)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "cdcc2f27-b52b-4fce-8a74-03322b4fedd4")
+		)
+		(fp_line
+			(start 9.95 -3.45)
+			(end 9.95 2.3)
+			(stroke
+				(width 0.1524)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4a64c3c3-041a-42d1-8c3b-986c6cf3607e")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_1_1")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "19a52118-8dd3-4e55-be17-92582fd55afa")
+		)
+		(pad "2" thru_hole circle
+			(at 2.5 0)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_2_2")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "35ba2421-7afb-4c28-b5a3-abbda3072638")
+		)
+		(pad "3" thru_hole circle
+			(at 5 0)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_3_3")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "de00b80a-8dde-481e-a31b-5e9555c016b9")
+		)
+		(pad "4" thru_hole circle
+			(at 7.5 0)
+			(size 1.408 1.408)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			
+			(pinfunction "Pin_4_4")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "397601a4-c338-4a5c-8424-e84a21bf168a")
+		)
+		(embedded_fonts no)
+	)

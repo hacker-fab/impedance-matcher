@@ -53,10 +53,15 @@ Written by `live.py` (and compatible with `plot.py`):
 
 ## Hardware
 
-- `hardware/CAD/` — mechanical assets  
-- `hardware/PCB/schematic.pdf` — schematic  
-- `hardware/PCB/Gerbers/Gerbers.zip` — fab Gerbers  
-- `hardware/PCB/Gerbers/JLC_bom.csv` / `JLC_cpl.csv` — JLCPCB BOM and placement  
+| Path | Role |
+|------|------|
+| `hardware/CAD/` | Mechanical assets |
+| `hardware/PCB/KiCad/impedance_matcher.kicad_pro` | KiCad source (schematic + PCB) |
+| `hardware/PCB/schematic.pdf` | Schematic export |
+| `hardware/PCB/Gerbers/Gerbers.zip` | Fab Gerbers |
+| `hardware/PCB/Gerbers/JLC_bom.csv` / `JLC_cpl.csv` | JLCPCB BOM and placement |
+
+Open the KiCad project via `impedance_matcher.kicad_pro`.
 
 ## Authors
 

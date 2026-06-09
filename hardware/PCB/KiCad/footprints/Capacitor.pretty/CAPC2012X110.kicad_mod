@@ -1,0 +1,142 @@
+(footprint "CAPC2012X110"
+		(layer "F.Cu")
+		(uuid "0759d74b-a637-4c7c-87e8-14e9bd135ba7")
+		(at 0 0)
+		(descr "Chip, 2.00 X 1.25 X 1.10 mm body\n\nChip package with body size 2.00 X 1.25 X 1.10 mm")
+		(property "Reference" "REF**"
+			(at -0.027493 1.984047 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "d2928211-4bf7-4aec-aa03-e35d359ecf2f")
+			(effects
+				(font
+					(size 0.57912 0.57912)
+					(thickness 0.23368)
+				)
+				(justify top)
+			)
+		)
+		(property "Value" "CAPC2012X110"
+			(at 0 2.54 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(uuid "71536b35-c17c-4c51-a117-11ed90254613")
+			(effects
+				(font
+					(size 1.1684 1.1684)
+					(thickness 0.1016)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8e0b08f-eca6-40da-8d79-31edcd9d7edb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "928943b4-60a7-40fe-b6c3-103c03c5162c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		
+		
+		
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 1.1 1.0467)
+			(end -1.1 1.0467)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4b1762bd-2433-49d7-b8e6-867380cddf5a")
+		)
+		(fp_line
+			(start 1.1 -1.0467)
+			(end -1.1 -1.0467)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "705c8949-34cf-43fa-acb5-d7ac41f40ddb")
+		)
+		(fp_line
+			(start 1.1 0.725)
+			(end -1.1 0.725)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "d83cb199-f3b1-41be-99d2-ed37aaf5791f")
+		)
+		(fp_line
+			(start 1.1 -0.725)
+			(end 1.1 0.725)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6c0c71d9-2102-4b64-9f33-66538482e29c")
+		)
+		(fp_line
+			(start -1.1 0.725)
+			(end -1.1 -0.725)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "f40197f5-17fd-4018-8277-84f14d4b7c9f")
+		)
+		(fp_line
+			(start -1.1 -0.725)
+			(end 1.1 -0.725)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "40224c79-bbc0-40c3-88c3-60f80c917d14")
+		)
+		(pad "1" smd rect
+			(at -0.8754 0 180)
+			(size 1.1646 1.4653)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			
+			(pinfunction "1_1")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "9d7459ee-78cc-421c-999b-9ce60095c355")
+		)
+		(pad "2" smd rect
+			(at 0.8754 0 180)
+			(size 1.1646 1.4653)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			
+			(pinfunction "2_2")
+			(pintype "passive")
+			(solder_mask_margin 0.1016)
+			(thermal_bridge_angle 0)
+			(uuid "64d1748f-a842-4192-96ad-d33e1588c9b5")
+		)
+		(embedded_fonts no)
+	)
