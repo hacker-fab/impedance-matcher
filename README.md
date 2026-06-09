@@ -1,23 +1,23 @@
 # Automated Impedance Matcher
 
-Teensy 4.1 firmware and Python telemetry tools for an automated RF impedance matcher.
+Teensy 4.1 control loop firmware, custom PCB/CAD hardware, and Python telemetry logging/plotting tools.
 
-## Repository Layout
+## Layout
 
 ```
 ├── firmware/
-│   ├── impedance_matcher/               # Tuning loop, local UI, & motor controls
-│   ├── headless_matcher/                # Serial-only sketch
-│   ├── live.py                          # Serial reader, live plots, CSV logger
-│   └── plot.py                          # Offline plots & Mermaid export
+│   ├── impedance_matcher/                 # Tuning loop, local UI, & motor controls
+│   ├── headless_matcher/                  # Serial-only sketch
+│   ├── live.py                            # Serial reader, live plots, CSV logger
+│   └── plot.py                            # Offline plots & Mermaid export
 └── hardware/
-    ├── CAD/                             # Mechanical design & enclosure models
-    └── PCB/                             # KiCad project & manufacturing files
-        ├── impedance_matcher.kicad_pro  # KiCad project main file
-        └── production/                  # JLCPCB manufacturing & assembly
-            ├── imp_match.zip            # Gerbers
-            ├── imp_match_bom.csv        # SMT BOM
-            └── imp_match_positions.csv  # SMT CPL
+    ├── CAD/                               # Mechanical design & enclosure models
+    └── PCB/                               # KiCad project & manufacturing files
+        ├── impedance_matcher.kicad_pro    # KiCad project main file
+        └── production/                    # JLCPCB manufacturing & assembly
+            ├── imp_match.zip              # Gerbers
+            ├── imp_match_bom.csv          # SMT BOM
+            └── imp_match_positions.csv    # SMT CPL
 ```
 
 **Arduino libraries:** Adafruit SSD1306, Adafruit GFX, and TMCStepper (GUI build); TMCStepper only for headless.
