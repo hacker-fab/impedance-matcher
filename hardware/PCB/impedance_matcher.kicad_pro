@@ -515,7 +515,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.95,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -682,6 +682,12 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part",
+          "name": "LCSC Part",
+          "show": true
         }
       ],
       "filter_string": "",
@@ -732,7 +738,7 @@
         "uuid": "05d78882-7448-4c56-96b8-6921af7027e2"
       }
     ],
-    "used_designators": "#SUPPLY52,#SUPPLY56,FB2-3,C9-10",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

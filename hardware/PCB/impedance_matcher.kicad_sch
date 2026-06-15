@@ -7922,6 +7922,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" ""
+			(at 133.35 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "95e0a252-3a69-482e-a2ef-286275fb03be")
 		)
@@ -8049,7 +8060,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 163.83 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -8072,6 +8083,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 163.83 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17513"
 			(at 163.83 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -8241,6 +8263,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C1740"
+			(at 100.33 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "461f8b01-457a-4e60-a7b7-26fb81cb5677")
 		)
@@ -8312,6 +8345,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 115.57 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C105651"
 			(at 115.57 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -8719,6 +8763,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" ""
+			(at 30.48 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e7c4ddeb-816e-4648-b67e-bc58201b0b65")
 		)
@@ -8791,6 +8846,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 229.87 102.235 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 229.87 102.235 0)
 			(hide yes)
 			(show_name no)
@@ -8925,7 +8991,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 143.51 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -8948,6 +9014,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 143.51 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17530"
 			(at 143.51 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -9507,6 +9584,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C45783"
+			(at 33.02 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e21acdd3-2a85-4841-9b06-18584ba32b02")
 		)
@@ -9578,6 +9666,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 53.34 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C84817"
 			(at 53.34 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -9759,6 +9858,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C1740"
+			(at 138.43 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "60575542-bf42-4567-a571-d8e5a6044a3a")
 		)
@@ -9908,6 +10018,17 @@
 			)
 		)
 		(property "Description" "https://pricing.snapeda.com/parts/Teensy%204.1/PJRC/view-part?ref=eda Check availability"
+			(at 34.29 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 34.29 22.86 0)
 			(hide yes)
 			(show_name no)
@@ -10336,7 +10457,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 163.83 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -10359,6 +10480,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 163.83 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17513"
 			(at 163.83 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -10441,6 +10573,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 35.56 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C93034"
 			(at 35.56 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -10613,6 +10756,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C17520"
+			(at 75.565 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "0349b255-cb10-46ca-8d60-0b74a0c4cec5")
 		)
@@ -10737,7 +10891,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -10760,6 +10914,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 161.29 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C149504"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -10841,6 +11006,17 @@
 		)
 		(property "Description" "Ferrite bead"
 			(at 200.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C15957"
+			(at 200.66 129.54 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11165,6 +11341,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" ""
+			(at 281.94 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "aafa794e-1230-44e1-a67e-06fc970ea60b")
 		)
@@ -11323,6 +11510,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C15957"
+			(at 271.78 129.54 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "a4bb8c92-a59e-4c96-86ed-0dcc64a76464")
 		)
@@ -11369,7 +11567,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -11392,6 +11590,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 161.29 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C149504"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -11561,6 +11770,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C45783"
+			(at 83.185 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ff743868-f4c4-472b-9d4b-5d3fa80cd071")
 		)
@@ -11634,6 +11854,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 267.97 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 267.97 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -11721,6 +11952,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 208.915 102.235 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C20612593"
 			(at 208.915 102.235 0)
 			(hide yes)
 			(show_name no)
@@ -12173,7 +12415,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 92.71 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -12196,6 +12438,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 92.71 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17520"
 			(at 92.71 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -12275,6 +12528,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 196.215 99.695 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17710"
 			(at 196.215 99.695 0)
 			(hide yes)
 			(show_name no)
@@ -12409,7 +12673,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 143.51 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -12432,6 +12696,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 143.51 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17530"
 			(at 143.51 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -12513,6 +12788,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 245.11 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -12642,6 +12928,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 173.99 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 173.99 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -12937,6 +13234,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C17414"
+			(at 33.02 156.845 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "360a44e3-6d96-43fb-b0ad-520ba53b42aa")
 		)
@@ -13097,6 +13405,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" ""
+			(at 159.385 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4c379ec7-779e-4910-a0db-787dbd54edbd")
 		)
@@ -13177,6 +13496,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 75.565 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17783"
 			(at 75.565 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -13972,6 +14302,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" ""
+			(at 85.09 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "721b33c9-4b9c-42af-a33f-27f58d5e2038")
 		)
@@ -14128,6 +14469,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 133.35 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 133.35 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14346,7 +14698,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:RESC3216X70"
+		(property "Footprint" "Resistor:RESC2012X65"
 			(at 92.71 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -14369,6 +14721,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 92.71 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17520"
 			(at 92.71 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -14537,6 +14900,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C15957"
+			(at 55.88 128.27 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e47c49b0-df8b-411a-b8ac-eab2bf9d0b83")
 		)
@@ -14609,6 +14983,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 106.045 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 106.045 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -14700,6 +15085,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C1740"
+			(at 281.94 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "93eeb63b-99a5-4c26-b7f3-10080d004df5")
 		)
@@ -14772,6 +15168,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 73.66 159.385 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C148101"
 			(at 73.66 159.385 0)
 			(hide yes)
 			(show_name no)
@@ -14934,6 +15341,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 115.57 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 115.57 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -15187,6 +15605,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 50.8 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C9391"
 			(at 50.8 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -15590,6 +16019,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C8678"
+			(at 67.945 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "87b7980e-5fb3-429f-aa6a-661ddf4efbaa")
 		)
@@ -15819,6 +16259,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 196.85 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 196.85 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -16070,6 +16521,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C149504"
+			(at 154.305 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5f08616d-53ef-40b7-a97e-15d45700bddd")
 		)
@@ -16229,6 +16691,17 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C1740"
+			(at 210.82 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "c7501be1-c213-43ff-b396-c33473bf2d9e")
 		)
@@ -16300,6 +16773,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 210.82 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" ""
 			(at 210.82 124.46 0)
 			(hide yes)
 			(show_name no)
