@@ -70,7 +70,24 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "extra_footprint|40584439|59410860|e73a39c2-dc38-4134-a2bd-22d607b50590|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "extra_footprint|40584439|81910860|c7f19b94-8760-49cc-bd80-c6dea84bf821|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "extra_footprint|93584439|59410860|19e4ee66-6a4c-4cab-82d7-1817e215b91e|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "extra_footprint|93584439|81910860|8e19b8aa-c5e3-44e5-9a24-c42a2f76b393|00000000-0000-0000-0000-000000000000",
+          ""
+        ]
+      ],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -738,7 +755,7 @@
         "uuid": "05d78882-7448-4c56-96b8-6921af7027e2"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#FLG5-7,#SUPPLY57",
     "variants": []
   },
   "sheets": [

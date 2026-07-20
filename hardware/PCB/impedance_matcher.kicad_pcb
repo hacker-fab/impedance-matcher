@@ -16,8 +16,8 @@
 	)
 	(layers
 		(0 "F.Cu" signal)
-		(4 "In1.Cu" signal)
-		(6 "In2.Cu" signal)
+		(4 "In1.Cu" power)
+		(6 "In2.Cu" power)
 		(2 "B.Cu" signal)
 		(9 "F.Adhes" user "F.Adhesive")
 		(11 "B.Adhes" user "B.Adhesive")
@@ -190,7 +190,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C45783.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -218,6 +218,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9e1fb3be-ad11-418e-a1d0-3b0c8675f437")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "daa02da7-1464-451f-9c13-5afd76f8f68d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3723c4c6-672f-4138-9d07-2ddc465c843c")
 			(effects
 				(font
 					(size 1 1)
@@ -386,7 +412,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17513.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -414,6 +440,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "80aa868b-d9fa-4516-a8fd-7dd7c2c7d461")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1001T5E"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "475ed9e3-b03d-4fa8-8315-ccfea5d1103b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "309d41e4-023f-4f7a-b617-e82859e60b43")
 			(effects
 				(font
 					(size 1 1)
@@ -750,7 +802,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C149504.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -778,6 +830,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3ee316a8-43f5-42ae-9015-1da3196c44a7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1003T5E"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "815dd438-f851-4efe-975f-e23ac2bca0be")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5596d5b8-dc7d-48dd-8b11-a5fd0d3e8098")
 			(effects
 				(font
 					(size 1 1)
@@ -935,7 +1013,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17414.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -963,6 +1041,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "657f180d-8be1-495f-8c58-db3129397304")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1002T5E"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2ec4eb5-1e37-4028-8f3e-9ebc4d8502f4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e5bc4aa-cce9-4e56-8cc8-b5cd53995354")
 			(effects
 				(font
 					(size 1 1)
@@ -1067,7 +1171,7 @@
 			(at 0.9195 0 270)
 			(size 1.0312 1.4202)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(CR1-Pad1)")
+			(net "/NET_REVPOL")
 			(pinfunction "2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -1131,7 +1235,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17513.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1159,6 +1263,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5e2404ce-236f-4b4e-b472-46d56c26cbde")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1001T5E"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3b3d64c-d785-493a-bf92-1bea5052e820")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d661777-5950-4a7b-a511-f62232a81473")
 			(effects
 				(font
 					(size 1 1)
@@ -1776,7 +1906,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(DRIVER2-VM)")
+			(net "/VM_DRV2")
 			(pinfunction "VM_8")
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
@@ -2080,7 +2210,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17520.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2108,6 +2238,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5e6211cb-8e97-4a39-ab68-40f2543e2c24")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F2201T5E"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fcd6b051-686a-4a17-b379-dcb32d9f2f0e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "639e802d-a114-4803-bcf0-8e73d79ed92d")
 			(effects
 				(font
 					(size 1 1)
@@ -2265,7 +2421,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1740.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2293,6 +2449,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d22acdd8-bd8f-4698-9486-646d346be651")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805B334K500NT"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b0d11950-aed5-4193-9d54-8208e831f3aa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH (Guangdong Fenghua)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d9969fa1-1156-4836-9193-9998444b80b6")
 			(effects
 				(font
 					(size 1 1)
@@ -2458,7 +2640,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C15957.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2498,6 +2680,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e572b32d-354b-42d3-9911-4b866bb0b0a4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "MPZ2012S101AT000"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "febe0332-a430-4734-8db8-ae823cda9614")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "TDK"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5be7877a-6139-4266-b801-ee57e37b4085")
 			(effects
 				(font
 					(size 1 1)
@@ -2564,7 +2772,7 @@
 			(size 0.875 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(DRIVER2-VM)")
+			(net "/VM_DRV2")
 			(pintype "passive")
 			(teardrops
 				(best_length_ratio 0.5)
@@ -2645,7 +2853,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17710.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2673,6 +2881,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "be26d4da-0d09-477f-b20d-976d9f4e7e86")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F4700T5E"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a3c09f3-42f2-45df-9dad-c525533d1ae6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "651053a9-a652-457c-b716-0dc1da0faaac")
 			(effects
 				(font
 					(size 1 1)
@@ -3395,7 +3629,7 @@
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(POWER1-Pin_2)")
+			(net "/VIN")
 			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -3459,7 +3693,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1740.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3487,6 +3721,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9beac0b6-ca0d-4bef-a344-6d99bedef9e8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805B334K500NT"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb5ee6a7-b269-4336-9285-2926bc411a38")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH (Guangdong Fenghua)"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51229729-448d-4e20-bdeb-fd6e51282c1a")
 			(effects
 				(font
 					(size 1 1)
@@ -3653,7 +3913,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2878991.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3675,12 +3935,38 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2878991"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0b605c93-3882-4c30-ace7-332dc6ff6e74")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TLV2372IP"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "23207b0e-1492-403a-9893-d4fe78532f27")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "df978e4d-7b3e-4faf-87eb-d38b70c3818f")
 			(effects
 				(font
 					(size 1 1)
@@ -4056,7 +4342,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C15957.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4096,6 +4382,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1d72720c-be81-41ea-9583-d6cbbd1de0fb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "MPZ2012S101AT000"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "855f4d09-83dd-45a2-a967-5e0905eb45cc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "TDK"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0f718ba-c4ef-45ba-bc9e-ee7f02cbfb7f")
 			(effects
 				(font
 					(size 1 1)
@@ -4162,7 +4474,7 @@
 			(size 0.875 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(DRIVER1-VM)")
+			(net "/VM_DRV1")
 			(pintype "passive")
 			(teardrops
 				(best_length_ratio 0.5)
@@ -4240,7 +4552,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C9391.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4268,6 +4580,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "aef676aa-9ce3-4c44-8448-0d6b25c6d7f0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SMNR5040-220MT"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb5904ad-2dae-4c17-8362-77cfb1739d36")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2775d89e-7435-43a4-a545-20e0afcdc53c")
 			(effects
 				(font
 					(size 1 1)
@@ -4372,7 +4710,7 @@
 			(at 2.4383 0)
 			(size 1.6525 4.1153)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(D1-A)")
+			(net "/SW_NODE")
 			(pinfunction "2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -4436,7 +4774,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17783.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4464,6 +4802,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b8c7e8d0-521a-4c8b-b260-7c9250b956a7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F6202T5E"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "893e6e9d-5d23-4b3b-8ede-b9d3e1f2504c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "072dacd3-1631-4dad-99ad-41fb901a3363")
 			(effects
 				(font
 					(size 1 1)
@@ -4546,7 +4910,7 @@
 			(at -0.9195 0 90)
 			(size 1.0312 1.4202)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(STEP_UP0-FB)")
+			(net "/FB_DIV")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -5079,7 +5443,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C8678.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5107,6 +5471,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1ff80aa8-99b8-481a-9b20-70b2341bab14")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SS34"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b14b97d9-d3b1-434f-adaf-68dbeecd021b")
 			(effects
 				(font
 					(size 1 1)
@@ -5512,7 +5889,7 @@
 			(at 1.6764 0 180)
 			(size 2.159 2.7432)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(D1-A)")
+			(net "/SW_NODE")
 			(pinfunction "A_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -5665,7 +6042,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C84817.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5693,6 +6070,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e58660fe-28af-438d-a8a2-9455f4f73e3f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "MT3608"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3868b3cc-02d2-46af-815b-0e4ae31e451a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "XLSEMI"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f116e2d-0d9f-4637-b5c4-605ee28dd370")
 			(effects
 				(font
 					(size 1 1)
@@ -5839,7 +6242,7 @@
 			(size 1.37 0.59)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(D1-A)")
+			(net "/SW_NODE")
 			(pinfunction "SW_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -5885,7 +6288,7 @@
 			(size 1.37 0.59)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(STEP_UP0-FB)")
+			(net "/FB_DIV")
 			(pinfunction "FB_3")
 			(pintype "input")
 			(solder_mask_margin 0.1016)
@@ -6140,7 +6543,7 @@
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(TRANSMIT1-Pin_1)")
+			(net "/TX_DRAIN")
 			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -6164,7 +6567,7 @@
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(TRANSMIT1-Pin_2)")
+			(net "/TX_GATE")
 			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -6228,7 +6631,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17520.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -6256,6 +6659,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "aaea1eae-4eee-449f-95bb-da172f84630b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F2201T5E"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f6b64dc-0e40-4f98-b79e-44a03d123492")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fa451d48-5fa4-496e-a26e-9fabadd0bed8")
 			(effects
 				(font
 					(size 1 1)
@@ -6413,7 +6842,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1740.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -6441,6 +6870,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9974d22e-6c3c-4111-875b-cf0f9b35feda")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805B334K500NT"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "508f8aee-86e5-4768-94d8-a1a52875933c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH (Guangdong Fenghua)"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "03597ac1-e22d-44c0-aafe-9dc0ba4cd50f")
 			(effects
 				(font
 					(size 1 1)
@@ -6609,7 +7064,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17520.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6637,6 +7092,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "67fe229e-4cee-4473-a270-ff090d910701")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F2201T5E"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f06fb37-26d2-4313-8e88-ddee53649c3b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b31d81ba-317e-4ac2-ad7d-cc740a94babe")
 			(effects
 				(font
 					(size 1 1)
@@ -6741,7 +7222,7 @@
 			(at 0.9195 0 90)
 			(size 1.0312 1.4202)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(STEP_UP0-FB)")
+			(net "/FB_DIV")
 			(pinfunction "2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -7124,7 +7605,7 @@
 				(justify top)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C148101.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7152,6 +7633,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d4045a53-b40b-477c-8dd1-e9980f3884b2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "BZX84C5V6"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a24f8111-3d6c-4ec7-93f8-733c0e4d2756")
 			(effects
 				(font
 					(size 1 1)
@@ -7265,7 +7759,7 @@
 			(at -1.0247 -0.95)
 			(size 1.1821 0.6122)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(CR1-Pad1)")
+			(net "/NET_REVPOL")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -7287,7 +7781,7 @@
 			(at -1.0247 0.95)
 			(size 1.1821 0.6122)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(CR1-Pad1)")
+			(net "/NET_REVPOL")
 			(pinfunction "2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -7373,7 +7867,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C149504.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7401,6 +7895,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "26bd2ad8-56a4-4165-8819-950c6d9e9614")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1003T5E"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eea78a55-6e29-452b-ad53-ce4601b7f1fd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f4aff856-002c-484d-be07-b30774cb8f11")
 			(effects
 				(font
 					(size 1 1)
@@ -7558,7 +8078,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17530.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7586,6 +8106,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e578f4a0-10cb-44b4-9573-fef6ac090c2d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F2701T5E"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "df851f9a-1ade-4f7f-8cf6-0d3bbe9ef919")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c3da0bb-877a-43b6-860a-05daacade577")
 			(effects
 				(font
 					(size 1 1)
@@ -7743,7 +8289,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17530.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -7771,6 +8317,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7c0d420f-1876-48c3-809d-394e2c055140")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F2701T5E"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f3faf87b-0ab8-44a9-8529-3fa1e5bf721d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfa461c9-b5b1-42e7-9168-e4ddddf7f3f3")
 			(effects
 				(font
 					(size 1 1)
@@ -8165,7 +8737,7 @@
 			(drill 0.9)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(FAN1-Pin_3)")
+			(net "/FAN_CTRL")
 			(pinfunction "Pin_3_3")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -8253,7 +8825,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C1740.pdf"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -8281,6 +8853,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5d595fe1-fd7b-4e0c-8602-3e58fb76fe8c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805B334K500NT"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a1b0d624-c6e4-42ad-bda3-8eb13d3a44f7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH (Guangdong Fenghua)"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea4d7efd-ac77-4fba-9505-2a39272bd19d")
 			(effects
 				(font
 					(size 1 1)
@@ -8446,7 +9044,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C15957.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -8486,6 +9084,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a4188664-6843-4174-8cc4-69d5515169d6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "MPZ2012S101AT000"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e5356a4-c194-4f11-87bd-ee3a4fb5f40c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "TDK"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "937cd87c-026f-4a56-ab73-a5bf60944335")
 			(effects
 				(font
 					(size 1 1)
@@ -8552,7 +9176,7 @@
 			(size 0.875 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(POWER1-Pin_2)")
+			(net "/VIN")
 			(pintype "passive")
 			(teardrops
 				(best_length_ratio 0.5)
@@ -8572,7 +9196,7 @@
 			(size 0.875 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(FB1-Pad2)")
+			(net "/FB1_OUT")
 			(pintype "passive")
 			(teardrops
 				(best_length_ratio 0.5)
@@ -9093,7 +9717,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(DRIVER1-VM)")
+			(net "/VM_DRV1")
 			(pinfunction "VM_8")
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
@@ -9601,7 +10225,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C45783.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -9629,6 +10253,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fee36f47-65db-4ddc-9eb5-005b59e20868")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8a87aca-6f19-4b47-b818-11cc0fe56e7a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eafcd62e-fec2-43f2-9882-23b2868543cc")
 			(effects
 				(font
 					(size 1 1)
@@ -9797,7 +10447,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C149504.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9825,6 +10475,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "98b25d07-602b-44fb-b13d-f1b203262787")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1003T5E"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "25774b33-31b6-42e8-a4d4-3ecffb190e8f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "28d5580e-171b-46d1-a673-092ba59f0cbf")
 			(effects
 				(font
 					(size 1 1)
@@ -9907,7 +10583,7 @@
 			(at -0.9195 0 270)
 			(size 1.0312 1.4202)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(FAN1-Pin_3)")
+			(net "/FAN_CTRL")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -10159,7 +10835,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C20612593.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -10187,6 +10863,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "253530cf-8fdd-494d-b091-44995e67600f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PC817B"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1ebb8519-0f2f-4607-8bcb-8dc68c3a1798")
 			(effects
 				(font
 					(size 1 1)
@@ -10389,7 +11078,7 @@
 			(drill 0.84)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(TRANSMIT1-Pin_2)")
+			(net "/TX_GATE")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -10412,7 +11101,7 @@
 			(drill 0.84)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(TRANSMIT1-Pin_1)")
+			(net "/TX_DRAIN")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -10794,7 +11483,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C105651.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -10822,6 +11511,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "007bb766-03cf-4ec4-8d5c-bf3b810f3189")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "L7812CV"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "121de3aa-2285-4262-a7b7-ecf84b65cb4a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "STMicroelectronics"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "68f15f00-cf74-47ed-b069-7ce9bae19f22")
 			(effects
 				(font
 					(size 1 1)
@@ -11099,7 +11814,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C93034.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11127,6 +11842,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f227ee65-e699-4e70-a420-24d9845772e9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "DMP6180SK3-13"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1087b8d1-7674-403a-96a7-a06d7887a9de")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Diodes Incorporated"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b687e26b-c38f-4ab0-9664-31cb4b54992d")
 			(effects
 				(font
 					(size 1 1)
@@ -11455,7 +12196,7 @@
 			(at -2.3 4.5803)
 			(size 1.4986 2.4892)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(CR1-Pad1)")
+			(net "/NET_REVPOL")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -11499,7 +12240,7 @@
 			(at 0 -2.3197)
 			(size 7.0104 7.0104)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "Net-(FB1-Pad2)")
+			(net "/FB1_OUT")
 			(pinfunction "3_3")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -11887,7 +12628,7 @@
 			(remove_unused_layers no)
 			(net "GND")
 			(pinfunction "GND_AGND/GND")
-			(pintype "bidirectional")
+			(pintype "power_in")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
 			(teardrops
@@ -12919,7 +13660,7 @@
 			(remove_unused_layers no)
 			(net "GND")
 			(pinfunction "GND_GND")
-			(pintype "bidirectional")
+			(pintype "power_in")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
 			(teardrops
@@ -12943,7 +13684,7 @@
 			(remove_unused_layers no)
 			(net "GND")
 			(pinfunction "GND_GND@2")
-			(pintype "bidirectional")
+			(pintype "power_in")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
 			(teardrops
@@ -15555,7 +16296,7 @@
 		(end 42.4506 31.75199)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(uuid "7aaefd2e-d4a5-412b-b5be-0dd4e7ceea13")
 	)
 	(segment
@@ -15563,7 +16304,7 @@
 		(end 42.4506 36.45)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(uuid "9510ac21-e79a-4d4d-a829-c3f0cbb3fbde")
 	)
 	(segment
@@ -15571,7 +16312,7 @@
 		(end 39.9042 38.9964)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(uuid "cd50a014-9080-491d-bc2b-843e9a5bc002")
 	)
 	(segment
@@ -15579,8 +16320,16 @@
 		(end 35.5989 38.9964)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(uuid "f82ff12b-ebbf-4508-8b0a-8aa5ddc7cbfc")
+	)
+	(segment
+		(start 83.542813 42.542813)
+		(end 84.5 43.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/FWD_OUT")
+		(uuid "1c3dbc0f-eec5-4746-badc-a468447c0df3")
 	)
 	(segment
 		(start 86.74515 48.74515)
@@ -15591,20 +16340,20 @@
 		(uuid "20db7f9d-eea0-410a-a9b4-277a0a47208d")
 	)
 	(segment
-		(start 82.099275 42.542813)
-		(end 84.5 44.943538)
+		(start 84.5 47.6612)
+		(end 85.2583 48.4195)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/FWD_OUT")
-		(uuid "829b5a76-6993-4ae2-aac3-a51715c6cddb")
+		(uuid "24eb8249-0311-4a2b-b0ec-fecaadcd4bd4")
 	)
 	(segment
 		(start 69.471337 42.542813)
-		(end 82.099275 42.542813)
+		(end 83.542813 42.542813)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/FWD_OUT")
-		(uuid "8567dd75-6fd5-4f53-9797-58ad03ee505f")
+		(uuid "3157915c-0284-4ea2-98d6-8dcd55f08e55")
 	)
 	(segment
 		(start 85.2583 48.4195)
@@ -15612,23 +16361,15 @@
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/FWD_OUT")
-		(uuid "8a5132b9-47aa-4c4a-8dce-0fd0f1a409cc")
+		(uuid "863b3215-f4b3-48d1-ab6d-34b7edfd5ad0")
 	)
 	(segment
-		(start 84.5 44.943538)
+		(start 84.5 43.5)
 		(end 84.5 47.6612)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/FWD_OUT")
-		(uuid "9d8ccf82-d0be-452a-a39e-4f7a578fbeda")
-	)
-	(segment
-		(start 84.5 47.6612)
-		(end 85.2583 48.4195)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/FWD_OUT")
-		(uuid "ae83d1f0-1ba0-4f2d-9c2b-19ccc094601a")
+		(uuid "8b56c9cf-1d6a-4e24-93af-7b9ffbefb1b5")
 	)
 	(via
 		(at 69.471337 42.542813)
@@ -16143,7 +16884,7 @@
 		(end 67.9405 75.4375)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(DRIVER2-VM)")
+		(net "/VM_DRV2")
 		(uuid "4cb92486-f3ad-4cfd-8351-3c745cb3f044")
 	)
 	(segment
@@ -16151,7 +16892,7 @@
 		(end 67.9405 75.4375)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(DRIVER2-VM)")
+		(net "/VM_DRV2")
 		(uuid "b6c5866c-e0f3-4a3c-a011-8f0de696b6ac")
 	)
 	(segment
@@ -16556,14 +17297,6 @@
 		(uuid "410a88be-9dc8-4c71-aa5a-fee2f0141acc")
 	)
 	(segment
-		(start 82.864 25.5102)
-		(end 82.864 25.852657)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/SCL")
-		(uuid "97f81bce-de0f-4a32-9223-9ec770569e64")
-	)
-	(segment
 		(start 73.4989 31.9964)
 		(end 80.9964 31.9964)
 		(width 0.2)
@@ -16616,7 +17349,7 @@
 		(end 40.277687 27.991095)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(POWER1-Pin_2)")
+		(net "/VIN")
 		(uuid "6e0c4201-6f93-477a-9f20-b20f282edea9")
 	)
 	(segment
@@ -16808,7 +17541,7 @@
 		(end 89.6101 75.4375)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(DRIVER1-VM)")
+		(net "/VM_DRV1")
 		(uuid "7f5091de-dcb0-4a96-9651-116927e4a4b3")
 	)
 	(segment
@@ -16816,7 +17549,7 @@
 		(end 89.967642 75.433539)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(DRIVER1-VM)")
+		(net "/VM_DRV1")
 		(uuid "806b8abe-da27-46a1-aad3-e70028b88e94")
 	)
 	(segment
@@ -16824,7 +17557,7 @@
 		(end 89.963681 75.4375)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(DRIVER1-VM)")
+		(net "/VM_DRV1")
 		(uuid "909c7b16-6ca9-4cc0-a569-45a606e9978a")
 	)
 	(segment
@@ -16832,7 +17565,7 @@
 		(end 90.857542 75.433539)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(DRIVER1-VM)")
+		(net "/VM_DRV1")
 		(uuid "9268c728-084f-47e2-a93c-f7bd39d14716")
 	)
 	(segment
@@ -16840,7 +17573,7 @@
 		(end 43.79505 53.5)
 		(width 0.8128)
 		(layer "F.Cu")
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(uuid "4311a29d-157d-4e1b-a098-9eece95cd4ba")
 	)
 	(segment
@@ -16848,7 +17581,7 @@
 		(end 45.80765 51.28265)
 		(width 0.8128)
 		(layer "F.Cu")
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(uuid "6a3e5aba-2686-4913-893c-590240e77587")
 	)
 	(segment
@@ -16856,7 +17589,7 @@
 		(end 43.794 49.269)
 		(width 0.8128)
 		(layer "F.Cu")
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(uuid "a09656b1-c712-4bf8-b518-8a290f881838")
 	)
 	(segment
@@ -16864,7 +17597,7 @@
 		(end 42.139 49.269)
 		(width 0.8128)
 		(layer "F.Cu")
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(uuid "dbfebba3-5d9d-4532-905d-c62ea28d62df")
 	)
 	(segment
@@ -16872,7 +17605,7 @@
 		(end 45.80765 51.4874)
 		(width 0.8128)
 		(layer "F.Cu")
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(uuid "ee7856f9-a817-43c6-b0be-65f67dfbb9c7")
 	)
 	(segment
@@ -16880,7 +17613,7 @@
 		(end 45.906261 44.133061)
 		(width 0.9)
 		(layer "F.Cu")
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(uuid "00f7c541-ff9a-4379-80de-4b2274c73abf")
 	)
 	(segment
@@ -16888,7 +17621,7 @@
 		(end 49.3305 47.5)
 		(width 0.9)
 		(layer "F.Cu")
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(uuid "4d6a53d9-ae5b-43a9-8547-69abf05a3365")
 	)
 	(segment
@@ -16896,7 +17629,7 @@
 		(end 45.906261 45.962739)
 		(width 0.9)
 		(layer "F.Cu")
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(uuid "89c44655-c9fe-47b9-828f-7cd7c4def46c")
 	)
 	(segment
@@ -16904,7 +17637,7 @@
 		(end 49.1995 47.369)
 		(width 0.9)
 		(layer "F.Cu")
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(uuid "abf8d20c-8627-4298-9317-1acb09914143")
 	)
 	(segment
@@ -16912,7 +17645,7 @@
 		(end 44.5 47.369)
 		(width 0.9)
 		(layer "F.Cu")
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(uuid "bcd54094-5a70-4fdf-ac87-5d590a7271a0")
 	)
 	(segment
@@ -17128,7 +17861,7 @@
 		(end 41.9989 74.4964)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(TRANSMIT1-Pin_1)")
+		(net "/TX_DRAIN")
 		(uuid "21db856b-44d9-4d37-be45-c9ef1a7c5f5c")
 	)
 	(segment
@@ -17136,7 +17869,7 @@
 		(end 41.9989 72.5811)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(TRANSMIT1-Pin_1)")
+		(net "/TX_DRAIN")
 		(uuid "2ffa289f-81a1-4449-881c-f1cf39fd2c0e")
 	)
 	(segment
@@ -17144,7 +17877,7 @@
 		(end 41.8863 77.149)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(TRANSMIT1-Pin_2)")
+		(net "/TX_GATE")
 		(uuid "4e0a90c6-1fb1-42a0-ba17-ec3a04a1b76c")
 	)
 	(segment
@@ -17152,7 +17885,7 @@
 		(end 39.6516 72.3884)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(TRANSMIT1-Pin_2)")
+		(net "/TX_GATE")
 		(uuid "74b0c4b4-47f7-4faa-8c96-ec508d6d836c")
 	)
 	(segment
@@ -17160,7 +17893,7 @@
 		(end 40.647262 77.149)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(TRANSMIT1-Pin_2)")
+		(net "/TX_GATE")
 		(uuid "8459ec3b-93b1-4766-b436-88148a08b01a")
 	)
 	(segment
@@ -17168,7 +17901,7 @@
 		(end 40.73 71.31)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(TRANSMIT1-Pin_2)")
+		(net "/TX_GATE")
 		(uuid "9da2c1d9-0bc5-4839-bbb4-366d7b89602d")
 	)
 	(segment
@@ -17296,7 +18029,7 @@
 		(end 94.4173 36.5)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(FAN1-Pin_3)")
+		(net "/FAN_CTRL")
 		(uuid "10ab4c0e-515c-4e4d-aa12-4b16980e550f")
 	)
 	(segment
@@ -17304,7 +18037,7 @@
 		(end 92.9195 36.5)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(FAN1-Pin_3)")
+		(net "/FAN_CTRL")
 		(uuid "b4074e13-dfe5-406f-ad46-6e00419a2469")
 	)
 	(segment
@@ -17312,7 +18045,7 @@
 		(end 95.4989 35.4184)
 		(width 0.508)
 		(layer "F.Cu")
-		(net "Net-(FAN1-Pin_3)")
+		(net "/FAN_CTRL")
 		(uuid "c9172711-8a5d-48ca-91aa-6d8198aca21a")
 	)
 	(segment
@@ -17344,7 +18077,7 @@
 		(end 36.179889 34.5)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(FB1-Pad2)")
+		(net "/FB1_OUT")
 		(uuid "2a39f835-d602-4e03-a822-9d3c33d58ed0")
 	)
 	(segment
@@ -17352,7 +18085,7 @@
 		(end 40.331282 30.348607)
 		(width 1.016)
 		(layer "F.Cu")
-		(net "Net-(FB1-Pad2)")
+		(net "/FB1_OUT")
 		(uuid "ba7dc94f-3dee-47f4-942f-518fd63d3ed0")
 	)
 	(segment
@@ -17618,7 +18351,7 @@
 		(uuid "af5c1e16-9cab-46fc-88b8-f815c395c4cd")
 	)
 	(zone
-		(net "Net-(TRANSMIT1-Pin_2)")
+		(net "/TX_GATE")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30034)
@@ -17982,7 +18715,7 @@
 		)
 	)
 	(zone
-		(net "Net-(DRIVER1-VM)")
+		(net "/VM_DRV1")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30010)
@@ -18204,12 +18937,15 @@
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 77.090733 58.78439) (xy 77.213771 58.907428) (xy 77.217198 58.915701) (xy 77.213771 58.923974)
-				(xy 77.21197 58.925448) (xy 77.100599 58.999399) (xy 77.65921 59.922064) (xy 77.660563 59.930916)
-				(xy 77.655261 59.938133) (xy 77.654772 59.938413) (xy 77.006171 60.289614) (xy 76.997264 60.290539)
-				(xy 76.995029 60.289614) (xy 76.346427 59.938413) (xy 76.340784 59.93146) (xy 76.341709 59.922553)
-				(xy 76.341974 59.922089) (xy 76.9006 58.9994) (xy 76.929 58.930833) (xy 76.931531 58.927046) (xy 77.07419 58.784388)
-				(xy 77.08246 58.780963)
+				(xy 77.08858 58.783498) (xy 77.092378 58.786035) (xy 77.212125 58.905782) (xy 77.214661 58.909576)
+				(xy 77.215343 58.911222) (xy 77.215344 58.920177) (xy 77.215341 58.920185) (xy 77.214975 58.921067)
+				(xy 77.21064 58.92633) (xy 77.100598 58.999398) (xy 77.658004 59.920073) (xy 77.659561 59.924366)
+				(xy 77.65983 59.926127) (xy 77.657695 59.934819) (xy 77.656797 59.936042) (xy 77.652937 59.939406)
+				(xy 77.008216 60.288506) (xy 77.003856 60.289854) (xy 77.001416 60.290107) (xy 77.000423 60.29021)
+				(xy 76.993642 60.288863) (xy 76.348473 59.939521) (xy 76.344959 59.936604) (xy 76.343836 59.93522)
+				(xy 76.341284 59.926638) (xy 76.341441 59.925125) (xy 76.343067 59.920282) (xy 76.9006 58.9994)
+				(xy 76.928565 58.931882) (xy 76.929633 58.929885) (xy 76.930897 58.927993) (xy 76.932339 58.926237)
+				(xy 77.072544 58.786033) (xy 77.07634 58.783498) (xy 77.077985 58.782817) (xy 77.086935 58.782817)
 			)
 		)
 	)
@@ -18314,7 +19050,7 @@
 		)
 	)
 	(zone
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30003)
@@ -18672,7 +19408,7 @@
 		)
 	)
 	(zone
-		(net "Net-(FB1-Pad2)")
+		(net "/FB1_OUT")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30000)
@@ -18737,7 +19473,7 @@
 		)
 	)
 	(zone
-		(net "Net-(DRIVER2-VM)")
+		(net "/VM_DRV2")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30011)
@@ -18904,7 +19640,7 @@
 		)
 	)
 	(zone
-		(net "Net-(FAN1-Pin_3)")
+		(net "/FAN_CTRL")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30033)
@@ -18936,7 +19672,7 @@
 		)
 	)
 	(zone
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30057)
@@ -18968,7 +19704,7 @@
 		)
 	)
 	(zone
-		(net "Net-(TRANSMIT1-Pin_1)")
+		(net "/TX_DRAIN")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30044)
@@ -19098,38 +19834,6 @@
 				(xy 52.040884 32.018703) (xy 52.035377 32.025764) (xy 52.029124 32.027276) (xy 51.190526 31.992597)
 				(xy 51.18254 31.98898) (xy 50.763626 31.549516) (xy 50.760398 31.541163) (xy 50.764022 31.532974)
 				(xy 50.767047 31.530887) (xy 52.17465 30.858233) (xy 52.18359 30.857759)
-			)
-		)
-	)
-	(zone
-		(net "/SCL")
-		(layer "F.Cu")
-		(hatch none 0.1)
-		(priority 30126)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 82.764 25.852657) (xy 82.964 25.852657) (xy 83.1242 25.731085) (xy 82.864 24.816042) (xy 82.6038 25.0084)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 82.866775 24.828539) (xy 82.868621 24.832294) (xy 83.122013 25.723396) (xy 83.12098 25.732291)
-				(xy 83.117832 25.735916) (xy 82.967136 25.850277) (xy 82.960063 25.852657) (xy 82.773689 25.852657)
-				(xy 82.765416 25.84923) (xy 82.762194 25.843138) (xy 82.725047 25.647376) (xy 82.605169 25.015616)
-				(xy 82.606994 25.006852) (xy 82.609703 25.004035) (xy 82.850414 24.826085) (xy 82.859102 24.823923)
 			)
 		)
 	)
@@ -19360,7 +20064,7 @@
 		)
 	)
 	(zone
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30110)
@@ -19587,7 +20291,7 @@
 		)
 	)
 	(zone
-		(net "Net-(POWER1-Pin_2)")
+		(net "/VIN")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30022)
@@ -19783,6 +20487,40 @@
 		)
 	)
 	(zone
+		(net "/FWD_OUT")
+		(layer "F.Cu")
+		(hatch none 0.1)
+		(priority 30112)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(fill yes
+			(island_removal_mode 1)
+		)
+		(polygon
+			(pts
+				(xy 70.224501 42.642813) (xy 70.224501 42.442813) (xy 69.616068 42.193402) (xy 69.467101 42.542813)
+				(xy 69.616068 42.892224)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 69.626743 42.197777) (xy 70.217239 42.439836) (xy 70.223594 42.446145) (xy 70.224501 42.450662)
+				(xy 70.224501 42.634963) (xy 70.221074 42.643236) (xy 70.217239 42.645789) (xy 69.626744 42.887847)
+				(xy 69.617789 42.887814) (xy 69.611543 42.88161) (xy 69.577388 42.801499) (xy 69.469056 42.5474)
+				(xy 69.468965 42.538447) (xy 69.469057 42.538224) (xy 69.509735 42.442813) (xy 69.611543 42.204014)
+				(xy 69.61794 42.197749)
+			)
+		)
+	)
+	(zone
 		(net "GND")
 		(layer "F.Cu")
 		(hatch none 0.1)
@@ -19914,7 +20652,7 @@
 		)
 	)
 	(zone
-		(net "Net-(STEP_UP0-FB)")
+		(net "/FB_DIV")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30067)
@@ -19947,10 +20685,10 @@
 		)
 	)
 	(zone
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30127)
+		(priority 30126)
 		(attr
 			(teardrop
 				(type padvia)
@@ -20076,7 +20814,7 @@
 		)
 	)
 	(zone
-		(net "Net-(D1-A)")
+		(net "/SW_NODE")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30008)
@@ -20476,7 +21214,7 @@
 		(net "/RX1")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30112)
+		(priority 30113)
 		(attr
 			(teardrop
 				(type padvia)
@@ -20497,10 +21235,13 @@
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 77.505187 50.497723) (xy 77.838816 50.640206) (xy 77.845079 50.646607) (xy 77.84505 50.655395)
-				(xy 77.603573 51.245893) (xy 77.59727 51.252253) (xy 77.592744 51.253164) (xy 77.408442 51.253164)
-				(xy 77.400169 51.249737) (xy 77.39762 51.245911) (xy 77.327251 51.074661) (xy 77.15498 50.655417)
-				(xy 77.155005 50.646464) (xy 77.161219 50.640206) (xy 77.496011 50.497716) (xy 77.504964 50.497631)
+				(xy 77.507224 50.498593) (xy 77.836674 50.639291) (xy 77.840441 50.641868) (xy 77.841725 50.64318)
+				(xy 77.845038 50.651342) (xy 77.845063 50.651404) (xy 77.845057 50.653118) (xy 77.844186 50.657506)
+				(xy 77.604453 51.243738) (xy 77.601938 51.247542) (xy 77.600952 51.248537) (xy 77.599802 51.249697)
+				(xy 77.591547 51.253164) (xy 77.410769 51.253164) (xy 77.406291 51.252273) (xy 77.403486 51.251111)
+				(xy 77.397155 51.24478) (xy 77.327251 51.074661) (xy 77.155863 50.657567) (xy 77.154986 50.65309)
+				(xy 77.154991 50.651342) (xy 77.154991 50.651265) (xy 77.158385 50.643059) (xy 77.159609 50.641826)
+				(xy 77.163319 50.639311) (xy 77.493875 50.498624) (xy 77.498338 50.497693) (xy 77.50252 50.497654)
 			)
 		)
 	)
@@ -20572,7 +21313,7 @@
 		(net "/TX2")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30113)
+		(priority 30114)
 		(attr
 			(teardrop
 				(type padvia)
@@ -20701,7 +21442,7 @@
 		(net "/FWD_IN")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30114)
+		(priority 30115)
 		(attr
 			(teardrop
 				(type padvia)
@@ -20899,7 +21640,7 @@
 		(net "/REV_OUT")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30115)
+		(priority 30116)
 		(attr
 			(teardrop
 				(type padvia)
@@ -20921,18 +21662,16 @@
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 68.639108 43.625969) (xy 68.643506 43.626842) (xy 69.229739 43.867154) (xy 69.233542 43.869675)
-				(xy 69.235695 43.871812) (xy 69.239153 43.880072) (xy 69.239153 44.060835) (xy 69.238261 44.065316)
-				(xy 69.237099 44.068119) (xy 69.230765 44.074449) (xy 69.230729 44.074464) (xy 68.643549 44.315164)
-				(xy 68.639066 44.316038) (xy 68.637236 44.316031) (xy 68.629035 44.312631) (xy 68.627816 44.31142)
-				(xy 68.625299 44.307709) (xy 68.59204 44.229699) (xy 68.48462 43.977739) (xy 68.483684 43.97327)
-				(xy 68.483641 43.96909) (xy 68.484576 43.964389) (xy 68.524387 43.871013) (xy 68.625282 43.634354)
-				(xy 68.627859 43.630584) (xy 68.629165 43.629305) (xy 68.637384 43.625964)
+				(xy 68.641395 43.625977) (xy 69.231891 43.868036) (xy 69.238246 43.874345) (xy 69.239153 43.878862)
+				(xy 69.239153 44.063163) (xy 69.235726 44.071436) (xy 69.231891 44.073989) (xy 68.641396 44.316047)
+				(xy 68.632441 44.316014) (xy 68.626195 44.30981) (xy 68.59204 44.229699) (xy 68.483708 43.9756)
+				(xy 68.483617 43.966647) (xy 68.483709 43.966424) (xy 68.524387 43.871013) (xy 68.626195 43.632214)
+				(xy 68.632592 43.625949)
 			)
 		)
 	)
 	(zone
-		(net "Net-(TRANSMIT1-Pin_1)")
+		(net "/TX_DRAIN")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30030)
@@ -20956,13 +21695,10 @@
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 42.248785 72.973289) (xy 42.252004 72.974622) (xy 42.25726 72.978941) (xy 42.75429 73.724486)
-				(xy 42.756033 73.728708) (xy 42.756508 73.731112) (xy 42.755346 73.7389) (xy 42.754942 73.739655)
-				(xy 42.752905 73.742403) (xy 42.008823 74.487463) (xy 42.005025 74.490003) (xy 42.00338 74.490685)
-				(xy 41.994432 74.490691) (xy 41.992793 74.490014) (xy 41.988981 74.487468) (xy 41.988976 74.487463)
-				(xy 41.245315 73.742826) (xy 41.242783 73.73903) (xy 41.242729 73.7389) (xy 41.241847 73.736766)
-				(xy 41.241464 73.728907) (xy 41.241715 73.728076) (xy 41.243173 73.724989) (xy 41.740136 72.979544)
-				(xy 41.743358 72.976316) (xy 41.746253 72.974377) (xy 41.752762 72.9724) (xy 42.244311 72.9724)
+				(xy 42.254911 72.975827) (xy 42.256373 72.97761) (xy 42.755582 73.726424) (xy 42.75732 73.735209)
+				(xy 42.754126 73.741182) (xy 42.007179 74.48911) (xy 41.998908 74.492542) (xy 41.990632 74.489121)
+				(xy 41.990621 74.48911) (xy 41.243673 73.741182) (xy 41.240252 73.732906) (xy 41.242217 73.726424)
+				(xy 41.741427 72.97761) (xy 41.748867 72.972627) (xy 41.751162 72.9724) (xy 42.246638 72.9724)
 			)
 		)
 	)
@@ -21000,7 +21736,7 @@
 		)
 	)
 	(zone
-		(net "Net-(FAN1-Pin_3)")
+		(net "/FAN_CTRL")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30074)
@@ -21064,7 +21800,7 @@
 		)
 	)
 	(zone
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30087)
@@ -21096,44 +21832,10 @@
 		)
 	)
 	(zone
-		(net "/FWD_OUT")
+		(net "/NET_REVPOL")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30116)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 70.224501 42.642813) (xy 70.224501 42.442813) (xy 69.616068 42.193402) (xy 69.467101 42.542813)
-				(xy 69.616068 42.892224)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 69.626743 42.197777) (xy 70.217239 42.439836) (xy 70.223594 42.446145) (xy 70.224501 42.450662)
-				(xy 70.224501 42.634963) (xy 70.221074 42.643236) (xy 70.217239 42.645789) (xy 69.626744 42.887847)
-				(xy 69.617789 42.887814) (xy 69.611543 42.88161) (xy 69.577388 42.801499) (xy 69.469056 42.5474)
-				(xy 69.468965 42.538447) (xy 69.469057 42.538224) (xy 69.509735 42.442813) (xy 69.611543 42.204014)
-				(xy 69.61794 42.197749)
-			)
-		)
-	)
-	(zone
-		(net "Net-(CR1-Pad1)")
-		(layer "F.Cu")
-		(hatch none 0.1)
-		(priority 30128)
+		(priority 30127)
 		(attr
 			(teardrop
 				(type padvia)
@@ -21162,10 +21864,10 @@
 		)
 	)
 	(zone
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30129)
+		(priority 30128)
 		(attr
 			(teardrop
 				(type padvia)
@@ -21423,7 +22125,7 @@
 		)
 	)
 	(zone
-		(net "Net-(TRANSMIT1-Pin_2)")
+		(net "/TX_GATE")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30045)
@@ -21556,6 +22258,38 @@
 		)
 	)
 	(zone
+		(net "/FWD_OUT")
+		(layer "F.Cu")
+		(hatch none 0.1)
+		(priority 30097)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(fill yes
+			(island_removal_mode 1)
+		)
+		(polygon
+			(pts
+				(xy 85.7138 48.3195) (xy 85.7138 48.5195) (xy 86.2294 48.9351) (xy 86.746 48.4195) (xy 86.2294 47.9039)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 86.236831 47.911317) (xy 86.737702 48.411219) (xy 86.741137 48.419489) (xy 86.737718 48.427765)
+				(xy 86.737702 48.427781) (xy 86.236831 48.927682) (xy 86.228555 48.931101) (xy 86.221225 48.92851)
+				(xy 85.718156 48.523011) (xy 85.713867 48.515152) (xy 85.7138 48.513903) (xy 85.7138 48.325096)
+				(xy 85.717227 48.316823) (xy 85.718145 48.315997) (xy 86.221227 47.910487) (xy 86.229815 47.907965)
+			)
+		)
+	)
+	(zone
 		(net "3.3V")
 		(layer "F.Cu")
 		(hatch none 0.1)
@@ -21663,7 +22397,7 @@
 		(net "/REV_OUT")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30097)
+		(priority 30098)
 		(attr
 			(teardrop
 				(type padvia)
@@ -21728,38 +22462,6 @@
 		)
 	)
 	(zone
-		(net "/FWD_OUT")
-		(layer "F.Cu")
-		(hatch none 0.1)
-		(priority 30098)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 85.7138 48.3195) (xy 85.7138 48.5195) (xy 86.2294 48.9351) (xy 86.746 48.4195) (xy 86.2294 47.9039)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 86.236831 47.911317) (xy 86.737702 48.411219) (xy 86.741137 48.419489) (xy 86.737718 48.427765)
-				(xy 86.737702 48.427781) (xy 86.236831 48.927682) (xy 86.228555 48.931101) (xy 86.221225 48.92851)
-				(xy 85.718156 48.523011) (xy 85.713867 48.515152) (xy 85.7138 48.513903) (xy 85.7138 48.325096)
-				(xy 85.717227 48.316823) (xy 85.718145 48.315997) (xy 86.221227 47.910487) (xy 86.229815 47.907965)
-			)
-		)
-	)
-	(zone
 		(net "/SCL")
 		(layer "F.Cu")
 		(hatch none 0.1)
@@ -21793,7 +22495,7 @@
 		)
 	)
 	(zone
-		(net "Net-(CR1-Pad1)")
+		(net "/NET_REVPOL")
 		(layer "F.Cu")
 		(hatch none 0.1)
 		(priority 30007)
@@ -22112,13 +22814,10 @@
 		(filled_polygon
 			(layer "B.Cu")
 			(pts
-				(xy 69.320088 42.197793) (xy 69.328289 42.201193) (xy 69.329508 42.202404) (xy 69.332025 42.206115)
-				(xy 69.472703 42.536084) (xy 69.473639 42.540553) (xy 69.473682 42.544731) (xy 69.472746 42.54944)
-				(xy 69.332041 42.87947) (xy 69.329471 42.883234) (xy 69.328685 42.884004) (xy 69.328165 42.884513)
-				(xy 69.319933 42.88786) (xy 69.318212 42.887854) (xy 69.313815 42.88698) (xy 68.727587 42.646671)
-				(xy 68.723781 42.644147) (xy 68.721629 42.64201) (xy 68.718173 42.633749) (xy 68.718173 42.452989)
-				(xy 68.719064 42.448512) (xy 68.720225 42.445709) (xy 68.726556 42.439377) (xy 68.726596 42.43936)
-				(xy 69.31378 42.198659) (xy 69.318256 42.197786)
+				(xy 69.324884 42.197811) (xy 69.33113 42.204015) (xy 69.473616 42.538224) (xy 69.473708 42.547179)
+				(xy 69.473616 42.547402) (xy 69.33113 42.88161) (xy 69.324733 42.887876) (xy 69.315929 42.887847)
+				(xy 68.725435 42.645789) (xy 68.71908 42.63948) (xy 68.718173 42.634963) (xy 68.718173 42.450662)
+				(xy 68.7216 42.442389) (xy 68.725435 42.439836) (xy 69.31593 42.197778)
 			)
 		)
 	)

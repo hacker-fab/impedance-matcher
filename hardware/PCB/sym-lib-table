@@ -1,0 +1,12 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "2025-08-28_23-08-10_Library") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/2025-08-28_23-08-10_Library.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "2025-08-28_23-20-52_Library") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/2025-08-28_23-20-52_Library.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "Capacitor") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/Capacitor.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "Inductor") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/Inductor.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "L7812CV") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/L7812CV.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "Resistor") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/Resistor.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "TEENSY_4") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/TEENSY_4.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "TLV2372IP") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/TLV2372IP.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+	(lib (name "TMC2209_SILENTSTEPSTICK") (type "KiCad") (uri "${KIPRJMOD}/sym_lib/TMC2209_SILENTSTEPSTICK.kicad_sym") (options "") (descr "Project symbol library (recovered from schematic cache)"))
+)
