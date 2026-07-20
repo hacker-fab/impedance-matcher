@@ -5,3 +5,8 @@ data/
 **/.DS_Store
 .opencode/
 **/.opencode/
+
+# Regenerable SPICE outputs (re-run the .cir testbenches to reproduce)
+hardware/PCB/spice/*.txt
+hardware/PCB/spice/*.out
+hardware/PCB/spice/*.log

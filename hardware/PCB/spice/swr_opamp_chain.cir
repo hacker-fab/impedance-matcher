@@ -1,0 +1,13 @@
+* SWR forward-power detector chain: TLV2372 unity buffer (12V rail) + 2.7k/1k divider
+.param VSAT_H=11.95 VSAT_L=0.05
+VIN FWD_IN 0 DC 0
+R4 FWD_IN 0 100k
+Bbuf IN1 0 V = min(max(V(FWD_IN), VSAT_L), VSAT_H)
+R10 IN1 FWD_OUT 2.7k
+R13 FWD_OUT 0 1k
+.control
+dc VIN 0 13 0.5
+wrdata swr_sweep.txt v(FWD_IN) v(IN1) v(FWD_OUT)
+quit
+.endc
+.end

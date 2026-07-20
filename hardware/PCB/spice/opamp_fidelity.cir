@@ -1,0 +1,19 @@
+* SWR detector fidelity re-verification with real TLV2372 behavioral macromodel
+* U1A as unity-gain buffer on 12V rail; output -> R10 2.7k / R13 1k divider (x0.27027) -> ADC
+* Compare ceiling vs earlier ideal-rail buffer (which gave 3.23V).
+
+.include tlv2372.lib
+
+VCC   VCC 0 DC 12
+VFWD  FWD_IN 0 DC 6
+* U1A unity buffer: non-inv=FWD_IN, inv=OUT (feedback), out=BUF_OUT
+XU1A  FWD_IN BUF_OUT BUF_OUT VCC 0 OPAMP_TLV2372
+R10   BUF_OUT ADC 2.7k
+R13   ADC 0 1k
+
+.control
+dc VFWD 0 12 0.25
+wrdata opamp_fidelity.txt v(BUF_OUT) v(ADC)
+quit
+.endc
+.end

@@ -14,6 +14,7 @@ Teensy 4.1 control loop firmware, custom PCB/CAD hardware, and Python telemetry 
     ├── CAD/                               # Mechanical design & enclosure models
     └── PCB/                               # KiCad project & manufacturing files
         ├── impedance_matcher.kicad_pro    # KiCad project main file
+        ├── spice/                         # SPICE verification of analog support circuits
         └── production/                    # JLCPCB manufacturing & assembly
             ├── imp_match.zip              # Gerbers
             ├── imp_match_bom.csv          # SMT BOM
@@ -58,6 +59,11 @@ python firmware/plot.py path/to/run.csv --mermaid
 Written by `live.py` (and compatible with `plot.py`):
 
 `host_time_s,device_millis,vswr,forward_v,reverse_v,motor1_pos_rad,motor2_pos_rad,at_match`
+
+## Hardware notes
+
+The analog support circuits (SWR sensing, input protection) were checked in ngspice.
+See `hardware/PCB/spice/` for results and testbenches.
 
 ## Authors
 

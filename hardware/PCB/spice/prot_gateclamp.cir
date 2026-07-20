@@ -1,0 +1,26 @@
+* Protection circuit sim - REPRESENTATIVE models (no vendor DMP6180 / BZX84C5V6 SPICE available)
+* Topology recovered from netlist:
+*   POWER1 -> VIN -> FB1(ferrite) -> FB1_OUT = P-FET source
+*   P-FET drain = protected rail ("5V" net, bulk caps)
+*   P-FET gate = NET_REVPOL ; R9 10k gate->GND (pulls gate low => P-FET ON in forward)
+*   CR1 BZX84C5V6 : cathode=rail/source side, anode=gate => clamps Vgs to ~-5.6V
+*
+* TEST A: gate-clamp DC sweep. Sweep input 4..16V, confirm zener clamps |Vgs| at ~5.6V
+* (protects P-FET gate oxide; without clamp Vgs would follow -Vin to -16V).
+
+.model PFET PMOS (VTO=-1.35 KP=20 RD=0.05 RS=0.05)
+.model DZEN D  (BV=5.6 IS=1e-14 N=1 RS=2)
+.model DBODY D (IS=1e-14 N=1 RS=0.01)
+
+VIN SRC 0 DC 12
+R9  GATE 0 10k
+* zener: anode=GATE, cathode=SRC  => reverse-breakdown clamps V(SRC)-V(GATE)
+DZ  GATE SRC DZEN
+
+.control
+dc VIN 4 16 0.5
+let vgs = v(GATE) - v(SRC)
+wrdata prot_gateclamp.txt v(GATE) vgs
+quit
+.endc
+.end

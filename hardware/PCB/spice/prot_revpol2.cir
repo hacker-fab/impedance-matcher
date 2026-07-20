@@ -1,0 +1,24 @@
+* Protection TEST B (v2): canonical reverse-battery high-side P-FET (REPRESENTATIVE models)
+* Correct orientation: SOURCE=rail/load side, DRAIN=supply(input) side.
+* Body diode anode=drain(supply) -> cathode=source(load): conducts fwd pre-enhance, blocks reverse.
+* Gate via R9 10k to GND; CR1 zener clamps Vgs. Sweep input -14..+14V.
+*   Forward (+): FET enhances, rail follows input (mV drop).
+*   Reverse (-): FET off + body diode reverse-biased => rail blocked (~0V), load protected.
+
+.model PFET PMOS (VTO=-1.35 KP=50 W=100m L=1u RD=0.03 RS=0.03)
+.model DZEN D  (BV=5.6 IS=1e-14 N=1 RS=2)
+.model DBODY D (IS=1e-14 N=1 RS=0.02)
+
+VIN   SUP 0 DC 12
+R9    GATE 0 10k
+DZ    GATE RAIL DZEN
+M1    SUP GATE RAIL RAIL PFET
+DBODY SUP RAIL DBODY
+RLOAD RAIL 0 100
+
+.control
+dc VIN -14 14 1
+wrdata prot_revpol2.txt v(RAIL) i(VIN)
+quit
+.endc
+.end

@@ -1,0 +1,23 @@
+.subckt OPAMP_TLV2372 inp inn out vcc vee
+* Behavioral model for TLV2372
+* GBW=3.0MHz, SR=2.4V/us, Vos=0.5mV, Aol=100dB
+* Source: kicad-happy part library (Phase 2)
+*
+* Input stage
+Rin inp inn 1T
+Vos inp inp_os DC 0.0005
+*
+* Gain stage: Aol=100000, pole at 30.0Hz → GBW=3.0MHz
+E1 int 0 inp_os inn 100000
+R1 int out_int 1
+C1 out_int 0 5.305m
+*
+* Output stage with rail clamping
+* Rail-to-rail output
+Dhigh out_int vcc_int DLIMIT
+Dlow vee_int out_int DLIMIT
+Vswh vcc vcc_int DC 0
+Vswl vee_int vee DC 0
+.model DLIMIT D(IS=1e-14 N=0.01)
+Eout out 0 out_int 0 1
+.ends OPAMP_TLV2372

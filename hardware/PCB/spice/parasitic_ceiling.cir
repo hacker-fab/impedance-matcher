@@ -1,0 +1,23 @@
+* SWR chain WITH extracted PCB parasitics (DC ceiling impact check)
+* FWD_IN net R=0.0759ohm (buffer out -> R10 top leg); FWD_OUT net R=0.0837ohm (tap -> ADC).
+* Via L (0.708nH) omitted: no effect on DC operating point.
+.include tlv2372.lib
+
+VCC   VCC 0 DC 12
+VFWD  FWD_IN 0 DC 12
+XU1A  FWD_IN BUF_OUT BUF_OUT VCC 0 OPAMP_TLV2372
+Rp_fwdin  BUF_OUT N1 0.0759
+R10   N1 TAP 2.7k
+R13   TAP 0 1k
+Rp_fwdout TAP ADC 0.0837
+RADC  ADC 0 1meg
+* (RADC = representative Teensy ADC input load ~1Mohm; real is higher)
+
+.control
+op
+let vadc = v(ADC)
+let vbuf = v(BUF_OUT)
+echo "PARASITIC vin=12 vbuf=$&vbuf vadc=$&vadc (ideal_noparasitic_ceiling=3.24308)" > parasitic_ceiling.txt
+quit
+.endc
+.end
