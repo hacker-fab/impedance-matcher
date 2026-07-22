@@ -705,6 +705,18 @@
           "label": "LCSC Part",
           "name": "LCSC Part",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -755,7 +767,7 @@
         "uuid": "05d78882-7448-4c56-96b8-6921af7027e2"
       }
     ],
-    "used_designators": "#FLG5-7,#SUPPLY57",
+    "used_designators": "D2,R14-15,#SUPPLY57-60",
     "variants": []
   },
   "sheets": [

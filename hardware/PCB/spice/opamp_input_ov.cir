@@ -1,0 +1,48 @@
+* SWR input overvoltage: characterize the UNPROTECTED FWD_IN -> TLV2372 pin.
+*
+* Board reality (from schematic): the external SWR sensor plugs into SWR1 and its
+* pins route as bare nets FWD_IN -> U1 pin 3 (1IN+) and REV_IN -> U1 pin 5 (2IN+)
+* with NO series resistor, NO clamp diode and NO RC filter. Because U1A is a unity
+* buffer feeding the 2.7k/1k (x0.27) divider, FWD_IN NORMALLY swings up to ~12V (the
+* rail) to reach the 3.24V ADC ceiling -- so normal operation already sits at V+,
+* and any coupler overshoot or a miswire drives the op-amp input ABOVE the rail.
+*
+* The shipped tlv2372.lib input stage is just Rin=1T + an ideal VCVS: it has NO
+* input clamp / abs-max behaviour, so a naive over-rail sweep would pass silently.
+* This bench therefore adds the datasheet input ESD clamps EXTERNALLY at the pin
+* (electrically identical to the on-die structure) so we can measure the clamp
+* current the pin must carry.
+*
+* TLV2372 abs-max (datasheet): input voltage (V-)-0.3V .. (V+)+0.3V,
+*                              input clamp current +/-10 mA continuous.
+*
+* Verdict question: with zero series resistance on FWD_IN, how much clamp current
+* flows for realistic fault voltages (coupler overshoot, negative swing, 18V miswire)?
+
+.include tlv2372.lib
+
+VCC   VCC 0 DC 12
+VFWD  FWD_IN 0 DC 0
+
+* --- On-die input ESD clamps (approximation), with 0V ammeters in each branch ---
+* High clamp: conducts when FWD_IN > VCC + ~0.3V
+Dhi   FWD_IN nhi DCLAMP
+Vhi   nhi VCC DC 0
+* Low clamp: conducts when FWD_IN < 0 - ~0.3V
+Dlo   nlo FWD_IN DCLAMP
+Vlo   0 nlo DC 0
+* Small-signal silicon ESD diode; RS is a rough on-die series term.
+.model DCLAMP D(IS=1e-15 N=1 RS=5)
+
+* --- U1A unity buffer + divider (same chain as opamp_fidelity.cir) ---
+XU1A  FWD_IN BUF_OUT BUF_OUT VCC 0 OPAMP_TLV2372
+R10   BUF_OUT ADC 2.7k
+R13   ADC 0 1k
+
+.control
+* Fault sweep -5V .. +30V; unprotected clamp currents i(Vhi)/i(Vlo).
+dc VFWD -5 30 0.1
+wrdata opamp_input_ov.txt v(FWD_IN) i(VFWD) i(Vhi) i(Vlo) v(BUF_OUT) v(ADC)
+quit
+.endc
+.end

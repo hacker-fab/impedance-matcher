@@ -32,5 +32,11 @@ fp-info-cache
 *-rescue.kicad_sym
 *-rescue.lib
 
+# SPICE: local-only driver + regenerable sim outputs
+spice/run_ngspice.py
+spice/*.txt
+spice/*.out
+spice/*.log
+
 # macOS
 .DS_Store

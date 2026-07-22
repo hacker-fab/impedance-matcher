@@ -1,0 +1,33 @@
+* LDO regulation + dropout + dissipation: STEP_DOWN1 = L7812CV, 18V -> 12V.
+*
+* Board reality: the 18V boost rail feeds an L7812CV (C105651) with C3/C4 = 100uF,
+* whose 12V output powers U1 (TLV2372) and the TMC2209 stepper drivers. The linear
+* reg burns (Vin - Vout) * Iload as heat -- flagged as the main thermal risk on this
+* board -- so this bench sweeps the 12V load current and reports dissipation.
+*
+* Load current: swept 0..1.2A (covers TMC2209 driver rails + opamp; adjust VLOAD's
+* stop if the real worst-case differs).
+*
+* Model: l7812.lib is a behavioral 12V reg with a fixed 2V dropout, NO current
+* limit / thermal foldback. Interpret dropout and dissipation quantitatively;
+* treat the >1.5A region as un-modeled (real part current-limits there).
+
+.include l7812.lib
+
+VIN  IN 0 DC 18
+XREG IN OUT 0 L7812
+* Sweep the 12V load as a current sink from OUT to GND.
+ILOAD OUT 0 DC 0
+
+.control
+* Regulation vs load at the nominal 18V rail; Pd = (Vin-Vout)*Iload.
+dc ILOAD 0 1.2 0.05
+wrdata ldo_reg.txt v(OUT)
+
+* Dropout: drop the input rail at Iload=0.6A and find where 12V collapses.
+alter ILOAD dc = 0.6
+dc VIN 10 18 0.25
+wrdata ldo_dropout.txt v(IN) v(OUT)
+quit
+.endc
+.end

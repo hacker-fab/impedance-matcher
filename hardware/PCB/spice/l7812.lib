@@ -1,0 +1,17 @@
+* L7812 positive 12V linear regulator -- behavioral fallback model.
+*
+* ST's encrypted/vendor L78xx SPICE subckt was not available on this machine, so
+* per the Tier 1 plan this is a behavioral stand-in: a 12V regulated output that
+* collapses into dropout when the input rail sags. It models the two things the
+* Tier 1 DC checks care about -- regulation setpoint and dropout -- but does NOT
+* model current limit, thermal foldback, quiescent current, or line/load
+* transient response. Keep that in mind when reading ldo_reg.cir results.
+*
+* Dropout: ~2V is the L7812 datasheet worst case (Vin-Vout at 1A). Modeled here as
+* a fixed 2V term, so Vout = min(12, Vin - 2). Below Vin=14V the part is in dropout
+* and the output simply follows the input minus 2V.
+*
+* Pins:  IN  OUT  GND
+.subckt L7812 IN OUT GND
+BREG OUT GND V = min(12, V(IN,GND) - 2)
+.ends L7812

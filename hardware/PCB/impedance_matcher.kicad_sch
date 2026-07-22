@@ -1803,6 +1803,324 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:BAV99S"
+			(pin_names
+				(offset 0.0254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BAV99S"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "High-speed switching diodes, dual series, SOT-363"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?363*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BAV99S_0_1"
+				(polyline
+					(pts
+						(xy -5.08 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 1.27) (xy -1.27 0) (xy -3.81 -1.27) (xy -3.81 1.27) (xy -3.81 1.27) (xy -3.81 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 3.81 0) (xy 1.27 -1.27) (xy 1.27 1.27) (xy 1.27 1.27) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.27) (xy 3.81 -1.27) (xy 3.81 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BAV99S_1_1"
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "K2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "K3A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "BAV99S_2_1"
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "K1A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "A3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "K4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Diode:SS34"
 			(pin_numbers
 				(hide yes)
@@ -5663,7 +5981,7 @@
 	)
 	(text "Radio on"
 		(exclude_from_sim no)
-		(at 186.055 93.345 0)
+		(at 226.695 93.345 0)
 		(effects
 			(font
 				(size 1.778 1.5113)
@@ -5760,6 +6078,12 @@
 		(uuid "5178f8b8-e2b4-4cee-a03a-de5594fc77bf")
 	)
 	(junction
+		(at 201.93 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57053fb5-0715-437b-b304-d80f42368f2b")
+	)
+	(junction
 		(at 41.91 167.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5776,6 +6100,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7ee12c69-cf9b-4ae5-bdf9-b23a07e79eff")
+	)
+	(junction
+		(at 201.93 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d6fb3f3b-fba3-4be6-9404-7140a85ff821")
 	)
 	(junction
 		(at 41.91 177.8)
@@ -6173,7 +6503,7 @@
 	)
 	(polyline
 		(pts
-			(xy 179.07 68.58) (xy 179.07 111.76)
+			(xy 219.71 68.58) (xy 219.71 111.76)
 		)
 		(stroke
 			(width 0.1524)
@@ -6313,6 +6643,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 104.14) (xy 191.77 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4dbe0801-abf7-4c43-89ca-e08c5f4b5193")
+	)
+	(wire
+		(pts
 			(xy 156.21 142.24) (xy 151.13 142.24)
 		)
 		(stroke
@@ -6383,7 +6723,7 @@
 	)
 	(polyline
 		(pts
-			(xy 238.76 111.76) (xy 183.515 111.76)
+			(xy 279.4 111.76) (xy 224.155 111.76)
 		)
 		(stroke
 			(width 0.1524)
@@ -6523,7 +6863,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 100.33) (xy 222.25 102.87)
+			(xy 262.89 100.33) (xy 262.89 102.87)
 		)
 		(stroke
 			(width 0.1524)
@@ -6593,7 +6933,7 @@
 	)
 	(polyline
 		(pts
-			(xy 183.515 111.76) (xy 183.515 88.265)
+			(xy 224.155 111.76) (xy 224.155 88.265)
 		)
 		(stroke
 			(width 0.1524)
@@ -6723,7 +7063,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 102.87) (xy 224.79 102.87)
+			(xy 262.89 102.87) (xy 265.43 102.87)
 		)
 		(stroke
 			(width 0.1524)
@@ -6933,7 +7273,17 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 100.33) (xy 222.25 100.33)
+			(xy 189.23 85.09) (xy 191.77 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5d0065d-b906-4e52-8494-af8a4ef58ad0")
+	)
+	(wire
+		(pts
+			(xy 257.81 100.33) (xy 262.89 100.33)
 		)
 		(stroke
 			(width 0.1524)
@@ -6943,7 +7293,7 @@
 	)
 	(polyline
 		(pts
-			(xy 80.01 68.58) (xy 179.07 68.58)
+			(xy 80.01 68.58) (xy 219.71 68.58)
 		)
 		(stroke
 			(width 0.1524)
@@ -6970,6 +7320,16 @@
 			(type solid)
 		)
 		(uuid "bccfd609-7545-4416-a765-d50a3c7f33ee")
+	)
+	(wire
+		(pts
+			(xy 201.93 104.14) (xy 204.47 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be94a0e0-352c-40c0-ae3f-d696d1ec5153")
 	)
 	(wire
 		(pts
@@ -7043,6 +7403,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 85.09) (xy 204.47 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cab4fe74-0d03-4187-a3b8-655fdc64ff7f")
+	)
+	(wire
+		(pts
 			(xy 227.33 142.24) (xy 222.25 142.24)
 		)
 		(stroke
@@ -7093,7 +7463,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 100.33) (xy 186.69 100.33)
+			(xy 232.41 100.33) (xy 227.33 100.33)
 		)
 		(stroke
 			(width 0.1524)
@@ -7143,7 +7513,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 105.41) (xy 224.79 105.41)
+			(xy 257.81 105.41) (xy 265.43 105.41)
 		)
 		(stroke
 			(width 0.1524)
@@ -7153,7 +7523,7 @@
 	)
 	(polyline
 		(pts
-			(xy 179.07 111.76) (xy 80.01 111.76)
+			(xy 219.71 111.76) (xy 80.01 111.76)
 		)
 		(stroke
 			(width 0.1524)
@@ -7243,7 +7613,7 @@
 	)
 	(polyline
 		(pts
-			(xy 183.515 88.265) (xy 238.76 88.265)
+			(xy 224.155 88.265) (xy 279.4 88.265)
 		)
 		(stroke
 			(width 0.1524)
@@ -7273,7 +7643,7 @@
 	)
 	(polyline
 		(pts
-			(xy 238.76 88.265) (xy 238.76 111.76)
+			(xy 279.4 88.265) (xy 279.4 111.76)
 		)
 		(stroke
 			(width 0.1524)
@@ -7431,6 +7801,16 @@
 		)
 		(uuid "21b8f57c-8f80-4960-a93c-e43062ad9285")
 	)
+	(label "FWD_IN"
+		(at 189.23 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "23657c4d-2d97-470a-b0d7-7369280a33a2")
+	)
 	(label "SDA"
 		(at 95.25 27.94 0)
 		(effects
@@ -7440,6 +7820,16 @@
 			(justify left bottom)
 		)
 		(uuid "2c5f863d-1537-4a9b-ba42-98cd3194ddb3")
+	)
+	(label "FWD_BUF"
+		(at 92.71 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2ef36aff-9d0f-4972-a848-cf4007c7cfb4")
 	)
 	(label "CLK"
 		(at 26.67 60.96 0)
@@ -7491,16 +7881,6 @@
 		)
 		(uuid "4a183d0d-0ffa-4c12-80b0-6af63155cd04")
 	)
-	(label "REV_IN"
-		(at 92.71 91.44 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "4acd5647-64d6-4c05-8419-f69c07e1aa0e")
-	)
 	(label "FAN"
 		(at 143.51 48.26 0)
 		(effects
@@ -7551,6 +7931,16 @@
 		)
 		(uuid "5b494de4-7e2c-422a-a803-4a4bbb3a8734")
 	)
+	(label "REV_IN"
+		(at 189.23 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5bf5587a-8514-4beb-b3a6-40dc4febf3c6")
+	)
 	(label "FB_DIV"
 		(at 76.2 177.8 180)
 		(effects
@@ -7562,12 +7952,12 @@
 		(uuid "61018991-0d03-422c-91a9-0f0fa9f6a643")
 	)
 	(label "IN2"
-		(at 92.71 93.98 0)
+		(at 92.71 93.98 180)
 		(effects
 			(font
 				(size 1.2446 1.2446)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "62b70d0e-fcb8-4771-bc08-befdafe9d7c5")
 	)
@@ -7641,6 +8031,16 @@
 		)
 		(uuid "816bce38-87f9-4908-9ab8-d7e1115a2214")
 	)
+	(label "REV_BUF"
+		(at 92.71 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82da809d-4201-47fd-9da7-86c7a17f3994")
+	)
 	(label "FB1_OUT"
 		(at 59.69 128.27 0)
 		(effects
@@ -7682,17 +8082,17 @@
 		(uuid "8fcbfc8d-42a5-4720-a0ce-56f942f61d18")
 	)
 	(label "IN1"
-		(at 92.71 86.36 0)
+		(at 92.71 86.36 180)
 		(effects
 			(font
 				(size 1.2446 1.2446)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "915a7ab8-e98d-4795-ab32-2070c105d079")
 	)
 	(label "TX_GATE"
-		(at 217.17 105.41 0)
+		(at 257.81 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7712,7 +8112,7 @@
 		(uuid "970cc052-3746-40f4-b293-70c89d2045f6")
 	)
 	(label "TRANSMIT"
-		(at 186.69 100.33 0)
+		(at 227.33 100.33 0)
 		(effects
 			(font
 				(size 1.2446 1.2446)
@@ -7800,16 +8200,6 @@
 			(justify left bottom)
 		)
 		(uuid "b5e078e7-ec7a-42ed-8640-67c5d4c64ae8")
-	)
-	(label "FWD_IN"
-		(at 92.71 88.9 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "bb4ed339-90e2-4a8e-9fdb-e436991b5e21")
 	)
 	(label "DIR2"
 		(at 62.23 76.2 0)
@@ -7912,7 +8302,7 @@
 		(uuid "e8ea563d-bad4-4d3e-be8a-f4f1f80eaf69")
 	)
 	(label "TX_DRAIN"
-		(at 217.17 100.33 0)
+		(at 257.81 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7930,6 +8320,16 @@
 			(justify left bottom)
 		)
 		(uuid "ee39360e-387b-4ba3-a34b-96b4f6e50e8c")
+	)
+	(label "FWD_BUF"
+		(at 204.47 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f02d8bf6-bea7-4293-904e-b287ab2aa355")
 	)
 	(label "FWD_OUT"
 		(at 148.59 83.82 0)
@@ -7950,6 +8350,16 @@
 			(justify left bottom)
 		)
 		(uuid "f88c1073-c585-4f6c-b603-a744fce0032f")
+	)
+	(label "REV_BUF"
+		(at 204.47 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fc573c97-d099-4216-8c53-73ca5dd2cff4")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
@@ -8232,6 +8642,118 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Resistor:R-USCHIP-1206(3216-METRIC)")
+		(at 196.85 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "07a98326-e7d3-4996-8628-03b729f825d2")
+		(property "Reference" "R14"
+			(at 196.85 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 196.85 87.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+			)
+		)
+		(property "Footprint" "Resistor:RESC2012X65"
+			(at 196.85 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17513.pdf"
+			(at 196.85 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17513"
+			(at 196.85 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1001T5E"
+			(at 196.85 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 196.85 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a53d0db6-b022-475e-8814-fb66d09dc437")
+		)
+		(pin "2"
+			(uuid "f06de4e5-ffb1-48e7-acf6-a7bb2ce00b0f")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -8547,6 +9069,84 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:12V")
+		(at 209.55 99.06 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0efa05ba-3389-4bac-8a39-530e71732836")
+		(property "Reference" "#SUPPLY060"
+			(at 209.55 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12V"
+			(at 214.63 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 209.55 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 209.55 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "319bb2d2-81bc-43f1-be1e-8341dd6c2149")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY060")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 191.77 162.56 90)
 		(unit 1)
@@ -8626,7 +9226,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 201.93 105.41 0)
+		(at 242.57 105.41 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8636,7 +9236,7 @@
 		(dnp no)
 		(uuid "1655d3d4-49c0-4127-ad79-251f5b3fd679")
 		(property "Reference" "#SUPPLY10"
-			(at 201.93 105.41 0)
+			(at 242.57 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8647,7 +9247,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 201.93 107.95 0)
+			(at 242.57 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8658,7 +9258,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 201.93 105.41 0)
+			(at 242.57 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8669,7 +9269,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 201.93 105.41 0)
+			(at 242.57 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8680,7 +9280,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 201.93 105.41 0)
+			(at 242.57 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8953,7 +9553,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 229.87 102.87 0)
+		(at 270.51 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8963,7 +9563,7 @@
 		(dnp no)
 		(uuid "185db5e0-2925-4a2f-9a5b-0b15416cb4fd")
 		(property "Reference" "TRANSMIT1"
-			(at 222.885 109.855 0)
+			(at 263.525 109.855 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8974,7 +9574,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 227.33 107.696 0)
+			(at 267.97 107.696 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8986,7 +9586,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Connectors:1X02_2.54_SCREWTERM"
-			(at 229.87 102.87 0)
+			(at 270.51 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8997,7 +9597,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 229.87 102.87 0)
+			(at 270.51 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9008,7 +9608,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 229.87 102.87 0)
+			(at 270.51 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9019,7 +9619,7 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 229.87 102.87 0)
+			(at 270.51 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11099,6 +11699,98 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:BAV99S")
+		(at 201.93 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "52107516-0b1c-4ff0-8bbb-c42e7ea2cb9c")
+		(property "Reference" "D2"
+			(at 203.2 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAV99S"
+			(at 203.2 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+			(at 201.93 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
+			(at 201.93 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "High-speed switching diodes, dual series, SOT-363"
+			(at 201.93 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7f7d5e11-326d-4af6-a00b-2742adc506a8")
+		)
+		(pin "5"
+			(uuid "182baa49-1120-46f1-a76c-93ceb083353f")
+		)
+		(pin "1"
+			(uuid "03f65374-102c-4985-bac7-fb4e52c74d84")
+		)
+		(pin "6"
+			(uuid "3edd2fa2-3f27-461d-b574-52fda2b69f76")
+		)
+		(pin "4"
+			(uuid "a63ab7c0-d275-43f1-8da4-ff8c2a584bcf")
+		)
+		(pin "3"
+			(uuid "756ea529-6070-4c4f-9ee1-5b61cb163e6f")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:3.3V")
 		(at 191.77 127 0)
 		(unit 1)
@@ -12324,7 +13016,7 @@
 	)
 	(symbol
 		(lib_id "Isolator:PC817")
-		(at 209.55 102.87 0)
+		(at 250.19 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12334,7 +13026,7 @@
 		(dnp no)
 		(uuid "6f1f0abe-dc5b-46f9-93bc-6b0be2d24d2e")
 		(property "Reference" "Q1"
-			(at 207.645 98.425 0)
+			(at 248.285 98.425 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12345,7 +13037,7 @@
 			)
 		)
 		(property "Value" "PC817"
-			(at 205.74 109.855 0)
+			(at 246.38 109.855 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12356,7 +13048,7 @@
 			)
 		)
 		(property "Footprint" "PC817-B:DIP762W50P254L650H455Q4B"
-			(at 209.55 102.87 0)
+			(at 250.19 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12367,7 +13059,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/C20612593.pdf"
-			(at 209.55 102.87 0)
+			(at 250.19 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12378,7 +13070,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 102.87 0)
+			(at 250.19 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12389,7 +13081,7 @@
 			)
 		)
 		(property "LCSC Part" "C20612593"
-			(at 209.55 102.87 0)
+			(at 250.19 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12400,7 +13092,7 @@
 			)
 		)
 		(property "MPN" "PC817B"
-			(at 209.55 102.87 0)
+			(at 250.19 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12504,6 +13196,118 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Resistor:R-USCHIP-1206(3216-METRIC)")
+		(at 196.85 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "74afe93a-4002-4593-8903-9f6b60b48bd4")
+		(property "Reference" "R15"
+			(at 196.85 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 196.85 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+			)
+		)
+		(property "Footprint" "Resistor:RESC2012X65"
+			(at 196.85 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17513.pdf"
+			(at 196.85 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17513"
+			(at 196.85 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1001T5E"
+			(at 196.85 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 196.85 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "01df3302-bb56-4d8a-baad-822e060939b5")
+		)
+		(pin "2"
+			(uuid "b8502346-f81d-4a8e-a6d7-3426c7a11849")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -12666,6 +13470,84 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:12V")
+		(at 209.55 80.01 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a486f5a-91aa-44ea-b120-3f5e9f6d3397")
+		(property "Reference" "#SUPPLY059"
+			(at 209.55 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12V"
+			(at 214.63 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 209.55 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 209.55 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "20bd73e0-583b-429a-86b7-cf19f6f2a8a1")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY059")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 168.91 83.82 90)
 		(unit 1)
@@ -12738,6 +13620,84 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 194.31 80.01 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7c5200ab-a539-4454-9207-ed4b0beb01e5")
+		(property "Reference" "#SUPPLY057"
+			(at 194.31 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 191.77 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 194.31 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "84754ca0-7eb6-4929-9d2b-dcbe7bc2618f")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY057")
 					(unit 1)
 				)
 			)
@@ -12935,7 +13895,7 @@
 	)
 	(symbol
 		(lib_id "Resistor:R-USCHIP-0805(2012-METRIC)")
-		(at 196.85 100.33 0)
+		(at 237.49 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12945,7 +13905,7 @@
 		(dnp no)
 		(uuid "86841f77-a0cf-45d3-bed7-8573c9b1a932")
 		(property "Reference" "R1"
-			(at 196.85 97.79 0)
+			(at 237.49 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12955,7 +13915,7 @@
 			)
 		)
 		(property "Value" "470"
-			(at 196.85 102.87 0)
+			(at 237.49 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12965,7 +13925,7 @@
 			)
 		)
 		(property "Footprint" "Resistor:RESC2012X65"
-			(at 196.85 100.33 0)
+			(at 237.49 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12976,7 +13936,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/C17710.pdf"
-			(at 196.85 100.33 0)
+			(at 237.49 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12987,7 +13947,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 196.85 100.33 0)
+			(at 237.49 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12998,7 +13958,7 @@
 			)
 		)
 		(property "LCSC Part" "C17710"
-			(at 196.85 100.33 0)
+			(at 237.49 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13009,7 +13969,7 @@
 			)
 		)
 		(property "MPN" "0805W8F4700T5E"
-			(at 196.85 100.33 0)
+			(at 237.49 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13020,7 +13980,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 196.85 100.33 0)
+			(at 237.49 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14777,6 +15737,84 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 194.31 99.06 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b3c40f07-d2c5-4a77-856f-a49e0bb2c14d")
+		(property "Reference" "#SUPPLY058"
+			(at 194.31 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 191.77 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 194.31 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b05cf22e-e12d-434c-a048-9d9e3db8b0ec")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY058")
 					(unit 1)
 				)
 			)
@@ -17132,6 +18170,98 @@
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY032")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BAV99S")
+		(at 201.93 99.06 0)
+		(unit 2)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ed796c67-a77f-41ca-b119-23bd04a96a48")
+		(property "Reference" "D2"
+			(at 203.2 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAV99S"
+			(at 203.2 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+			(at 201.93 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
+			(at 201.93 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "High-speed switching diodes, dual series, SOT-363"
+			(at 201.93 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7f7d5e11-326d-4af6-a00b-2742adc506a8")
+		)
+		(pin "5"
+			(uuid "182baa49-1120-46f1-a76c-93ceb083353f")
+		)
+		(pin "1"
+			(uuid "03f65374-102c-4985-bac7-fb4e52c74d84")
+		)
+		(pin "6"
+			(uuid "3edd2fa2-3f27-461d-b574-52fda2b69f76")
+		)
+		(pin "4"
+			(uuid "a63ab7c0-d275-43f1-8da4-ff8c2a584bcf")
+		)
+		(pin "3"
+			(uuid "756ea529-6070-4c4f-9ee1-5b61cb163e6f")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "D2")
+					(unit 2)
 				)
 			)
 		)

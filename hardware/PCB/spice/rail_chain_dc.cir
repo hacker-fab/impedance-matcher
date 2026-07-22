@@ -1,0 +1,37 @@
+* Rail chain DC: end-to-end 5V -> 18V boost -> 12V LDO -> analog rail.
+*
+* Confirms the whole DC power path resolves to the voltages the analog circuits
+* expect: the MT3608 boost setpoint (~17.5V) clears the L7812 dropout, the L7812
+* holds 12V, and that 12V actually lands on the TLV2372 VCC pin so the SWR buffer
+* has its rail. The switcher itself is not modeled; the boost is
+* represented by its DC setpoint sourced from the 5V input.
+*
+* Chain:  V5 (5V USB) -> [boost setpoint 0.6*(1+62k/2.2k)] -> IN18
+*         IN18 -> L7812 -> V12 (12V) -> TLV2372 VCC
+*         FWD_IN -> U1A unity buffer -> R10/R13 divider -> ADC
+
+.include l7812.lib
+.include tlv2372.lib
+
+V5   V5IN 0 DC 5
+* Boost output as its DC setpoint (behavioral). Referenced conceptually to the 5V
+* input rail existing; BOOST is a stiff source at the FB-divider setpoint.
+BBOOST IN18 0 V = 0.6 * (1 + 62000/2200)
+
+* Linear reg 18V -> 12V feeds the analog rail node V12.
+XREG IN18 V12 0 L7812
+* Light housekeeping load on the 12V rail so it is not floating.
+RRAIL V12 0 1k
+
+* --- SWR buffer running off the resolved 12V rail ---
+VFWD FWD_IN 0 DC 8
+XU1A FWD_IN BUF_OUT BUF_OUT V12 0 OPAMP_TLV2372
+R10  BUF_OUT ADC 2.7k
+R13  ADC 0 1k
+
+.control
+op
+print v(V5IN) v(IN18) v(V12) v(ADC)
+quit
+.endc
+.end

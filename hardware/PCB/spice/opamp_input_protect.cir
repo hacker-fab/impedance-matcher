@@ -1,0 +1,47 @@
+* SWR input protection: add a series R + clamp diode ahead of the TLV2372
+* input and prove the worst-case fault current drops from ~1A (unprotected) to <10mA.
+*
+* Fix under test (per FWD_IN; mirror on REV_IN):
+*   FWD_IN --[ Rs ]-- PIN --> U1A(+)
+*                      |
+*                Dhi -> VCC   (clamps PIN to VCC+Vf when driven over the rail)
+*                Dlo <- GND   (clamps PIN to -Vf when driven negative)
+*
+* Rs is the ONLY current limiter: once a clamp conducts, PIN pins near a rail
+* and the fault voltage drops across Rs, so I_clamp ~= (Vfault - Vrail - Vf)/Rs.
+* Sizing target: keep I_clamp < TLV2372 abs-max +/-10mA at the 18V miswire fault.
+*   Rs = 1k  ->  (18 - ~12.65)/1k ~= 5.4mA  (well under 10mA, with margin)
+*
+* Normal-operation check: FWD_IN swings 0..12V to reach the 3.24V ADC ceiling.
+* In that range PIN <= VCC so NEITHER clamp conducts, PIN draws ~0 (1T op-amp
+* input), so Rs introduces ZERO dc error -- the buffer + divider are unchanged.
+*
+* Clamp model matches the unprotected bench (small-signal silicon ESD diode) so the two are apples-to-apples.
+
+.include tlv2372.lib
+
+VCC   VCC 0 DC 12
+VFWD  FWD_IN 0 DC 0
+
+* --- protection network ---
+Rs    FWD_IN PIN 1k
+* High clamp: conducts when PIN > VCC + ~0.6V, ammeter Vhi in series
+Dhi   PIN nhi DCLAMP
+Vhi   nhi VCC DC 0
+* Low clamp: conducts when PIN < 0 - ~0.6V, ammeter Vlo in series
+Dlo   nlo PIN DCLAMP
+Vlo   0 nlo DC 0
+.model DCLAMP D(IS=1e-15 N=1 RS=5)
+
+* --- U1A unity buffer + divider (same chain as opamp_fidelity.cir) ---
+XU1A  PIN BUF_OUT BUF_OUT VCC 0 OPAMP_TLV2372
+R10   BUF_OUT ADC 2.7k
+R13   ADC 0 1k
+
+.control
+* Fault sweep -5V .. +30V; clamp currents i(Vhi)/i(Vlo) vs abs-max +/-10mA.
+dc VFWD -5 30 0.1
+wrdata opamp_input_protect.txt v(FWD_IN) i(VFWD) i(Vhi) i(Vlo) v(PIN) v(ADC)
+quit
+.endc
+.end
