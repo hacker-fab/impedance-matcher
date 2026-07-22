@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 live.py
-Live VSWR plotter (serial) — Teensy 4.1
+Live VSWR plotter (serial)
 
 Dependencies (pip):
   matplotlib, pyserial
@@ -17,21 +17,32 @@ import matplotlib.pyplot as plt
 import serial
 from serial.tools import list_ports
 
-DEFAULT_BAUD = 500000
+import telemetry
+
+DEFAULT_BAUD = telemetry.BAUD
 DEFAULT_WINDOW_SECONDS = 20.0
-DEFAULT_CSV_PATH = os.path.join("data", "csv", "latest.csv")
+DEFAULT_CSV_PATH = telemetry.DEFAULT_CSV_PATH
 
 # Prevent macOS matplotlib windows from stealing focus on each redraw
 plt.rcParams["figure.raise_window"] = False
 
 def get_default_port():
-    ports = [p.device for p in list_ports.comports()]
-    for device in ports:
-        if "cu.usbmodem" in device:
-            return device
-    for device in ports:
-        if "tty.usbmodem" in device:
-            return device
+    ports = list(list_ports.comports())
+    # macOS / Linux USB CDC
+    for p in ports:
+        if "cu.usbmodem" in p.device:
+            return p.device
+    for p in ports:
+        if "tty.usbmodem" in p.device:
+            return p.device
+    # Windows: match Teensy/USB serial by description, else first COM port
+    for p in ports:
+        text = " ".join(filter(None, [p.description, p.manufacturer])).lower()
+        if "teensy" in text or "usb serial" in text:
+            return p.device
+    for p in ports:
+        if p.device.upper().startswith("COM"):
+            return p.device
     return "/dev/cu.usbmodem12345"
 
 
@@ -103,18 +114,7 @@ def main():
     with open(args.csv, "a", newline="") as csv_file:
         writer = csv.writer(csv_file)
         if not csv_exists or os.path.getsize(args.csv) == 0:
-            writer.writerow(
-                [
-                    "host_time_s",
-                    "device_millis",
-                    "vswr",
-                    "forward_v",
-                    "reverse_v",
-                    "motor1_pos_rad",
-                    "motor2_pos_rad",
-                    "at_match",
-                ]
-            )
+            writer.writerow(telemetry.CSV_HEADER)
 
         try:
             while True:
@@ -131,24 +131,17 @@ def main():
                     ser = connect_serial(args.port, args.baud)
                     continue
 
-                if not raw.startswith("VSWR_CSV,"):
+                sample = telemetry.parse_serial_line(raw)
+                if sample is None:
                     continue
 
-                parts = raw.split(",")
-                if len(parts) != 8:
-                    continue
-
-                _, millis_s, vswr_s, fwd_v_s, rev_v_s, motor1_s, motor2_s, at_match_s = parts
-                try:
-                    t_ms = int(millis_s)
-                    vswr = float(vswr_s)
-                    forward_v = float(fwd_v_s)
-                    reverse_v = float(rev_v_s)
-                    motor1_pos = float(motor1_s)
-                    motor2_pos = float(motor2_s)
-                    at_match = int(at_match_s) != 0
-                except ValueError:
-                    continue
+                t_ms = sample["device_millis"]
+                vswr = sample["vswr"]
+                forward_v = sample["forward_v"]
+                reverse_v = sample["reverse_v"]
+                motor1_pos = sample["motor1_pos"]
+                motor2_pos = sample["motor2_pos"]
+                at_match = sample["at_match"]
 
                 # Plots use host wall clock
                 # CSV column 0 is absolute host epoch for alignment with plot.py

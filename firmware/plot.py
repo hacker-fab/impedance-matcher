@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 plot.py
-CSV VSWR plotter — Teensy 4.1
+CSV VSWR plotter
 
-Plot a saved VSWR telemetry CSV file.
+Plot a saved VSWR telemetry CSV file
 
 Expected format:
 
@@ -23,12 +23,14 @@ from typing import Any, Dict, Tuple
 
 import numpy as np
 
-DATA_CSV_DIR = os.path.join("data", "csv")
+import telemetry
+
+DATA_CSV_DIR = telemetry.DATA_CSV_DIR
 DATA_HTML_DIR = os.path.join("data", "html")
 DATA_MERMAID_DIR = os.path.join("data", "mermaid")
 
 # Drop outliers (garbage data)
-VSWR_MAX = 4.0
+VSWR_MAX = telemetry.VSWR_MAX
 MOTOR_MAX_ABS_RAD = float(np.pi)
 
 
@@ -357,15 +359,15 @@ def load_csv(path: str) -> Tuple[list, int, int]:
             return rows, 0, 0
 
         for raw in reader:
-            if len(raw) != 8:
+            if len(raw) != telemetry.CSV_COLUMN_COUNT:
                 skipped_format += 1
                 continue
             try:
-                epoch = float(raw[0])
-                vswr = float(raw[2])
-                motor1 = filter_motor_position(parse_float_or_nan(raw[5]))
-                motor2 = filter_motor_position(parse_float_or_nan(raw[6]))
-                match = int(float(raw[7])) != 0
+                epoch = float(raw[telemetry.COL_EPOCH])
+                vswr = float(raw[telemetry.COL_VSWR])
+                motor1 = filter_motor_position(parse_float_or_nan(raw[telemetry.COL_MOTOR1]))
+                motor2 = filter_motor_position(parse_float_or_nan(raw[telemetry.COL_MOTOR2]))
+                match = int(float(raw[telemetry.COL_MATCH])) != 0
             except (ValueError, IndexError):
                 skipped_format += 1
                 continue
@@ -473,8 +475,8 @@ def plot_plotly(
         col=1,
     )
 
-    fig.add_hline(y=1.2, line_dash="dash", line_color="#238b45", row=1, col=1)
-    fig.add_hline(y=1.4, line_dash="dash", line_color="#cb6816", row=1, col=1)
+    fig.add_hline(y=telemetry.VSWR_MATCH, line_dash="dash", line_color="#238b45", row=1, col=1)
+    fig.add_hline(y=telemetry.VSWR_UNMATCH, line_dash="dash", line_color="#cb6816", row=1, col=1)
 
     if mid_panel == "motors":
         fig.add_trace(
@@ -697,8 +699,8 @@ def main():
     # VSWR
     ax_vswr.plot(tx, pack["vswr"], color="#08519c", linewidth=0.8, alpha=0.9, label="VSWR")
 
-    ax_vswr.axhline(1.2, color="#238b45", linestyle="--", linewidth=1.0, alpha=0.9, label="Match ≤ 1.2")
-    ax_vswr.axhline(1.4, color="#cb6816", linestyle="--", linewidth=1.0, alpha=0.9, label="Unmatch ≥ 1.4")
+    ax_vswr.axhline(telemetry.VSWR_MATCH, color="#238b45", linestyle="--", linewidth=1.0, alpha=0.9, label="Match ≤ 1.2")
+    ax_vswr.axhline(telemetry.VSWR_UNMATCH, color="#cb6816", linestyle="--", linewidth=1.0, alpha=0.9, label="Unmatch ≥ 1.4")
     ax_vswr.set_ylabel("VSWR")
     ax_vswr.legend(loc="upper right", fontsize=8, framealpha=0.92)
     ax_vswr.grid(True)

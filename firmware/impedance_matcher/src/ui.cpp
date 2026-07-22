@@ -1,10 +1,11 @@
 #include "../include/ui.h"
-#include "../include/pins_config.h"
+#include "../include/config.h"
 #include "../include/app_state.h"
 #include "../include/matching.h"
+#include "../../shared/matcher_core.h"
 
 // OLED flows: home → settings menu → optional motor adjust / metrics. Encoder delta
-// moves selection or nudges motor1Pos/motor2Pos (degrees); matching keeps *_pos (rad) in sync.
+// moves selection or nudges motor1Deg/motor2Deg; matching keeps motor1Rad/motor2Rad in sync.
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -19,8 +20,6 @@ static int  menuSel          = 0;
 static int  homeSel          = 0;
 static bool menuEditingMotor = false;
 static int  editingMotorId   = -1;
-
-#define MOTOR_STEP_SIZE 10
 
 static int buildMenu(int* out) {
   int n = 0;
@@ -131,10 +130,10 @@ static void drawMenu() {
 
     g_oled.setCursor(80, y);
     if (id == M_MOTOR1) {
-      g_oled.print(motor1Pos);
+      g_oled.print(motor1Deg);
       if (menuEditingMotor && editingMotorId == M_MOTOR1) g_oled.print("*");
     } else if (id == M_MOTOR2) {
-      g_oled.print(motor2Pos);
+      g_oled.print(motor2Deg);
       if (menuEditingMotor && editingMotorId == M_MOTOR2) g_oled.print("*");
     } else {
       const char* val = menuValue(id);
@@ -169,8 +168,8 @@ static void drawMotorAdjust(int motorNum, long pos) {
 }
 
 static void drawAdvancedMetrics() {
-  bool m1Max = (motor1Pos <= MOTOR_MIN_POS) || (motor1Pos >= MOTOR_MAX_POS);
-  bool m2Max = (motor2Pos <= MOTOR_MIN_POS) || (motor2Pos >= MOTOR_MAX_POS);
+  bool m1Max = (motor1Deg <= MOTOR_MIN_DEG) || (motor1Deg >= MOTOR_MAX_DEG);
+  bool m2Max = (motor2Deg <= MOTOR_MIN_DEG) || (motor2Deg >= MOTOR_MAX_DEG);
 
   g_oled.clearDisplay();
   g_oled.setTextColor(SSD1306_WHITE);
@@ -192,13 +191,13 @@ static void drawAdvancedMetrics() {
 
   g_oled.setCursor(0, 32);
   g_oled.print("M1:");
-  g_oled.print(motor1_pos * (180.0f / PI), 1);
+  g_oled.print(radToDeg(motor1Rad), 1);
   g_oled.print("d ");
   g_oled.print(m1Max ? "MAX" : "OK");
 
   g_oled.setCursor(0, 42);
   g_oled.print("M2:");
-  g_oled.print(motor2_pos * (180.0f / PI), 1);
+  g_oled.print(radToDeg(motor2Rad), 1);
   g_oled.print("d ");
   g_oled.print(m2Max ? "MAX" : "OK");
 
@@ -214,8 +213,7 @@ static void handleHome(int delta, bool pressed) {
   }
   if (pressed) {
     if (homeSel == 0) {
-      radioTX = !radioTX;
-      setRadioTX(radioTX);
+      setRadioTX(!radioTX);
     } else {
       state   = S_MENU;
       menuSel = 0;
@@ -230,13 +228,13 @@ static void handleMenu(int delta, bool pressed) {
   if (delta != 0) {
     if (menuEditingMotor) {
       if (editingMotorId == M_MOTOR1) {
-        motor1Pos += (long)delta * MOTOR_STEP_SIZE;
-        motor1Pos = constrain(motor1Pos, MOTOR_MIN_POS, MOTOR_MAX_POS);
-        setMotor1Step(motor1Pos);
+        motor1Deg += (long)delta * MOTOR_STEP_SIZE;
+        motor1Deg = constrain(motor1Deg, MOTOR_MIN_DEG, MOTOR_MAX_DEG);
+        setMotor1Step(motor1Deg);
       } else if (editingMotorId == M_MOTOR2) {
-        motor2Pos += (long)delta * MOTOR_STEP_SIZE;
-        motor2Pos = constrain(motor2Pos, MOTOR_MIN_POS, MOTOR_MAX_POS);
-        setMotor2Step(motor2Pos);
+        motor2Deg += (long)delta * MOTOR_STEP_SIZE;
+        motor2Deg = constrain(motor2Deg, MOTOR_MIN_DEG, MOTOR_MAX_DEG);
+        setMotor2Step(motor2Deg);
       }
     } else if (count > 0) {
       menuSel = (menuSel + delta) % count;
@@ -275,7 +273,7 @@ static void handleMenu(int delta, bool pressed) {
 static void handleMotorAdjust(int motorNum, long& pos, int delta, bool pressed) {
   if (delta != 0) {
     pos += (long)delta * MOTOR_STEP_SIZE;
-    pos = constrain(pos, MOTOR_MIN_POS, MOTOR_MAX_POS);
+    pos = constrain(pos, MOTOR_MIN_DEG, MOTOR_MAX_DEG);
     if (motorNum == 1) setMotor1Step(pos);
     else               setMotor2Step(pos);
   }
@@ -330,16 +328,16 @@ void ui_tick(int delta, bool pressed, bool doDraw) {
       }
       break;
     case S_MOTOR1:
-      handleMotorAdjust(1, motor1Pos, delta, pressed);
+      handleMotorAdjust(1, motor1Deg, delta, pressed);
       if (doDraw) {
-        drawMotorAdjust(1, motor1Pos);
+        drawMotorAdjust(1, motor1Deg);
         lastDisplayMs = millis();
       }
       break;
     case S_MOTOR2:
-      handleMotorAdjust(2, motor2Pos, delta, pressed);
+      handleMotorAdjust(2, motor2Deg, delta, pressed);
       if (doDraw) {
-        drawMotorAdjust(2, motor2Pos);
+        drawMotorAdjust(2, motor2Deg);
         lastDisplayMs = millis();
       }
       break;

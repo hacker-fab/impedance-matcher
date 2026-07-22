@@ -1,9 +1,7 @@
 #pragma once
 
-// Shared UI / matcher state. Motor angles exist twice on purpose:
-//   motor1Pos, motor2Pos — integer degrees for OLED and encoder menus (0..180).
-//   motor1_pos, motor2_pos — float radians inside matching.cpp for stepping/limits.
-// dM1, dM2 — estimated loss gradient w.r.t. each motor (finite differences in matching_tick).
+// Shared UI / matcher state. Motor angles: *Deg (integer degrees) for OLED/encoder,
+// *Rad (float radians) for stepping/limits. lossGrad1/2: loss gradient per motor
 
 enum AppState { S_HOME, S_MENU, S_MOTOR1, S_MOTOR2, S_METRICS };
 enum OpMode   { MODE_AUTO, MODE_MANUAL };
@@ -22,12 +20,12 @@ extern AppState state;
 extern OpMode   opMode;
 extern bool     radioTX;
 
-extern long  motor1Pos;
-extern long  motor2Pos;
-extern float motor1_pos;
-extern float motor2_pos;
-extern float dM1;
-extern float dM2;
+extern long  motor1Deg;
+extern long  motor2Deg;
+extern float motor1Rad;
+extern float motor2Rad;
+extern float lossGrad1;
+extern float lossGrad2;
 
 extern bool  atMatch;
 extern float lastVSWR;

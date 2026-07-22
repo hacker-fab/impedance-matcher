@@ -1,13 +1,13 @@
 /*
  * impedance_matcher.ino
- * Impedance Matcher — Teensy 4.1
+ * Impedance Matcher
  *
  * Dependencies (Arduino Library Manager):
  *   Adafruit SSD1306, Adafruit GFX, TMCStepper
  */
 
 #include <Arduino.h>
-#include "include/pins_config.h"
+#include "include/config.h"
 #include "include/app_state.h"
 #include "include/matching.h"
 #include "include/encoder.h"
@@ -18,12 +18,12 @@ AppState state   = S_HOME;
 OpMode   opMode  = MODE_AUTO;
 bool     radioTX = false;
 
-long  motor1Pos = 0;
-long  motor2Pos = 0;
-float motor1_pos = 0.0f;
-float motor2_pos = 0.0f;
-float dM1 = 0.1f;
-float dM2 = 0.1f;
+long  motor1Deg = 0;
+long  motor2Deg = 0;
+float motor1Rad = 0.0f;
+float motor2Rad = 0.0f;
+float lossGrad1 = 0.1f;
+float lossGrad2 = 0.1f;
 
 bool  atMatch   = false;
 float lastVSWR  = 1.0f;
@@ -34,7 +34,7 @@ bool csvStreamEnabled = false;
 
 void setup() {
   analogReadResolution(12);
-  Serial.begin(500000);
+  Serial.begin(CONTROL_BAUD);
   while (!Serial && millis() < 3000)
     ;
 
@@ -68,7 +68,7 @@ void loop() {
   ui_tick(delta, pressed, doDraw);
 
   // OLED is throttled on AUTO home / metrics; skip fixed delay when not drawing
-  // so matching_tick stays tight.
+  // so matching_tick stays tight
   if (throttleDisplay && !doDraw) {
     yield();
   } else {
