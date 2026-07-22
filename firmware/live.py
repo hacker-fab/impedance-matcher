@@ -118,7 +118,7 @@ def main():
 
         try:
             while True:
-                # Drain all waiting serial lines before redrawing
+                # Read one line per iteration; redraw is throttled to 10 Hz below
                 try:
                     raw = ser.readline().decode("utf-8", errors="ignore").strip()
                 except serial.SerialException as exc:

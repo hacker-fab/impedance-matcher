@@ -300,12 +300,6 @@ def parse_args():
         help="CSV log file. Bare names are resolved to ./path first, then data/csv/<name>.",
     )
     parser.add_argument(
-        "--max-plot-points",
-        type=int,
-        default=4000,
-        help="Deprecated; ignored. Use --sample-interval to control downsampling.",
-    )
-    parser.add_argument(
         "--raw",
         action="store_true",
         help="Plot every sample as lines (disables time-based downsampling).",

@@ -22,7 +22,7 @@ void matching_init_uart() {
 
 void matching_homing() {
   Serial.println("Starting Homing Sequence...");
-  runHomingSequence(driver1, driver2);
+  runHomingSequence();
   Serial.println("Finished Homing Sequence...");
 
   motor1Deg = clampDeg(motor1Rad);
@@ -31,7 +31,7 @@ void matching_homing() {
 
 void matching_tick() {
   if (opMode != MODE_AUTO) return;
-  autoMatchStep(driver1, driver2, lossGrad1, lossGrad2);
+  autoMatchStep(lossGrad1, lossGrad2);
   motor1Deg = clampDeg(motor1Rad);
   motor2Deg = clampDeg(motor2Rad);
 }
@@ -46,9 +46,9 @@ void setRadioTX(bool en) {
 }
 
 void setMotor1Step(long posDeg) {
-  setMotorStep(driver1, STEP_PIN_1, DIR_PIN_1, posDeg, motor1Rad);
+  setMotorStep(STEP_PIN_1, DIR_PIN_1, posDeg, motor1Rad);
 }
 
 void setMotor2Step(long posDeg) {
-  setMotorStep(driver2, STEP_PIN_2, DIR_PIN_2, posDeg, motor2Rad);
+  setMotorStep(STEP_PIN_2, DIR_PIN_2, posDeg, motor2Rad);
 }

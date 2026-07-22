@@ -14,7 +14,7 @@
 #define TRANSMIT_PIN 31
 
 // Comms
-#define CONTROL_BAUD         500000    // USB serial to host (live.py / plot logging)
+#define CONTROL_BAUD         500000    // USB serial to host (live.py / plot logging); keep in sync with telemetry.py BAUD
 #define MATCHING_UART_BAUD   500000    // TMC2209 UART on Serial1
 #define MATCHING_SERIAL_PORT Serial1
 
@@ -30,8 +30,8 @@
 #define HOMING_CENTER_RAD  (PI / 2.0f) // re-center after homing
 
 // Matching
-#define VSWR_MATCH_ENTER 1.2f          // declare match below this
-#define VSWR_MATCH_EXIT  1.4f          // drop match above this
+#define VSWR_MATCH_ENTER 1.2f          // declare match below this; keep in sync with telemetry.py VSWR_MATCH
+#define VSWR_MATCH_EXIT  1.4f          // drop match above this; keep in sync with telemetry.py VSWR_UNMATCH
 
 // Scheduling/UI
 #define DISPLAY_THROTTLE_AUTO_HOME_MS 300u

@@ -10,7 +10,7 @@ Two schemas live here:
 import os
 
 # Serial link
-BAUD = 500000
+BAUD = 500000  # keep in sync with config.h CONTROL_BAUD
 
 # Serial-line schema (firmware -> host). Line is SERIAL_TAG + 8 comma parts:
 #   tag, millis, vswr, fwd_v, rev_v, motor1_pos, motor2_pos, at_match
@@ -45,8 +45,8 @@ DATA_CSV_DIR = os.path.join("data", "csv")
 DEFAULT_CSV_PATH = os.path.join(DATA_CSV_DIR, "latest.csv")
 
 # VSWR thresholds
-VSWR_MATCH = 1.2    # firmware declares match below this
-VSWR_UNMATCH = 1.4  # firmware drops match above this
+VSWR_MATCH = 1.2    # firmware declares match below this; keep in sync with config.h VSWR_MATCH_ENTER
+VSWR_UNMATCH = 1.4  # firmware drops match above this; keep in sync with config.h VSWR_MATCH_EXIT
 VSWR_MAX = 4.0      # plot.py outlier ceiling
 
 

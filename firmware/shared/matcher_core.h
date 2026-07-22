@@ -29,11 +29,11 @@ extern float lastFwdV;
 extern float lastRevV;
 extern bool  csvStreamEnabled;
 
-inline float analogReadMilliVolts(int pin) {
+inline float readMilliVolts(int pin) {
   return (analogRead(pin) / 4095.0f) * 3300.0f;
 }
 
-inline int roundUp(float value) {
+inline int ceilToInt(float value) {
   int truncated = (int)value;
   return (value > truncated) ? truncated + 1 : truncated;
 }
@@ -43,7 +43,7 @@ inline float stepsToRad(int steps) {
 }
 
 inline int radToSteps(float rads) {
-  return roundUp(rads * (STEPS_PER_RAD * MICROSTEPS_PER_STEP));
+  return ceilToInt(rads * (STEPS_PER_RAD * MICROSTEPS_PER_STEP));
 }
 
 inline void takeStep(int stepPin) {
@@ -53,9 +53,8 @@ inline void takeStep(int stepPin) {
   delayMicroseconds(STEP_DELAY / 2);
 }
 
-inline float turnByRad(TMC2209Stepper &driver, int stepPin, int dirPin,
+inline float turnByRad(int stepPin, int dirPin,
                        float rads, float &motorRad, bool ignoreLimits = false) {
-  (void)driver;
   if (rads == 0.0f) return 0.0f;
 
   bool  isNeg         = (rads < 0.0f);
@@ -84,8 +83,8 @@ inline float turnByRad(TMC2209Stepper &driver, int stepPin, int dirPin,
 inline float measureLoss(int fwd, int rev) {
   float sumFwd = 0.0f, sumRev = 0.0f;
   for (int i = 0; i < VSWR_SAMPLES; i++) {
-    sumFwd += analogReadMilliVolts(fwd);
-    sumRev += analogReadMilliVolts(rev);
+    sumFwd += readMilliVolts(fwd);
+    sumRev += readMilliVolts(rev);
     delayMicroseconds(15);
   }
   float avgFwd = sumFwd / VSWR_SAMPLES;
@@ -127,7 +126,7 @@ inline float clampMagnitude(float value, float minMag, float maxMag) {
   return value;
 }
 
-inline void calcGradAndStep(TMC2209Stepper &driver, int stepPin, int dirPin,
+inline void calcGradAndStep(int stepPin, int dirPin,
                             float &gradient, float &motorRad) {
   float initialCost   = measureLoss(FWD_PIN, REV_PIN);
   float commandedStep = clampMagnitude(gradient * GRAD_SCALE, MIN_STEPSIZE, MAX_STEPSIZE);
@@ -135,7 +134,7 @@ inline void calcGradAndStep(TMC2209Stepper &driver, int stepPin, int dirPin,
   if (motorRad >= MAX_ROT - MIN_STEPSIZE) commandedStep = -MIN_STEPSIZE;
   if (motorRad <= MIN_STEPSIZE)           commandedStep =  MIN_STEPSIZE;
 
-  float actualTravel = turnByRad(driver, stepPin, dirPin, commandedStep, motorRad);
+  float actualTravel = turnByRad(stepPin, dirPin, commandedStep, motorRad);
   delay(5);
   if (actualTravel != 0.0f)
     gradient = (initialCost - measureLoss(FWD_PIN, REV_PIN)) / actualTravel;
@@ -150,30 +149,29 @@ inline long clampDeg(float rad) {
 }
 
 // Back off to the hard stop, zero the reference, then re-center
-inline void runHomingSequence(TMC2209Stepper &driver1, TMC2209Stepper &driver2) {
-  turnByRad(driver1, STEP_PIN_1, DIR_PIN_1, HOMING_BACKOFF_RAD, motor1Rad, true);
-  turnByRad(driver2, STEP_PIN_2, DIR_PIN_2, HOMING_BACKOFF_RAD, motor2Rad, true);
+inline void runHomingSequence() {
+  turnByRad(STEP_PIN_1, DIR_PIN_1, HOMING_BACKOFF_RAD, motor1Rad, true);
+  turnByRad(STEP_PIN_2, DIR_PIN_2, HOMING_BACKOFF_RAD, motor2Rad, true);
   motor1Rad = 0.0f;
   motor2Rad = 0.0f;
-  turnByRad(driver1, STEP_PIN_1, DIR_PIN_1, HOMING_CENTER_RAD, motor1Rad, true);
-  turnByRad(driver2, STEP_PIN_2, DIR_PIN_2, HOMING_CENTER_RAD, motor2Rad, true);
+  turnByRad(STEP_PIN_1, DIR_PIN_1, HOMING_CENTER_RAD, motor1Rad, true);
+  turnByRad(STEP_PIN_2, DIR_PIN_2, HOMING_CENTER_RAD, motor2Rad, true);
 }
 
 // One coordinate-descent tick: step both axes toward match, or just sample once matched
-inline void autoMatchStep(TMC2209Stepper &driver1, TMC2209Stepper &driver2,
-                          float &gradient1, float &gradient2) {
+inline void autoMatchStep(float &gradient1, float &gradient2) {
   if (!atMatch) {
-    calcGradAndStep(driver1, STEP_PIN_1, DIR_PIN_1, gradient1, motor1Rad);
-    calcGradAndStep(driver2, STEP_PIN_2, DIR_PIN_2, gradient2, motor2Rad);
+    calcGradAndStep(STEP_PIN_1, DIR_PIN_1, gradient1, motor1Rad);
+    calcGradAndStep(STEP_PIN_2, DIR_PIN_2, gradient2, motor2Rad);
   } else {
     measureLoss(FWD_PIN, REV_PIN);
   }
 }
 
 // Absolute move: drive one axis to posDeg degrees from its current position
-inline void setMotorStep(TMC2209Stepper &driver, int stepPin, int dirPin,
+inline void setMotorStep(int stepPin, int dirPin,
                          long posDeg, float &motorRad) {
   float targetRad = posDeg * (PI / 180.0f);
   float delta     = targetRad - motorRad;
-  turnByRad(driver, stepPin, dirPin, delta, motorRad);
+  turnByRad(stepPin, dirPin, delta, motorRad);
 }

@@ -66,7 +66,7 @@ void setup() {
   delay(500);
 
   Serial.println("Starting Homing Sequence...");
-  runHomingSequence(driver1, driver2);
+  runHomingSequence();
   Serial.println("Finished Homing Sequence...");
 
   syncMotorDeg();
@@ -78,7 +78,7 @@ void loop() {
   processSerialCommand();
 
   if (opMode == MODE_AUTO) {
-    autoMatchStep(driver1, driver2, lossGrad1, lossGrad2);
+    autoMatchStep(lossGrad1, lossGrad2);
   } else {
     // Keep telemetry fresh in manual mode too
     measureLoss(FWD_PIN, REV_PIN);
@@ -181,7 +181,7 @@ static void handleCommand(char *line) {
   }
   if (strcasecmp(cmd, "home") == 0) {
     Serial.println("Re-homing...");
-    runHomingSequence(driver1, driver2);
+    runHomingSequence();
     syncMotorDeg();
     Serial.println("OK homed");
     return;
@@ -260,9 +260,9 @@ static bool parseLongArg(const char *arg, long *out) {
 }
 
 static void setMotor1Step(long posDeg) {
-  setMotorStep(driver1, STEP_PIN_1, DIR_PIN_1, posDeg, motor1Rad);
+  setMotorStep(STEP_PIN_1, DIR_PIN_1, posDeg, motor1Rad);
 }
 
 static void setMotor2Step(long posDeg) {
-  setMotorStep(driver2, STEP_PIN_2, DIR_PIN_2, posDeg, motor2Rad);
+  setMotorStep(STEP_PIN_2, DIR_PIN_2, posDeg, motor2Rad);
 }
