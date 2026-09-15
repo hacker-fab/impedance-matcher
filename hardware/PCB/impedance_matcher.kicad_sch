@@ -8151,7 +8151,7 @@
 		)
 		(uuid "aab8f9eb-54c3-41f8-9a28-56b12576949e")
 	)
-	(label "SCL"
+	(label "SDA"
 		(at 116.84 25.4 0)
 		(effects
 			(font
@@ -8211,7 +8211,7 @@
 		)
 		(uuid "bf236370-5af5-4b57-9b4a-cda66f393ea1")
 	)
-	(label "SDA"
+	(label "SCL"
 		(at 116.84 27.94 0)
 		(effects
 			(font
@@ -8395,7 +8395,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Footprint" "Project Connectors:B3B-XH-A"
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
 			(at 133.35 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -12329,7 +12329,7 @@
 	)
 	(symbol
 		(lib_id "Capacitor:C-POL-USRADIAL-11MM-DIA")
-		(at 281.94 124.46 270)
+		(at 281.94 124.46 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14857,7 +14857,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "B5B-XH-A:JST_B5B-XH-A"
+		(property "Footprint" "Connector_JST:JST_PH_B5B-PH-K_1x05_P2.00mm_Vertical"
 			(at 158.75 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -15932,7 +15932,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Footprint" "Project Connectors:B4B-XH-A"
+		(property "Footprint" "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical"
 			(at 85.09 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -16109,7 +16109,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Footprint" "Project Connectors:B4B-XH-A"
+		(property "Footprint" "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical"
 			(at 133.35 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16667,7 +16667,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Footprint" "Project Connectors:B2B-XH-A"
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
 			(at 106.68 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -18728,7 +18728,7 @@
 	)
 	(symbol
 		(lib_id "Capacitor:C-POL-USRADIAL-11MM-DIA")
-		(at 210.82 124.46 270)
+		(at 210.82 124.46 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
