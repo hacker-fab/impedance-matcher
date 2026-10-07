@@ -1,5 +1,5 @@
 #include "../include/encoder.h"
-#include "../include/pins_config.h"
+#include "../include/config.h"
 
 #include <Arduino.h>
 
@@ -66,7 +66,6 @@ static bool consumeButton() {
 
   uint32_t now = millis();
   if ((now - lastBtnAcceptMs) <= DEBOUNCE_MS) {
-    // Re-queue edges so a long mechanical bounce still yields one press after quiet time.
     noInterrupts();
     btnFallEvents += falls;
     interrupts();
