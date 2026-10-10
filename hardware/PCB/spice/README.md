@@ -1,85 +1,88 @@
-# SPICE Verification
+# Analog support-circuit calculations and SPICE benches
 
-ngspice checks on the board's analog support circuits: the SWR sense chain, the
-input protection, and the 5 V -> 18 V -> 12 V power rail (DC). MCU, steppers,
-OLED, fan, and opto are not simulated.
+These benches model selected DC behavior of the sensor buffers, input protection,
+reverse-polarity circuit, and analog supply. They do not validate motor supplies,
+switching ripple, transient protection, temperature, or RF behavior.
 
-SWR path: `FWD_IN -> U1A buffer -> R10 2.7k / R13 1k divider -> ADC`, gain x0.27027
-(TLV2372 on 12 V rail). REV path is identical (U1B, R11/R12).
+## Current divider and regulator load
 
-## Results
+The 10 October 2026 blocker fixes change both buffered sensor dividers to
+**3.3 kohm / 1 kohm**: R10/R13 for forward and R11/R12 for reverse.
 
-### SWR -> ADC ceiling
-Worst case is the buffer saturating near the 12 V rail. Ceiling lands at ~3.24 V
-across every model, ~55 mV under the 3.3 V full scale. No clipping.
+- Nominal gain: `1000 / 4300 = 0.232558`.
+- Independent 1% resistor maximum: `1010 / (3267 + 1010) = 0.236147` (+1.543%).
+- Minimum: `990 / (3333 + 990) = 0.229008` (-1.527%).
+- Conservative buffer-at-rail ceiling at the L7812C's 12.6 V upper specification:
+  `12.6 * 0.236147 = 2.97545 V`, about 325 mV below nominal 3.3 V.
+- An 8 V sensor input produces about 1.8605 V at the ADC nominally.
 
-| Model                     | Ceiling  |
-|---------------------------|----------|
-| Ideal buffer              | 3.230 V  |
-| Real TLV2372 macromodel   | 3.243 V  |
-| + PCB trace parasitics    | 3.241 V  |
+R16 is a **2.2 kohm, 1%, 125 mW** preload from 12 V to ground. At 11.4 V with
++1% resistance it draws 5.13 mA, meeting the regulator's specified 5 mA minimum
+load without relying on op-amp current. Worst calculated dissipation at 12.6 V
+and -1% resistance is 72.9 mW; apply the part's temperature derating when
+qualifying the enclosure. The rail-chain bench's RRAIL now represents R16.
 
-### Resistor tolerance (1% parts)
-Worst-case divider ratio is +/-1.0% (R13 contributes (1-k)*1% = 0.73%, R10
-contributes k*1% = 0.27%) -> ceiling ~3.27 V, still under 3.3 V.
+These calculations replace the previous 2.7 kohm-divider ceiling claim, which
+omitted regulator tolerance and understated combined resistor tolerance. The
+new ceiling applies to the specified regulated rail. Sensor faults, startup,
+power-off injection and ADC supply variation still require verification.
 
-### Protection
-- Gate clamp (CR1 BZX84C5V6): off below 5 V; breaks down at 5.5 V and holds Vgs
-  near -5.6 V up to 16 V input. Without it the gate would see -16 V.
-- Reverse polarity (DMP6180 P-FET): reverse input blocked (rail ~nV, ~pA). Forward
-  conducts with ~5 mV drop, ~120 mA at 12 V.
+Sources: [ST L78](https://www.st.com/resource/en/datasheet/l78.pdf),
+[TI TLV2372](https://www.ti.com/lit/ds/symlink/tlv2372.pdf),
+[PJRC Teensy 4.1](https://www.pjrc.com/store/teensy41.html).
 
-### PCB parasitics
-SWR trace resistance is 0.05 - 0.10 ohm, via inductance ~0.7 nH (irrelevant at DC).
-Shifts the ceiling by ~2.4 mV.
+## Model limitations
 
-### SWR input protection
-Each input has a 1k series resistor (R14/R15) plus clamp diodes to VCC/GND
-(D2 BAV99S). This caps the TLV2372 input current on a fault, since
-`I_clamp ~= (Vfault - Vrail - Vf) / 1k`. Abs-max is +/-10 mA.
+The user confirmed raw SW-112 detector taps. R4/R6 are now **100 Mohm, 5%,
+0805 Yageo RC0805JR-07100ML / C137480**; D2 is **Nexperia BAV199S-QZ**, a pin-compatible
+low-leakage replacement for BAV99S. For the guide's approximate 1 Mohm source,
+the input bias load retains `100M/(1M+100M) = 99.0099%` of the open-circuit
+signal, versus 9.0909% with the old 100 kohm bias. The 5% resistor range gives
+98.9583–99.0566% retention for that fixed source model. This is a loading
+estimate, not a calibrated detector transfer function.
 
-| Fault on `FWD_IN` | unprotected | with R + clamp | vs +/-10 mA |
-|-------------------|-------------|----------------|-------------|
-| 18 V              | 1.02 A      | 5.2 mA         | safe        |
-| 30 V              | 3.41 A      | 17.1 mA        | still over  |
-| -5 V              | 0.82 A      | 4.2 mA         | safe        |
+D2 is specified at at most 5 nA per diode at 75 V/25 °C and 80 nA at
+75 V/150 °C. Two adverse leakage contributions could therefore cause about
+9.9 mV at 25 °C or 158 mV at 150 °C through a 1 Mohm source in parallel with
+100 Mohm. These are conservative estimates using the specified 75 V test;
+they do not predict actual leakage at this board's 12 V or operating temperature.
+Op-amp bias, flux residue, humidity, connector leakage and a disconnected sensor
+also affect the reading. Clean the input area and measure offsets, settling and
+both-channel calibration across the intended temperature and power range.
 
-Normal operation is unaffected (8 V in -> 8.00 V pin) since the input draws no
-DC. 30 V would need 2.2k (~7.9 mA).
+Sources: [Hacker Fab guide](https://docs.hackerfab.org/home/fab-toolkit/deposition/diy-rf-sputtering-chamber-cmu/add-ons-and-wip/automated-impedance-matching),
+[Yageo resistor](https://www.lcsc.com/product-detail/C137480.html),
+[Nexperia diode](https://assets.nexperia.com/documents/data-sheet/BAV199S-Q.pdf).
 
-### Power rail, DC
-Rail is `5 V (USB) -> MT3608 boost -> ~17.5 V -> L7812 -> 12 V`. DC operating point
-only; MT3608 switching ripple is out of scope.
+`tlv2372.lib` is a local simplified behavioral model, not a TI vendor macromodel.
+It omits device supply current, realistic input protection, output-current
+limits, and other important behavior. `l7812.lib` omits output tolerance,
+minimum-load behavior, thermal/current limits, and realistic rail injection.
+`rail_chain_dc.cir` uses a stiff behavioral boost source at 17.509 V, rather than
+simulating the MT3608. The generic PMOS in `prot_revpol2.cir` does not predict
+DMP6180 voltage drop or temperature under motor load.
 
-- **LDO** (`ldo_reg.cir`): 18 -> 12 V holds 12.00 V across 0 - 1.2 A. `Pd =
-  (Vin-Vout)*Iload` = 7.2 W at 1.2 A -- needs a heatsink (bare TO-220 ~2 W).
-- **Chain** (`rail_chain_dc.cir`): `5 -> 17.51 -> 12.00 V` (R8 62k / R7 2.2k set the
-  boost setpoint), lands 12.00 V on the TLV2372 VCC pin; SWR ADC reads 2.16 V for
-  8 V `FWD_IN`.
+R14/R15 and D2 clamp the buffer inputs relative to 12 V/GND, not the ADC relative
+to 3.3 V. A positive fault can raise the 12 V rail; ideal supply sources in the
+benches hide this because they can sink current. A 30 V fault gives approximately
+17 mA through 1 kohm, so input-clamp current sharing, resistor dissipation and
+power-off behavior need analysis against the actual fault envelope.
 
-Caveat: `l7812.lib` is behavioral (fixed 2 V dropout, no current limit); above
-1.5 A is un-modeled.
+## Benches and execution
 
-## Testbenches
+Run `ngspice -b <file>.cir` in this directory when an ngspice executable is
+available. Printed or generated outputs are ignored by git. Historical results
+used ngspice-46; the updated benches have not been rerun for this change.
 
-Run from this folder with `ngspice -b <file>.cir`. Batch mode writes sweep data to
-the `.txt`/`.out` each file names (`wrdata`); DC-point benches `print` to stdout.
+- `swr_opamp_chain.cir`: approximate raw detector loading, idealized buffer and
+  current ADC divider/filter sweep; leakage is omitted.
+- `opamp_fidelity.cir`: simplified TLV2372 model and current divider.
+- `parasitic_ceiling.cir`: divider plus previously extracted trace parasitics.
+- `rail_chain_dc.cir`: idealized supply chain, R16 and sensor buffer.
+- `prot_gateclamp.cir`, `prot_revpol2.cir`: supply protection topology.
+- `opamp_input_ov.cir`, `opamp_input_protect.cir`: limited input-fault studies.
+- `ldo_reg.cir`: idealized regulator DC behavior only.
 
-Install ngspice, or use the `ngspice` in KiCad's `bin/`. Results here are from
-ngspice-46 (KiCad 10.0).
-
-| File                      | Tests                                          |
-|---------------------------|------------------------------------------------|
-| `swr_opamp_chain.cir`     | SWR buffer + divider sweep (ideal op-amp)      |
-| `opamp_fidelity.cir`      | Same chain, real TLV2372 macromodel            |
-| `parasitic_ceiling.cir`   | Chain with extracted PCB trace parasitics      |
-| `prot_gateclamp.cir`      | Zener gate clamp sweep                         |
-| `prot_revpol2.cir`        | Reverse-polarity P-FET blocking + forward drop |
-| `opamp_input_ov.cir`      | SWR input overvoltage, pin clamp current       |
-| `opamp_input_protect.cir` | Series R + clamp fix, fault current <10mA      |
-| `ldo_reg.cir`             | L7812 18->12V regulation, dropout, dissipation |
-| `rail_chain_dc.cir`       | End-to-end 5->18->12V DC, TLV2372 VCC          |
-| `l7812.lib`               | L7812 behavioral reg model (included above)    |
-| `tlv2372.lib`             | TLV2372 op-amp macromodel (included above)     |
-
-Outputs (`.txt`, `.out`, `.log`) are gitignored; re-run to regenerate.
+Use the explicit worst-case calculations above and powered measurements for
+signoff. Neither old nor new DC outputs establish switching, thermal or RF
+performance.

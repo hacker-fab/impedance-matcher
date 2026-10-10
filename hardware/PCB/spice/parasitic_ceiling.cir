@@ -7,7 +7,7 @@ VCC   VCC 0 DC 12
 VFWD  FWD_IN 0 DC 12
 XU1A  FWD_IN BUF_OUT BUF_OUT VCC 0 OPAMP_TLV2372
 Rp_fwdin  BUF_OUT N1 0.0759
-R10   N1 TAP 2.7k
+R10   N1 TAP 3.3k
 R13   TAP 0 1k
 Rp_fwdout TAP ADC 0.0837
 RADC  ADC 0 1meg
@@ -17,7 +17,7 @@ RADC  ADC 0 1meg
 op
 let vadc = v(ADC)
 let vbuf = v(BUF_OUT)
-echo "PARASITIC vin=12 vbuf=$&vbuf vadc=$&vadc (ideal_noparasitic_ceiling=3.24308)" > parasitic_ceiling.txt
+echo "PARASITIC vin=12 vbuf=$&vbuf vadc=$&vadc (nominal divider ratio=0.232558)" > parasitic_ceiling.txt
 quit
 .endc
 .end

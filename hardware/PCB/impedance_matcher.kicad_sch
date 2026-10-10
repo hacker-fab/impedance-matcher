@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "0185a048-fcf7-4fdd-80fa-1339c3beb0ce")
+	(uuid "05d78882-7448-4c56-96b8-6921af7027e2")
 	(paper "User" 312.42 218.5924)
 	(title_block
 		(title "Automated Sputtering Impedance Matcher Schematic")
@@ -906,7 +906,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(property "ki_fp_filters" "Connector*:*_1x??_* SparkFun-Connectors:1X02_2.54_SCREWTERM"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1251,7 +1251,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(property "ki_fp_filters" "Connector*:*_1x??_* SparkFun-Connectors:JST-4-PTH-VERT"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1803,6 +1803,324 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:BAV199S-Q"
+			(pin_names
+				(offset 0.0254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BAV199S-Q"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV199S-Q.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Low-leakage quadruple diode, two series pairs, SOT363-3 / SC-88"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?363*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BAV199S-Q_0_1"
+				(polyline
+					(pts
+						(xy -5.08 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 1.27) (xy -1.27 0) (xy -3.81 -1.27) (xy -3.81 1.27) (xy -3.81 1.27) (xy -3.81 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 3.81 0) (xy 1.27 -1.27) (xy 1.27 1.27) (xy 1.27 1.27) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.27) (xy 3.81 -1.27) (xy 3.81 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BAV199S-Q_1_1"
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "K2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "K1A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "BAV199S-Q_2_1"
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "K3A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "A3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "K4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Diode:BAV99S"
 			(pin_names
 				(offset 0.0254)
@@ -2198,7 +2516,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "D*SMA*"
+			(property "ki_fp_filters" "D*SMB* SS34:SMB_ONS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2534,7 +2852,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "DIP*W7.62mm*"
+			(property "ki_fp_filters" "DIP*W7.62mm* PC817-B:DIP762W50P254L650H455Q4B"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2948,6 +3266,223 @@
 						(effects
 							(font
 								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Logic:SN74AHCT1G14DBV"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SN74AHCT1G14DBV"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Logic:SOT-23-5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74ahct1g14.pdf"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "Single Schmitt inverter, 5 V AHCT with TTL-compatible input"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Single Gate NOT Schmitt LVC CMOS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23* SOT?553*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SN74AHCT1G14DBV_0_1"
+				(polyline
+					(pts
+						(xy -7.62 6.35) (xy -7.62 -6.35) (xy 5.08 0) (xy -7.62 6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SN74AHCT1G14DBV_1_1"
+				(polyline
+					(pts
+						(xy -3.81 -1.27) (xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -2.54 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin no_connect line
+					(at -7.62 5.08 180)
+					(length 5.08)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 0 0)
+					(length 7.62)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 -10.16 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 12.7 0 180)
+					(length 7.62)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 10.16 270)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -3549,7 +4084,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOT*23*"
+			(property "ki_fp_filters" "SOT*23* MT3608:SOT95P280X145-6N"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5422,7 +5957,7 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/blob/master/TMC2209/V1.3/Schematic/TMC2209%20V1.3-SCH.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5433,7 +5968,7 @@
 					)
 				)
 			)
-			(property "Description" "https://pricing.snapeda.com/parts/TMC2209%20SILENTSTEPSTICK/Trinamic%20Motion%20Control%20GmbH/view-part?ref=eda Check availability"
+			(property "Description" "BIGTREETECH TMC2209 V1.3 main headers; legacy auxiliary holes left unpopulated"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5542,7 +6077,7 @@
 				(pin output line
 					(at 17.78 -2.54 180)
 					(length 5.08)
-					(name "M1B"
+					(name "B1"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5560,7 +6095,7 @@
 				(pin output line
 					(at 17.78 2.54 180)
 					(length 5.08)
-					(name "M1A"
+					(name "A2"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5578,7 +6113,7 @@
 				(pin output line
 					(at 17.78 0 180)
 					(length 5.08)
-					(name "M2A"
+					(name "A1"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5596,7 +6131,7 @@
 				(pin output line
 					(at 17.78 -5.08 180)
 					(length 5.08)
-					(name "M2B"
+					(name "B2"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5683,10 +6218,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at -17.78 -10.16 0)
 					(length 5.08)
-					(name "PDN"
+					(name "CLK"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5704,7 +6239,7 @@
 				(pin bidirectional line
 					(at -17.78 -12.7 0)
 					(length 5.08)
-					(name "UART"
+					(name "UART_ALT_NC"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5719,10 +6254,10 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at -17.78 -7.62 0)
 					(length 5.08)
-					(name "SPRD"
+					(name "PDN_UART"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5794,7 +6329,7 @@
 				(pin output line
 					(at 17.78 10.16 180)
 					(length 5.08)
-					(name "INDEX"
+					(name "LEGACY_NC17"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5812,7 +6347,7 @@
 				(pin output line
 					(at 17.78 7.62 180)
 					(length 5.08)
-					(name "DIAG"
+					(name "LEGACY_NC18"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5946,6 +6481,29 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 224.79 45.72)
+		(end 285.75 83.82)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "b1c1903d-51bd-4f80-ac87-7706331a0861")
+	)
+	(text "LOW = full speed\nPWM: inverted, 25 kHz"
+		(exclude_from_sim no)
+		(at 189.23 46.99 0)
+		(effects
+			(font
+				(size 1.1 1.1)
+			)
+			(justify left top)
+		)
+		(uuid "215c2b62-7e11-48d8-9e99-aef31fc3b0f0")
+	)
 	(text "I2C"
 		(exclude_from_sim no)
 		(at 82.55 22.86 0)
@@ -6001,6 +6559,17 @@
 		)
 		(uuid "62894413-f848-443e-a044-c1bcfb380507")
 	)
+	(text "Local bypass and ADC filters\nC12/C13: nominal pole 2.07 kHz"
+		(exclude_from_sim no)
+		(at 227.33 76.2 0)
+		(effects
+			(font
+				(size 1.1 1.1)
+			)
+			(justify left top)
+		)
+		(uuid "8f138139-a371-477f-a8ba-2500151957ba")
+	)
 	(text "Teensy"
 		(exclude_from_sim no)
 		(at 23.495 22.86 0)
@@ -6011,6 +6580,17 @@
 			(justify left bottom)
 		)
 		(uuid "c045f705-e0c7-4614-9ba3-bfbf752e9d69")
+	)
+	(text "ASSEMBLY: cut Teensy VIN-VUSB link before using external 5 V + USB.\nVerify VIN-to-VUSB isolation before connecting the computer."
+		(exclude_from_sim no)
+		(at 88.9 113.03 0)
+		(effects
+			(font
+				(size 1.1 1.1)
+			)
+			(justify left top)
+		)
+		(uuid "d5e0652f-4591-4d33-9a58-e12af5fea517")
 	)
 	(text "Buffer"
 		(exclude_from_sim no)
@@ -6090,12 +6670,6 @@
 		(uuid "68cf6e75-3808-41a4-8609-bbe5743fdbf4")
 	)
 	(junction
-		(at 210.82 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6d766ce8-9784-4bad-a250-21249e6b888e")
-	)
-	(junction
 		(at 62.23 167.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6118,12 +6692,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f1bae8ea-fb24-4bd2-b689-8f0bcffded5b")
-	)
-	(junction
-		(at 281.94 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f209ddb7-b9fd-4abe-a249-a9a5f78c12b6")
 	)
 	(no_connect
 		(at 191.77 137.16)
@@ -6184,6 +6752,10 @@
 	(no_connect
 		(at 57.15 53.34)
 		(uuid "78a08375-bdc5-457c-9250-8ba4a2691629")
+	)
+	(no_connect
+		(at 195.58 25.4)
+		(uuid "88390ff5-4668-4a41-98d7-b9679350d3f8")
 	)
 	(no_connect
 		(at 57.15 71.12)
@@ -6311,16 +6883,7 @@
 		)
 		(uuid "0d6c205e-68cb-41ce-82bc-83ca621f934f")
 	)
-	(wire
-		(pts
-			(xy 227.33 154.94) (xy 222.25 154.94)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "0e8a69c3-179d-4dfc-98e4-5774dd3b09fb")
-	)
+	
 	(wire
 		(pts
 			(xy 158.75 93.98) (xy 148.59 93.98)
@@ -6371,16 +6934,6 @@
 		)
 		(uuid "190f70a2-14f2-4531-8304-8392e886c1bf")
 	)
-	(wire
-		(pts
-			(xy 204.47 129.54) (xy 210.82 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a17caa1-02b2-4d82-a11c-87ff2d1d4c3b")
-	)
 	(polyline
 		(pts
 			(xy 20.32 17.78) (xy 74.295 17.78)
@@ -6410,6 +6963,16 @@
 			(type solid)
 		)
 		(uuid "210e8dc1-5208-4eb2-a795-adcca14ee924")
+	)
+	(wire
+		(pts
+			(xy 265.43 66.04) (xy 267.97 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "219c6b49-1ac3-4ef2-ae9c-f43a3a31a722")
 	)
 	(wire
 		(pts
@@ -6531,15 +7094,16 @@
 		)
 		(uuid "36e2c563-057c-43b4-b8d3-3213f911dbab")
 	)
+	
 	(wire
 		(pts
-			(xy 227.33 157.48) (xy 222.25 157.48)
+			(xy 232.41 66.04) (xy 234.95 66.04)
 		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(uuid "3774e4c7-3ddf-4de1-b661-4b57287c0161")
+		(uuid "391ee07f-1368-4fb9-a50e-ff405adbd625")
 	)
 	(wire
 		(pts
@@ -6690,6 +7254,16 @@
 			(type default)
 		)
 		(uuid "52e5721b-c401-4671-a6e6-da181dff059d")
+	)
+	(wire
+		(pts
+			(xy 240.03 53.34) (xy 242.57 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "543446ea-eb0e-4c37-a809-cc8b8f5eb01c")
 	)
 	(wire
 		(pts
@@ -6903,6 +7477,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 66.04) (xy 242.57 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "723b5525-9be7-45cb-b803-63bd7b7eb220")
+	)
+	(wire
+		(pts
 			(xy 158.75 83.82) (xy 148.59 83.82)
 		)
 		(stroke
@@ -6930,6 +7514,16 @@
 			(type solid)
 		)
 		(uuid "73de0919-2813-4c81-aa85-e8d444827d19")
+	)
+	(wire
+		(pts
+			(xy 247.65 27.94) (xy 250.19 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "786c3147-6677-4b9a-b499-6eba5946aec4")
 	)
 	(polyline
 		(pts
@@ -7060,6 +7654,16 @@
 			(type solid)
 		)
 		(uuid "94ef767f-4de0-48b3-b65b-de36e90b60f3")
+	)
+	(wire
+		(pts
+			(xy 240.03 27.94) (xy 242.57 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9616569e-71a2-480c-a657-a459a0d24d33")
 	)
 	(wire
 		(pts
@@ -7221,15 +7825,26 @@
 		)
 		(uuid "a65715fc-37a2-4c46-85ea-9b3cc2324d1e")
 	)
+	
 	(wire
 		(pts
-			(xy 156.21 157.48) (xy 151.13 157.48)
+			(xy 232.41 53.34) (xy 234.95 53.34)
 		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(uuid "a6882bd2-1ebf-4f31-ba07-0deada1839a6")
+		(uuid "aa90859d-13d2-4638-8086-b93f3f5076e4")
+	)
+	(wire
+		(pts
+			(xy 273.05 66.04) (xy 275.59 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac58e015-f531-4fa3-937c-a37a9f377cb5")
 	)
 	(polyline
 		(pts
@@ -7311,16 +7926,7 @@
 		)
 		(uuid "bc7faead-d37f-4892-8305-a427ead4a5d6")
 	)
-	(wire
-		(pts
-			(xy 156.21 154.94) (xy 151.13 154.94)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "bccfd609-7545-4416-a765-d50a3c7f33ee")
-	)
+	
 	(wire
 		(pts
 			(xy 201.93 104.14) (xy 204.47 104.14)
@@ -7330,16 +7936,6 @@
 			(type default)
 		)
 		(uuid "be94a0e0-352c-40c0-ae3f-d696d1ec5153")
-	)
-	(wire
-		(pts
-			(xy 275.59 129.54) (xy 281.94 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c07675e2-5cb6-4868-88be-8fbbf1fe921d")
 	)
 	(polyline
 		(pts
@@ -7360,16 +7956,6 @@
 			(type solid)
 		)
 		(uuid "c51a2985-4091-447c-a2a2-213ab95b82af")
-	)
-	(wire
-		(pts
-			(xy 214.63 129.54) (xy 210.82 129.54)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "c849c89c-0813-4e05-9da6-f5fe973323ae")
 	)
 	(wire
 		(pts
@@ -7701,16 +8287,6 @@
 		)
 		(uuid "fe6c667c-c500-40d8-8228-e2bdc598ecb9")
 	)
-	(wire
-		(pts
-			(xy 285.75 129.54) (xy 281.94 129.54)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "ff0db777-4f7a-4dda-b91d-b01a73ecbc40")
-	)
 	(label "VM_DRV1"
 		(at 208.28 157.48 270)
 		(effects
@@ -7811,6 +8387,16 @@
 		)
 		(uuid "23657c4d-2d97-470a-b0d7-7369280a33a2")
 	)
+	(label "REV_OUT"
+		(at 265.43 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2563391a-c613-4851-bd31-6a3433ce53f6")
+	)
 	(label "SDA"
 		(at 95.25 27.94 0)
 		(effects
@@ -7861,27 +8447,19 @@
 		)
 		(uuid "44ed7b52-d213-4be5-aa3f-30ed513ebc04")
 	)
-	(label "RX1"
-		(at 151.13 157.48 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "47236b55-e210-4321-b613-bb4a5b298882")
-	)
-	(label "TX1"
-		(at 151.13 154.94 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "4a183d0d-0ffa-4c12-80b0-6af63155cd04")
-	)
+	
 	(label "FAN"
+		(at 204.47 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "48e20edd-1e0c-4036-8fa0-534961fef3d2")
+	)
+	
+	(label "FAN_PWM"
 		(at 143.51 48.26 0)
 		(effects
 			(font
@@ -7901,6 +8479,16 @@
 		)
 		(uuid "50cd28f3-b6f4-4c4a-b031-9ce807d5dbe5")
 	)
+	(label "VM_DRV1"
+		(at 210.82 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "51ab2acb-b81e-43e1-b02f-2130d97abde0")
+	)
 	(label "TX1"
 		(at 62.23 81.28 0)
 		(effects
@@ -7911,16 +8499,7 @@
 		)
 		(uuid "5733233b-6c2a-46cb-aab2-3e4446d608db")
 	)
-	(label "RX2"
-		(at 222.25 157.48 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "59260518-5e87-4e09-a07b-64c1ba29fbc2")
-	)
+	
 	(label "SW"
 		(at 26.67 66.04 0)
 		(effects
@@ -7960,6 +8539,16 @@
 			(justify right bottom)
 		)
 		(uuid "62b70d0e-fcb8-4771-bc08-befdafe9d7c5")
+	)
+	(label "VM_DRV2"
+		(at 281.94 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6321c7f6-29b3-467d-bf64-8cad67d5640d")
 	)
 	(label "NET_REVPOL"
 		(at 38.1 137.16 270)
@@ -8201,6 +8790,16 @@
 		)
 		(uuid "b5e078e7-ec7a-42ed-8640-67c5d4c64ae8")
 	)
+	(label "FWD_OUT"
+		(at 232.41 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b6490b41-b44d-494f-9071-3eabb668a776")
+	)
 	(label "DIR2"
 		(at 62.23 76.2 0)
 		(effects
@@ -8271,16 +8870,7 @@
 		)
 		(uuid "da520c34-7a76-4c04-b9f2-9d9e3778b180")
 	)
-	(label "TX2"
-		(at 222.25 154.94 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "ddd9a717-6a82-4ff3-854c-5e640c1d395f")
-	)
+	
 	(label "SW_NODE"
 		(at 63.5 167.64 180)
 		(effects
@@ -8291,7 +8881,7 @@
 		)
 		(uuid "e890e003-8067-4c2f-adb0-d85237dbe3c2")
 	)
-	(label "FAN_CTRL"
+	(label "FAN_TACH"
 		(at 138.43 50.8 0)
 		(effects
 			(font
@@ -8321,6 +8911,16 @@
 		)
 		(uuid "ee39360e-387b-4ba3-a34b-96b4f6e50e8c")
 	)
+	(label "FAN"
+		(at 187.96 30.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "efadc766-b07a-4278-824c-7f9eb549bdc2")
+	)
 	(label "FWD_BUF"
 		(at 204.47 85.09 0)
 		(effects
@@ -8330,6 +8930,16 @@
 			(justify left bottom)
 		)
 		(uuid "f02d8bf6-bea7-4293-904e-b287ab2aa355")
+	)
+	(label "FAN_PWM"
+		(at 215.9 30.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f4803a69-2b2b-479a-8563-5534727c9f86")
 	)
 	(label "FWD_OUT"
 		(at 148.59 83.82 0)
@@ -8406,7 +9016,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 133.35 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -8456,7 +9066,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B3B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:3.3V")
 		(at 158.75 50.8 270)
@@ -8832,6 +9444,84 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 88.9 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0a1ad485-403b-41b2-85f9-1c10a214f799")
+		(property "Reference" "#SUPPLY62"
+			(at 88.9 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6df4fb22-4517-4b28-9fec-6ef1b7b5970b")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY62")
 					(unit 1)
 				)
 			)
@@ -9226,6 +9916,84 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 198.12 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "147f290f-45b8-48f6-aa5d-fcc273469c58")
+		(property "Reference" "#SUPPLY67"
+			(at 198.12 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 198.12 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 198.12 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 198.12 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3e7566e7-037a-4841-b66e-517a53870b7f")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY67")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 242.57 105.41 0)
 		(unit 1)
 		(body_style 1)
@@ -9503,7 +10271,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.sparkfun.com/screw-terminals-2-54mm-pitch-2-pin.html"
 			(at 30.48 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -9550,7 +10318,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "SparkFun" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "PRT-10571" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 270.51 102.87 0)
@@ -9596,7 +10366,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.sparkfun.com/screw-terminals-2-54mm-pitch-2-pin.html"
 			(at 270.51 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -9643,7 +10413,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "SparkFun" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "PRT-10571" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:3.3V")
 		(at 87.63 48.26 90)
@@ -9743,7 +10515,7 @@
 				)
 			)
 		)
-		(property "Value" "2.7k"
+		(property "Value" "3.3k"
 			(at 143.51 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9764,7 +10536,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C17530.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C26010.pdf"
 			(at 143.51 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -9786,7 +10558,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C17530"
+		(property "LCSC Part" "C26010"
 			(at 143.51 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -9797,7 +10569,7 @@
 				)
 			)
 		)
-		(property "MPN" "0805W8F2701T5E"
+		(property "MPN" "0805W8F3301T5E"
 			(at 143.51 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -9914,7 +10686,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 227.33 152.4 270)
+		(at 227.330000 154.940000 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9924,7 +10696,7 @@
 		(dnp no)
 		(uuid "263da7c5-fdbf-408b-b2ce-0e072439c046")
 		(property "Reference" "#SUPPLY38"
-			(at 227.33 152.4 0)
+			(at 227.330000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9935,7 +10707,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 222.504 150.622 90)
+			(at 222.504000 153.162000 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9946,7 +10718,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 227.33 152.4 0)
+			(at 227.330000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9957,7 +10729,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 227.33 152.4 0)
+			(at 227.330000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9968,7 +10740,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 227.33 152.4 0)
+			(at 227.330000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9992,7 +10764,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:5V")
-		(at 285.75 129.54 270)
+		(at 275.59 129.54 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10002,7 +10774,7 @@
 		(dnp no)
 		(uuid "28739203-2818-4ca6-b5e9-a1bb1a8f8706")
 		(property "Reference" "#SUPPLY5"
-			(at 285.75 129.54 0)
+			(at 275.59 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10013,7 +10785,7 @@
 			)
 		)
 		(property "Value" "5V"
-			(at 290.83 129.54 0)
+			(at 280.67 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10024,7 +10796,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 285.75 129.54 0)
+			(at 275.59 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10035,7 +10807,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 285.75 129.54 0)
+			(at 275.59 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10046,7 +10818,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 285.75 129.54 0)
+			(at 275.59 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10856,7 +11628,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.pjrc.com/store/teensy41.html"
 			(at 34.29 22.86 0)
 			(hide yes)
 			(show_name no)
@@ -11041,6 +11813,122 @@
 				)
 			)
 		)
+	 (property "Manufacturer" "PJRC" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "TEENSY41" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
+	(symbol
+		(lib_id "Capacitor:C-USCHIP-0805(2012-METRIC)")
+		(at 237.49 66.04 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "40223b50-7d43-4ada-a563-9b0db9b7804f")
+		(property "Reference" "C12"
+			(at 237.49 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "100n"
+			(at 237.49 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" "Capacitor:CAPC2012X110"
+			(at 237.49 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C49678.pdf"
+			(at 237.49 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C49678"
+			(at 237.49 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB104"
+			(at 237.49 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 237.49 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d161b5c7-b228-4211-aa02-de6b1d563cdf")
+		)
+		(pin "1"
+			(uuid "048f6896-f6ca-4054-8195-0b0d411008e3")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:5V")
@@ -11115,6 +12003,120 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor:C-USCHIP-0805(2012-METRIC)")
+		(at 237.49 53.34 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "414eb35f-64a4-4db4-b657-2ef17f81cb58")
+		(property "Reference" "C11"
+			(at 237.49 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "100n"
+			(at 237.49 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" "Capacitor:CAPC2012X110"
+			(at 237.49 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C49678.pdf"
+			(at 237.49 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C49678"
+			(at 237.49 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB104"
+			(at 237.49 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 237.49 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "af90cb53-fe04-43e1-bc02-0b7a93e8f896")
+		)
+		(pin "1"
+			(uuid "e0bed020-5e3a-4731-9cbf-488cc9834bb5")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -11699,7 +12701,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:BAV99S")
+		(lib_id "Diode:BAV199S-Q")
 		(at 201.93 80.01 0)
 		(unit 1)
 		(body_style 1)
@@ -11720,7 +12722,7 @@
 				)
 			)
 		)
-		(property "Value" "BAV99S"
+		(property "Value" "BAV199S-Q"
 			(at 203.2 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11741,7 +12743,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV199S-Q.pdf"
 			(at 201.93 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -11752,7 +12754,40 @@
 				)
 			)
 		)
-		(property "Description" "High-speed switching diodes, dual series, SOT-363"
+		(property "Description" "Low-leakage quadruple diode, two series pairs, SOT363-3 / SC-88"
+			(at 201.93 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BAV199S-QZ"
+			(at 201.93 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 201.93 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C7507590"
 			(at 201.93 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -11785,6 +12820,84 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 214.63 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "538b506f-2d84-4009-b6cd-a0671c3bf9e3")
+		(property "Reference" "#SUPPLY71"
+			(at 214.63 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 214.63 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 214.63 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 214.63 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ae1bbded-e6cb-4eba-b75d-f9a141db3d74")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY71")
 					(unit 1)
 				)
 			)
@@ -11869,6 +12982,84 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:12V")
+		(at 232.41 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5420ecaa-c1d7-4c7a-baac-17b226477369")
+		(property "Reference" "#SUPPLY64"
+			(at 232.41 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12V"
+			(at 232.41 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95bfcf77-887f-42f7-895e-59c2f99c7229")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY64")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Resistor:R-USCHIP-1206(3216-METRIC)")
 		(at 161.29 104.14 180)
 		(unit 1)
@@ -11889,7 +13080,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "100M"
 			(at 161.29 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11910,7 +13101,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C149504.pdf"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C137480.html"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11921,7 +13112,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "100 Mohm 5% 0805 high-value input bias resistor"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11932,7 +13123,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C149504"
+		(property "LCSC Part" "C137480"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11943,7 +13134,7 @@
 				)
 			)
 		)
-		(property "MPN" "0805W8F1003T5E"
+		(property "MPN" "RC0805JR-07100ML"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11954,7 +13145,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+		(property "Manufacturer" "YAGEO"
 			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -12360,7 +13551,7 @@
 				(justify top)
 			)
 		)
-		(property "Footprint" "Capacitor:CAPPRD508W65D1000H1100B"
+		(property "Footprint" "Capacitor:CP_Radial_D5.0mm_P5.08mm_Formed"
 			(at 281.94 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -12371,7 +13562,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1259.pdf"
 			(at 281.94 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -12401,6 +13592,28 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EEU-FR1C101B"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Panasonic"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
 				)
 			)
 		)
@@ -12631,7 +13844,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "100M"
 			(at 161.29 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12652,7 +13865,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C149504.pdf"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C137480.html"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12663,7 +13876,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "100 Mohm 5% 0805 high-value input bias resistor"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12674,7 +13887,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C149504"
+		(property "LCSC Part" "C137480"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12685,7 +13898,7 @@
 				)
 			)
 		)
-		(property "MPN" "0805W8F1003T5E"
+		(property "MPN" "RC0805JR-07100ML"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12696,7 +13909,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+		(property "Manufacturer" "YAGEO"
 			(at 161.29 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12960,7 +14173,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 267.97 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -13013,7 +14226,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B4B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "Isolator:PC817")
 		(at 250.19 102.87 0)
@@ -13196,6 +14411,84 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 242.57 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72b67e49-70f3-47a7-9158-2a3013fc6bec")
+		(property "Reference" "#SUPPLY65"
+			(at 242.57 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 242.57 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 242.57 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1a7abe9c-43b7-4a4c-8876-42cc86f99d33")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY65")
 					(unit 1)
 				)
 			)
@@ -13782,6 +15075,84 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 250.19 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "81e14bf7-07cd-474e-a0ed-effd243b50e1")
+		(property "Reference" "#SUPPLY69"
+			(at 250.19 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 250.19 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 250.19 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 250.19 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f9b3f9c-2722-416e-8f76-a437f31452bf")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY69")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Resistor:R-USCHIP-1206(3216-METRIC)")
 		(at 92.71 58.42 180)
 		(unit 1)
@@ -13888,6 +15259,120 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor:C-USCHIP-0805(2012-METRIC)")
+		(at 245.11 27.94 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "85b14a6f-164c-4335-9a2c-e82e00c25be3")
+		(property "Reference" "C14"
+			(at 245.11 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "100n"
+			(at 245.11 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" "Capacitor:CAPC2012X110"
+			(at 245.11 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C49678.pdf"
+			(at 245.11 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 245.11 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C49678"
+			(at 245.11 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB104"
+			(at 245.11 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 245.11 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b7aebad1-8320-49bd-b9bc-f3696b441d8a")
+		)
+		(pin "1"
+			(uuid "bf39f0d9-80fa-4f5a-b33e-eb4effe09aa1")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -14104,7 +15589,7 @@
 				)
 			)
 		)
-		(property "Value" "2.7k"
+		(property "Value" "3.3k"
 			(at 143.51 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14125,7 +15610,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C17530.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C26010.pdf"
 			(at 143.51 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -14147,7 +15632,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C17530"
+		(property "LCSC Part" "C26010"
 			(at 143.51 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -14158,7 +15643,7 @@
 				)
 			)
 		)
-		(property "MPN" "0805W8F2701T5E"
+		(property "MPN" "0805W8F3301T5E"
 			(at 143.51 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -14196,6 +15681,84 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:5V")
+		(at 240.03 27.94 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8882ff0f-b8aa-401e-8bec-82b9a0f8e41f")
+		(property "Reference" "#SUPPLY70"
+			(at 240.03 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5V"
+			(at 245.11 27.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 240.03 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "75b4fb0b-e2fa-47b4-87e7-a9856e299913")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY70")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "TMC2209_SILENTSTEPSTICK:TMC2209_SILENTSTEPSTICK")
 		(at 245.11 144.78 0)
 		(unit 1)
@@ -14217,7 +15780,7 @@
 				(justify left top)
 			)
 		)
-		(property "Value" "TMC2209_SILENTSTEPSTICK"
+		(property "Value" "BTT_TMC2209_V1.3"
 			(at 232.41 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14239,7 +15802,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2209/V1.3"
 			(at 245.11 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -14334,7 +15897,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "BIGTREETECH" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "TMC2209 V1.3" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "TMC2209_SILENTSTEPSTICK:TMC2209_SILENTSTEPSTICK")
 		(at 173.99 144.78 0)
@@ -14357,7 +15922,7 @@
 				(justify left top)
 			)
 		)
-		(property "Value" "TMC2209_SILENTSTEPSTICK"
+		(property "Value" "BTT_TMC2209_V1.3"
 			(at 161.29 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14379,7 +15944,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2209/V1.3"
 			(at 173.99 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -14474,6 +16039,122 @@
 				)
 			)
 		)
+	 (property "Manufacturer" "BIGTREETECH" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "TMC2209 V1.3" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
+	(symbol
+		(lib_id "Resistor:R-USCHIP-0805(2012-METRIC)")
+		(at 88.9 184.15 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8ff8aa39-c333-4500-beef-a6d8e95e6f43")
+		(property "Reference" "R16"
+			(at 87.4014 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 92.202 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 88.9 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17520.pdf"
+			(at 88.9 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17520"
+			(at 88.9 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0805W8F2201T5E"
+			(at 88.9 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 88.9 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f6cb9cce-cc3c-4467-8da2-c49da446836a")
+		)
+		(pin "1"
+			(uuid "c55992b2-11cd-49e6-a51b-7f0ee7874f5c")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
@@ -14548,6 +16229,204 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 275.59 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "95d2497c-3f0b-42cf-8046-0b6ec342cd92")
+		(property "Reference" "#SUPPLY66"
+			(at 275.59 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 275.59 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 275.59 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 275.59 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc747f83-c22b-480c-b1d7-4c1c799e35e6")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Logic:SN74AHCT1G14DBV")
+		(at 203.2 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "96bfb70e-78e3-448b-9bc2-a836e3a338e4")
+		(property "Reference" "U2"
+			(at 207.01 21.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74AHCT1G14"
+			(at 208.28 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Logic:SOT-23-5"
+			(at 203.2 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74ahct1g14.pdf"
+			(at 203.2 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 203.2 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SN74AHCT1G14DBVR"
+			(at 203.2 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C55250"
+			(at 203.2 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 203.2 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "80c0f60e-52b0-4224-bdb2-79bb31750be8")
+		)
+		(pin "2"
+			(uuid "c51943df-0050-4ddd-94c8-9e63b00c9740")
+		)
+		(pin "3"
+			(uuid "31adad0f-d4d4-49f0-89e2-b709fa3782d9")
+		)
+		(pin "4"
+			(uuid "7ef2bdab-cf96-400a-9f04-7e719527823f")
+		)
+		(pin "5"
+			(uuid "04af535c-2c1d-40e2-844b-ebbdef2fbfa0")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -14868,7 +16747,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 158.75 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -14924,7 +16803,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B5B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "Resistor:R-USCHIP-0805(2012-METRIC)")
 		(at 76.2 172.72 90)
@@ -15432,6 +17313,84 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 242.57 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ad2c5151-4fa1-454c-81bb-9d3c299ff851")
+		(property "Reference" "#SUPPLY63"
+			(at 242.57 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 242.57 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 242.57 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a83c2aa9-96ed-4004-80d4-d450c1cf759a")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY63")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 138.43 35.56 0)
 		(unit 1)
 		(body_style 1)
@@ -15822,7 +17781,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 156.21 152.4 270)
+		(at 156.210000 154.940000 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15832,7 +17791,7 @@
 		(dnp no)
 		(uuid "b41b3f7e-a735-4e8f-a1c5-df2c2a073fbe")
 		(property "Reference" "#SUPPLY30"
-			(at 156.21 152.4 0)
+			(at 156.210000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15843,7 +17802,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 151.384 150.622 90)
+			(at 151.384000 153.162000 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15854,7 +17813,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 152.4 0)
+			(at 156.210000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15865,7 +17824,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 152.4 0)
+			(at 156.210000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15876,7 +17835,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 156.21 152.4 0)
+			(at 156.210000 154.940000 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15893,6 +17852,84 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:12V")
+		(at 88.9 179.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b8e8f7d5-cbb5-4a09-87d1-59c57d4264f2")
+		(property "Reference" "#SUPPLY61"
+			(at 88.9 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12V"
+			(at 88.9 173.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7953eb78-895d-45d5-973b-246a7f49bdb2")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY61")
 					(unit 1)
 				)
 			)
@@ -15943,7 +17980,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 85.09 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -15996,7 +18033,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B4B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 35.56 130.81 90)
@@ -16120,7 +18159,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 133.35 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16173,7 +18212,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B4B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:12V")
 		(at 97.79 180.34 90)
@@ -16443,6 +18484,118 @@
 		)
 	)
 	(symbol
+		(lib_id "Resistor:R-USCHIP-0805(2012-METRIC)")
+		(at 209.55 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c53166bf-e8e2-412d-a9c9-56bd5e43a31d")
+		(property "Reference" "R17"
+			(at 209.55 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 209.55 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+			)
+		)
+		(property "Footprint" "Resistor:RESC2012X65"
+			(at 209.55 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C149504.pdf"
+			(at 209.55 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 209.55 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C149504"
+			(at 209.55 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1003T5E"
+			(at 209.55 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 209.55 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4355a459-e93e-4903-bdbf-a1aee08f3a21")
+		)
+		(pin "2"
+			(uuid "b3fdaa3d-d134-4608-9408-f0010296981f")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:3.3V")
 		(at 262.89 127 0)
 		(unit 1)
@@ -16678,7 +18831,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 106.68 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -16725,7 +18878,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B2B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "Capacitor:C-USCHIP-0805(2012-METRIC)")
 		(at 281.94 134.62 90)
@@ -17308,6 +19463,198 @@
 			(project "impedance_matcher"
 				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
 					(reference "#SUPPLY25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Capacitor:C-USCHIP-0805(2012-METRIC)")
+		(at 270.51 66.04 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d373c25c-0bb9-4860-a99a-adc2b8567f7a")
+		(property "Reference" "C13"
+			(at 270.51 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "100n"
+			(at 270.51 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" "Capacitor:CAPC2012X110"
+			(at 270.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C49678.pdf"
+			(at 270.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 270.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C49678"
+			(at 270.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB104"
+			(at 270.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 270.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "3491cf00-a2de-4ecb-97b2-46e9a9d70032")
+		)
+		(pin "1"
+			(uuid "eec55876-4ad7-43a4-9928-19e62ecae187")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:5V")
+		(at 198.12 20.32 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d4692fe7-75e4-47c4-a4b4-60fda8349d61")
+		(property "Reference" "#SUPPLY68"
+			(at 198.12 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5V"
+			(at 203.2 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify top)
+			)
+		)
+		(property "Footprint" ""
+			(at 198.12 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 198.12 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "789461ed-622e-44f4-82ec-515b2a4b4659")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "#SUPPLY68")
 					(unit 1)
 				)
 			)
@@ -18042,7 +20389,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 196.85 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -18095,7 +20442,9 @@
 				)
 			)
 		)
-	)
+	 (property "Manufacturer" "JST" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+ (property "MPN" "B4B-PH-K-S" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 106.68 147.32 0)
@@ -18175,7 +20524,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:BAV99S")
+		(lib_id "Diode:BAV199S-Q")
 		(at 201.93 99.06 0)
 		(unit 2)
 		(body_style 1)
@@ -18196,7 +20545,7 @@
 				)
 			)
 		)
-		(property "Value" "BAV99S"
+		(property "Value" "BAV199S-Q"
 			(at 203.2 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18217,7 +20566,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV199S-Q.pdf"
 			(at 201.93 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -18228,7 +20577,40 @@
 				)
 			)
 		)
-		(property "Description" "High-speed switching diodes, dual series, SOT-363"
+		(property "Description" "Low-leakage quadruple diode, two series pairs, SOT363-3 / SC-88"
+			(at 201.93 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BAV199S-QZ"
+			(at 201.93 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 201.93 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C7507590"
 			(at 201.93 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -18240,22 +20622,22 @@
 			)
 		)
 		(pin "2"
-			(uuid "7f7d5e11-326d-4af6-a00b-2742adc506a8")
+			(uuid "7f7d5e11-326d-4af6-a00b-2742adc506a9")
 		)
 		(pin "5"
-			(uuid "182baa49-1120-46f1-a76c-93ceb083353f")
+			(uuid "182baa49-1120-46f1-a76c-93ceb0833540")
 		)
 		(pin "1"
-			(uuid "03f65374-102c-4985-bac7-fb4e52c74d84")
+			(uuid "03f65374-102c-4985-bac7-fb4e52c74d85")
 		)
 		(pin "6"
-			(uuid "3edd2fa2-3f27-461d-b574-52fda2b69f76")
+			(uuid "3edd2fa2-3f27-461d-b574-52fda2b69f77")
 		)
 		(pin "4"
-			(uuid "a63ab7c0-d275-43f1-8da4-ff8c2a584bcf")
+			(uuid "a63ab7c0-d275-43f1-8da4-ff8c2a584bd0")
 		)
 		(pin "3"
-			(uuid "756ea529-6070-4c4f-9ee1-5b61cb163e6f")
+			(uuid "756ea529-6070-4c4f-9ee1-5b61cb163e70")
 		)
 		(instances
 			(project "impedance_matcher"
@@ -18346,7 +20728,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:5V")
-		(at 214.63 129.54 270)
+		(at 204.47 129.54 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18356,7 +20738,7 @@
 		(dnp no)
 		(uuid "ef3f3f9e-a814-4394-af17-035bd5f9c14b")
 		(property "Reference" "#SUPPLY4"
-			(at 214.63 129.54 0)
+			(at 204.47 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18367,7 +20749,7 @@
 			)
 		)
 		(property "Value" "5V"
-			(at 219.71 129.54 0)
+			(at 209.55 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18378,7 +20760,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 214.63 129.54 0)
+			(at 204.47 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18389,7 +20771,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 214.63 129.54 0)
+			(at 204.47 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18400,7 +20782,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 214.63 129.54 0)
+			(at 204.47 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18759,7 +21141,7 @@
 				(justify top)
 			)
 		)
-		(property "Footprint" "Capacitor:CAPPRD508W65D1000H1100B"
+		(property "Footprint" "Capacitor:CP_Radial_D5.0mm_P5.08mm_Formed"
 			(at 210.82 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -18770,7 +21152,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1259.pdf"
 			(at 210.82 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -18803,6 +21185,28 @@
 				)
 			)
 		)
+		(property "MPN" "EEU-FR1C101B"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Panasonic"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "12130f9a-17db-4da3-b31f-18cf5715c261")
 		)
@@ -18824,4 +21228,240 @@
 		)
 	)
 	(embedded_fonts no)
+
+(symbol
+		(lib_id "Resistor:R-USCHIP-0805(2012-METRIC)")
+		(at 152.400000 165.100000 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d9567691-7bd6-439c-b1ed-cfdee6b28393")
+		(property "Reference" "R18"
+			(at 152.400000 162.560000 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 152.400000 167.640000 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+			)
+		)
+		(property "Footprint" "Resistor:RESC2012X65"
+			(at 152.400000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17513.pdf"
+			(at 152.400000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 152.400000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17513"
+			(at 152.400000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1001T5E"
+			(at 152.400000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 152.400000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9c59e2ea-18db-4a52-8bfd-5913a20fa17e")
+		)
+		(pin "2"
+			(uuid "97425e74-ead3-4822-adce-1749d2b7b0a5")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+(label "RX1" (at 151.13 152.40 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "e97105b3-8a50-497e-b8ee-31be1a20594d"))
+(label "TX1" (at 147.320000 165.100000 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "f848c63d-0f80-4c98-b5a7-39bf94fbffc9"))
+(label "RX1" (at 157.480000 165.100000 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "da9c58a7-b025-4ef0-87a7-c7dd4de02d1c"))
+(wire (pts (xy 156.21 152.4) (xy 151.13 152.4)) (stroke (width 0.1524) (type solid)) (uuid "38c3f541-94a5-4de9-9384-6344e3dc2c64"))
+(no_connect (at 156.21 157.48) (uuid "7208c830-2ff0-4452-a970-d86b432fd6a6"))
+(symbol
+		(lib_id "Resistor:R-USCHIP-0805(2012-METRIC)")
+		(at 223.520000 165.100000 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "93d496b1-3503-4b04-90df-1b5555379589")
+		(property "Reference" "R19"
+			(at 223.520000 162.560000 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 223.520000 167.640000 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.1 1.1)
+				)
+			)
+		)
+		(property "Footprint" "Resistor:RESC2012X65"
+			(at 223.520000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C17513.pdf"
+			(at 223.520000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 223.520000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C17513"
+			(at 223.520000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0805W8F1001T5E"
+			(at 223.520000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 223.520000 165.100000 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "07ccc583-9a23-4fd7-9b4d-fceb8ed686a4")
+		)
+		(pin "2"
+			(uuid "5353dec4-37d5-4600-9104-b56c4c00da55")
+		)
+		(instances
+			(project "impedance_matcher"
+				(path "/05d78882-7448-4c56-96b8-6921af7027e2"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+(label "RX2" (at 222.25 152.40 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "6b9c7145-b0f8-4ce3-81c0-8f7b63eab261"))
+(label "TX2" (at 218.440000 165.100000 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "5c99b9af-3fa4-4960-bbbe-734f88fa6612"))
+(label "RX2" (at 228.600000 165.100000 0) (effects (font (size 1.1 1.1)) (justify left bottom)) (uuid "58617a45-667f-4599-9496-40fd1697623a"))
+(wire (pts (xy 227.33 152.4) (xy 222.25 152.4)) (stroke (width 0.1524) (type solid)) (uuid "76016ae2-bfe9-4bc6-92ad-172d2616848c"))
+(no_connect (at 227.33 157.48) (uuid "389b8469-e8df-45f4-849d-fdb08ba0123a"))
+(text "BTT V1.3 UART: R18/R19 = 1k TX isolation.\nRX to PDN_UART; alternate TX header NC.\nMS1=LOW / MS2=HIGH: 64 steps, UART address 2.\nStandalone: UART GPIOs INPUT. Power-cycle after UART.\nLeave legacy auxiliary holes 17/18 empty." (at 223.52 36.83 0) (effects (font (size 1 1)) (justify left top)) (uuid "1d1a5a48-38c3-4d33-9c8a-615d7de4d4f6"))
 )

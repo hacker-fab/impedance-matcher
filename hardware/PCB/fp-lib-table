@@ -16,4 +16,5 @@
 	(lib (name "TEENSY_4") (type "KiCad") (uri "${KIPRJMOD}/footprints/TEENSY_4.pretty") (options "") (descr "Project footprint library"))
 	(lib (name "TLV2372IP") (type "KiCad") (uri "${KIPRJMOD}/footprints/TLV2372IP.pretty") (options "") (descr "Project footprint library"))
 	(lib (name "TMC2209_SILENTSTEPSTICK") (type "KiCad") (uri "${KIPRJMOD}/footprints/TMC2209_SILENTSTEPSTICK.pretty") (options "") (descr "Project footprint library"))
+	(lib (name "Logic") (type "KiCad") (uri "${KIPRJMOD}/footprints/Logic.pretty") (options "") (descr "Project fan interface logic"))
 )

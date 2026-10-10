@@ -54,7 +54,7 @@
 		)
 	)
 	(property ki_fp_filters "D*SMA*")
-	(attr through_hole)
+	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
 		(start -4.0767 -0.635)
@@ -601,4 +601,13 @@
 		)
 	)
 	(embedded_fonts no)
-)
+
+		(fp_rect
+			(start -4.7000 -2.2500)
+			(end 3.0500 2.2500)
+			(stroke (width 0.05) (type solid))
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "bc9d1c89-c1b2-4454-b98e-7952bc7ff4dd")
+		)
+	)
