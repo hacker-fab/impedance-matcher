@@ -230,7 +230,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "M1B_3")
+			(pinfunction "B1")
 			(pintype "output")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -243,7 +243,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "M1A_4")
+			(pinfunction "A2")
 			(pintype "output")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -256,7 +256,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "M2A_5")
+			(pinfunction "A1")
 			(pintype "output")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -269,7 +269,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "M2B_6")
+			(pinfunction "B2")
 			(pintype "output")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -334,8 +334,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "PDN_11")
-			(pintype "bidirectional")
+			(pinfunction "CLK")
+			(pintype "input")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
 			(uuid "df8ef4b7-c58f-4c86-b914-f2036984e225")
@@ -347,7 +347,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "UART_12")
+			(pinfunction "UART_ALT_NC")
 			(pintype "bidirectional")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -360,8 +360,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "SPRD_13")
-			(pintype "input")
+			(pinfunction "PDN_UART")
+			(pintype "bidirectional")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
 			(uuid "dc72b136-8c4d-422d-8765-2f14acd0086d")
@@ -412,7 +412,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "INDEX_17")
+			(pinfunction "LEGACY_NC17")
 			(pintype "output+no_connect")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)
@@ -425,7 +425,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			
-			(pinfunction "DIAG_18")
+			(pinfunction "LEGACY_NC18")
 			(pintype "output+no_connect")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 0)

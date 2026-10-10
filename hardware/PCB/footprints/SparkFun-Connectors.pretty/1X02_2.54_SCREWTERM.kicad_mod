@@ -52,9 +52,9 @@
 			)
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
-		
-		
-		
+
+
+
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -133,7 +133,7 @@
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			
+
 			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -146,7 +146,7 @@
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			
+
 			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -154,4 +154,13 @@
 			(uuid "1f1f0092-49a7-40f4-8d68-d234804e9512")
 		)
 		(embedded_fonts no)
+
+		(fp_rect
+			(start -2.1500 -3.9000)
+			(end 4.6500 3.9000)
+			(stroke (width 0.05) (type solid))
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "6f25be30-3777-4b69-b1a4-930af756a6d5")
+		)
 	)

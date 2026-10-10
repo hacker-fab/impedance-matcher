@@ -20,13 +20,13 @@ BBOOST IN18 0 V = 0.6 * (1 + 62000/2200)
 
 * Linear reg 18V -> 12V feeds the analog rail node V12.
 XREG IN18 V12 0 L7812
-* Light housekeeping load on the 12V rail so it is not floating.
-RRAIL V12 0 1k
+* R16 minimum-load resistor on the actual 12V rail.
+RRAIL V12 0 2.2k
 
 * --- SWR buffer running off the resolved 12V rail ---
 VFWD FWD_IN 0 DC 8
 XU1A FWD_IN BUF_OUT BUF_OUT V12 0 OPAMP_TLV2372
-R10  BUF_OUT ADC 2.7k
+R10  BUF_OUT ADC 3.3k
 R13  ADC 0 1k
 
 .control

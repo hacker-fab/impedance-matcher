@@ -1,0 +1,142 @@
+(footprint "CP_Radial_D5.0mm_P5.08mm_Formed"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Panasonic EEU-FR1C101B: 100uF 16V, D5 x H11 mm, formed 5.0 mm leads. Existing 5.08 mm pad pitch retained; 0.85 mm holes accept 0.5 mm leads.")
+	(property "Reference" "REF**"
+		(at 4.195 4.552 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "6c7a86f3-b06d-4f93-831f-03ab1cdba0e6")
+		(effects
+			(font
+				(size 0.57912 0.57912)
+				(thickness 0.23368)
+			)
+		)
+	)
+	(property "Value" "CP_Radial_D5.0mm_P5.08mm_Formed"
+		(at 0 6.35 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "76088d9f-19bf-41fe-add1-68285b530987")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "54293222-b9b3-4a89-a4fa-cab9c830d13b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4520a75d-0514-4978-b7d6-7cbf695fbaf6")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.875 -2.5)
+		(end -2.125 -2.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "be056b55-3b10-4d89-a36e-5950d78972b4")
+	)
+	(fp_line
+		(start -2.5 -2.875)
+		(end -2.5 -2.125)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bea242f2-149a-4d13-b9de-4b5d85cb617d")
+	)
+	(fp_arc
+		(start -2 -1.5)
+		(mid 0 -2.5)
+		(end 2 -1.5)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "663d4b38-2c9f-4cde-9cdb-bc91147f1f96")
+	)
+	(fp_arc
+		(start 2 1.5)
+		(mid 0 2.5)
+		(end -2 1.5)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "f4f8b1b2-8d0a-4085-b9c6-c3447d0ecda0")
+	)
+	(fp_rect
+		(start -3.8 -3.1)
+		(end 3.8 3.1)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "bfb14855-0b56-495f-9482-23b98b8e5dd1")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 2.5 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "195ade68-078f-41d0-9f92-d0c8fed9f1f9")
+	)
+	(pad "1" thru_hole circle
+		(at -2.54 0)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "2b09f89a-3fe3-4f27-a485-163fd2987bc9")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 0)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "eca0fe46-46da-4fd4-a814-39330752a4a8")
+	)
+	(embedded_fonts no)
+)

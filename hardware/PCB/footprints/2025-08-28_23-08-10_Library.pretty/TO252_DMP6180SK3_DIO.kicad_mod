@@ -53,7 +53,7 @@
 			)
 		)
 	)
-	(attr through_hole)
+	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
 		(start -4.6863 4.5803)
@@ -315,4 +315,13 @@
 		(uuid "4ab837a6-aeef-49a6-ae43-191160ff9756")
 	)
 	(embedded_fonts no)
-)
+
+		(fp_rect
+			(start -3.8000 -6.1000)
+			(end 3.8000 6.1000)
+			(stroke (width 0.05) (type solid))
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "a6a2b3c6-bd89-4a27-935f-5a330c50fd69")
+		)
+	)

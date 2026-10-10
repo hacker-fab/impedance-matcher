@@ -41,7 +41,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/blob/master/TMC2209/V1.3/Schematic/TMC2209%20V1.3-SCH.pdf"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52,7 +52,7 @@
 				)
 			)
 		)
-		(property "Description" "https://pricing.snapeda.com/parts/TMC2209%20SILENTSTEPSTICK/Trinamic%20Motion%20Control%20GmbH/view-part?ref=eda Check availability"
+		(property "Description" "BIGTREETECH TMC2209 V1.3 main headers; legacy auxiliary holes left unpopulated"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -161,7 +161,7 @@
 			(pin output line
 				(at 17.78 -2.54 180)
 				(length 5.08)
-				(name "M1B"
+				(name "B1"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -179,7 +179,7 @@
 			(pin output line
 				(at 17.78 2.54 180)
 				(length 5.08)
-				(name "M1A"
+				(name "A2"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -197,7 +197,7 @@
 			(pin output line
 				(at 17.78 0 180)
 				(length 5.08)
-				(name "M2A"
+				(name "A1"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -215,7 +215,7 @@
 			(pin output line
 				(at 17.78 -5.08 180)
 				(length 5.08)
-				(name "M2B"
+				(name "B2"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -302,10 +302,10 @@
 					)
 				)
 			)
-			(pin bidirectional line
+			(pin input line
 				(at -17.78 -10.16 0)
 				(length 5.08)
-				(name "PDN"
+				(name "CLK"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -323,7 +323,7 @@
 			(pin bidirectional line
 				(at -17.78 -12.7 0)
 				(length 5.08)
-				(name "UART"
+				(name "UART_ALT_NC"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -338,10 +338,10 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -17.78 -7.62 0)
 				(length 5.08)
-				(name "SPRD"
+				(name "PDN_UART"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -413,7 +413,7 @@
 			(pin output line
 				(at 17.78 10.16 180)
 				(length 5.08)
-				(name "INDEX"
+				(name "LEGACY_NC17"
 					(effects
 						(font
 							(size 1.524 1.524)
@@ -431,7 +431,7 @@
 			(pin output line
 				(at 17.78 7.62 180)
 				(length 5.08)
-				(name "DIAG"
+				(name "LEGACY_NC18"
 					(effects
 						(font
 							(size 1.524 1.524)

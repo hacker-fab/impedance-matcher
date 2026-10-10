@@ -51,10 +51,10 @@
 				)
 			)
 		)
-		
-		
-		
-		(attr through_hole)
+
+
+
+		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -0.7 -1.5701)
@@ -151,7 +151,7 @@
 			(at -1.0247 -0.95)
 			(size 1.1821 0.6122)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			
+
 			(pinfunction "1_1")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -162,7 +162,7 @@
 			(at -1.0247 0.95)
 			(size 1.1821 0.6122)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			
+
 			(pinfunction "2_2")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -173,7 +173,7 @@
 			(at 1.0247 0)
 			(size 1.1821 0.6122)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			
+
 			(pinfunction "3_3")
 			(pintype "passive")
 			(solder_mask_margin 0.1016)
@@ -181,4 +181,13 @@
 			(uuid "3717dda9-f904-48b8-92a1-879aa90e22c9")
 		)
 		(embedded_fonts no)
+
+		(fp_rect
+			(start -1.9000 -1.8500)
+			(end 1.9000 1.8500)
+			(stroke (width 0.05) (type solid))
+			(fill none)
+			(layer "F.CrtYd")
+			(uuid "2683d3c9-b432-4771-b71e-a7d5c0c009be")
+		)
 	)
