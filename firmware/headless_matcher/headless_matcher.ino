@@ -14,8 +14,8 @@
 
 #include "../shared/matcher_core.h"
 
-TMC2209Stepper driver1(&MATCHING_SERIAL_PORT, R_SENSE, DRV_ADDRESS_1);
-TMC2209Stepper driver2(&MATCHING_SERIAL_PORT, R_SENSE, DRV_ADDRESS_2);
+TMC2209Stepper driver1(&MATCHING_SERIAL_PORT_1, R_SENSE, DRV_ADDRESS_1);
+TMC2209Stepper driver2(&MATCHING_SERIAL_PORT_2, R_SENSE, DRV_ADDRESS_2);
 
 #define SCHED_LOOP_MS 16u
 
@@ -49,6 +49,8 @@ static void setMotor1Step(long posDeg);
 static void setMotor2Step(long posDeg);
 
 void setup() {
+  digitalWrite(FAN_PIN, LOW);  // Buffer and pulldown default the fan to full speed.
+  pinMode(FAN_PIN, OUTPUT);
   analogReadResolution(12);
 
   Serial.begin(CONTROL_BAUD);
@@ -62,8 +64,10 @@ void setup() {
   pinMode(TRANSMIT_PIN, OUTPUT);
   digitalWrite(TRANSMIT_PIN, LOW);  // HIGH = TX on
 
-  MATCHING_SERIAL_PORT.begin(MATCHING_UART_BAUD, SERIAL_8N1);
-  delay(500);
+  if (!initMotorDrivers(driver1, driver2)) {
+    Serial.println("Motor initialization failed; homing and motion stopped.");
+    while (true) delay(1000);
+  }
 
   Serial.println("Starting Homing Sequence...");
   runHomingSequence();
