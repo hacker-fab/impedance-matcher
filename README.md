@@ -17,8 +17,8 @@ Teensy 4.1 control loop firmware, custom PCB/CAD hardware, and Python telemetry 
         ├── spice/                         # SPICE verification of analog support circuits
         └── production/                    # JLCPCB manufacturing & assembly
             ├── imp_match.zip              # Gerbers
-            ├── imp_match_bom.csv          # SMT BOM
-            └── imp_match_positions.csv    # SMT CPL
+            ├── imp_match_bom.csv          # Assembly BOM
+            └── imp_match_positions.csv    # Component placement
 ```
 
 **Arduino libraries:** Adafruit SSD1306, Adafruit GFX, and TMCStepper (GUI build); TMCStepper only for headless.
@@ -62,8 +62,17 @@ Written by `live.py` (and compatible with `plot.py`):
 
 ## Hardware notes
 
-The analog support circuits (SWR sensing, input protection) were checked in ngspice.
-See `hardware/PCB/spice/` for results and testbenches.
+The analog support circuits have limited DC SPICE benches and worst-case
+calculations; see `hardware/PCB/spice/` for their assumptions and limits.
+
+`MATCHING_USE_DRIVER_UART` defaults to `0` in
+`firmware/impedance_matcher/include/config.h` for standalone STEP/DIR. Set it to
+`1` to enable TMC2209 UART. To return to standalone, reflash with `0` and fully
+power-cycle both drivers (VM and VIO); a Teensy-only reset does not clear their
+registers.
+
+Before using external 5 V and USB together, isolate the Teensy's VIN–VUSB link
+following [PJRC's power instructions](https://www.pjrc.com/store/teensy41.html).
 
 ## Authors
 

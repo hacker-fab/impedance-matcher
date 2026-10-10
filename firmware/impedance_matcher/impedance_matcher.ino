@@ -39,7 +39,10 @@ void setup() {
     ;
 
   matching_init_motor_pins();
-  matching_init_uart();
+  if (!matching_init_motors()) {
+    Serial.println("Motor initialization failed; homing and motion stopped.");
+    while (true) delay(1000);
+  }
   encoder_init();
 
   if (!ui_init_display()) {

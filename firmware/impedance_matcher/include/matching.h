@@ -3,7 +3,7 @@
 #include <Arduino.h>
 
 void matching_init_motor_pins();
-void matching_init_uart();
+bool matching_init_motors();
 void matching_homing();
 void matching_tick();
 

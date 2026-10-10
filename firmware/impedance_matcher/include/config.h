@@ -9,14 +9,26 @@
 #define DIR_PIN_1    3
 #define STEP_PIN_2   9
 #define DIR_PIN_2    10
-#define FWD_PIN      25
-#define REV_PIN      24
+#define FWD_PIN      24
+#define REV_PIN      25
 #define TRANSMIT_PIN 31
+#define FAN_PIN      23  // AHCT inverter: LOW = full speed; future PWM must be inverted, 25 kHz
 
 // Comms
+#ifndef MATCHING_USE_DRIVER_UART
+// Existing hardware runs from STEP/DIR and the module's straps/VREF.
+// The revised carrier supports BTT TMC2209 V1.3 single-wire UART.
+// Enable for bench testing; returning to 0 also requires a driver power cycle.
+#define MATCHING_USE_DRIVER_UART 0
+#endif
 #define CONTROL_BAUD         500000    // USB serial to host (live.py / plot logging); keep in sync with telemetry.py BAUD
-#define MATCHING_UART_BAUD   500000    // TMC2209 UART on Serial1
-#define MATCHING_SERIAL_PORT Serial1
+#define MATCHING_UART_BAUD    500000
+#define MATCHING_SERIAL_PORT_1 Serial2 // Teensy RX 7, TX 8 through R18
+#define MATCHING_SERIAL_PORT_2 Serial7 // Teensy RX 28, TX 29 through R19
+#define DRIVER_RX_PIN_1       7
+#define DRIVER_TX_PIN_1       8
+#define DRIVER_RX_PIN_2       28
+#define DRIVER_TX_PIN_2       29
 
 // Display
 #define SCREEN_W 128

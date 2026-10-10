@@ -5,14 +5,15 @@
 #include "../impedance_matcher/include/config.h"
 
 #define R_SENSE       0.11f
-#define DRV_ADDRESS_1 0b00
-#define DRV_ADDRESS_2 0b01
+// Separate UART buses; both modules strap MS1=GND, MS2=3.3V (address 2).
+#define DRV_ADDRESS_1 0b10
+#define DRV_ADDRESS_2 0b10
 
 #define STEP_DELAY          200
 
 // Mechanical: rad -> full steps x microsteps (MAX_ROT is half a turn of travel)
 #define STEPS_PER_RAD       63.66197f
-#define MICROSTEPS_PER_STEP 32
+#define MICROSTEPS_PER_STEP 64 // MS1=low, MS2=high; retain hardware selection
 #define MAX_ROT             3.14159f
 #define GRAD_SCALE          0.025f
 #define MAX_STEPSIZE        (PI / 36.0f)
@@ -28,6 +29,47 @@ extern float lastVSWR;
 extern float lastFwdV;
 extern float lastRevV;
 extern bool  csvStreamEnabled;
+
+inline bool initMotorDriver(TMC2209Stepper &driver) {
+  // Check the actual chip and strap inputs before changing any configuration.
+  if (driver.version() != 0x21 || driver.ms1() || !driver.ms2()) return false;
+
+  const uint32_t previous = driver.GCONF();
+  const uint8_t writesBefore = driver.IFCNT();
+  // Enable UART operation while retaining hardware microsteps and current/VREF.
+  // Do not write CHOPCONF or IHOLD_IRUN without known motor/module ratings.
+  const uint32_t configured = (previous | (1UL << 6)) & ~(1UL << 7);
+  driver.GCONF(configured);
+
+  const uint8_t writesAfter = driver.IFCNT();
+  return static_cast<uint8_t>(writesAfter - writesBefore) == 1 &&
+         driver.GCONF() == configured;
+}
+
+inline bool initMotorDrivers(TMC2209Stepper &driver1, TMC2209Stepper &driver2) {
+#if !MATCHING_USE_DRIVER_UART
+  // Release the single-wire UART connections for hardware standalone control.
+  // Power-cycle the drivers after reverting from a UART-enabled build.
+  (void)driver1;
+  (void)driver2;
+  pinMode(DRIVER_RX_PIN_1, INPUT);
+  pinMode(DRIVER_TX_PIN_1, INPUT);
+  pinMode(DRIVER_RX_PIN_2, INPUT);
+  pinMode(DRIVER_TX_PIN_2, INPUT);
+  delay(500);
+  Serial.println("Motor control: standalone STEP/DIR; driver UART disabled.");
+  return true;  // Configuration selected; this does not detect driver presence.
+#else
+  MATCHING_SERIAL_PORT_1.begin(MATCHING_UART_BAUD, SERIAL_8N1);
+  MATCHING_SERIAL_PORT_2.begin(MATCHING_UART_BAUD, SERIAL_8N1);
+  delay(500);
+  const bool ready1 = initMotorDriver(driver1);
+  const bool ready2 = initMotorDriver(driver2);
+  if (!ready1) Serial.println("ERR DRIVER1 UART/straps: check Serial2, address 2 and PDN_UART wiring");
+  if (!ready2) Serial.println("ERR DRIVER2 UART/straps: check Serial7, address 2 and PDN_UART wiring");
+  return ready1 && ready2;
+#endif
+}
 
 inline float readMilliVolts(int pin) {
   return (analogRead(pin) / 4095.0f) * 3300.0f;

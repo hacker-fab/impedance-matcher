@@ -3,10 +3,12 @@
 #include "../include/app_state.h"
 #include "../../shared/matcher_core.h"
 
-TMC2209Stepper driver1(&MATCHING_SERIAL_PORT, R_SENSE, DRV_ADDRESS_1);
-TMC2209Stepper driver2(&MATCHING_SERIAL_PORT, R_SENSE, DRV_ADDRESS_2);
+TMC2209Stepper driver1(&MATCHING_SERIAL_PORT_1, R_SENSE, DRV_ADDRESS_1);
+TMC2209Stepper driver2(&MATCHING_SERIAL_PORT_2, R_SENSE, DRV_ADDRESS_2);
 
 void matching_init_motor_pins() {
+  digitalWrite(FAN_PIN, LOW);  // Buffer and pulldown default the fan to full speed.
+  pinMode(FAN_PIN, OUTPUT);
   pinMode(STEP_PIN_1,   OUTPUT);
   pinMode(DIR_PIN_1,    OUTPUT);
   pinMode(STEP_PIN_2,   OUTPUT);
@@ -15,9 +17,8 @@ void matching_init_motor_pins() {
   digitalWrite(TRANSMIT_PIN, LOW);
 }
 
-void matching_init_uart() {
-  MATCHING_SERIAL_PORT.begin(MATCHING_UART_BAUD, SERIAL_8N1);
-  delay(500);
+bool matching_init_motors() {
+  return initMotorDrivers(driver1, driver2);
 }
 
 void matching_homing() {
