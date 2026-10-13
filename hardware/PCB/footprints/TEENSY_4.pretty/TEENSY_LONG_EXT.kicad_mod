@@ -749,4 +749,37 @@
 		(uuid "0c015f78-0692-4ad5-aa31-88de7c39d279")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/3dmodels/Teensy+4.stp"
+		(offset
+			(xyz 0 0 8.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(model "${KIPRJMOD}/3dmodels/PinSocket_1x24_P2.54mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
+	(model "${KIPRJMOD}/3dmodels/PinSocket_1x24_P2.54mm_Vertical.step"
+		(offset
+			(xyz 15.24 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
 )
