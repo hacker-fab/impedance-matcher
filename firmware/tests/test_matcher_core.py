@@ -14,10 +14,13 @@ ARDUINO = r"""
 #define HIGH 1
 #define LOW 0
 #define INPUT 0
+#define OUTPUT 1
 #define SERIAL_8N1 0
 extern int adcValues[64];
 extern int stepPulses;
 extern int pinModes[64];
+extern int digitalValues[64];
+extern int stepPulsesByPin[64];
 inline void pinMode(int pin, int mode) { pinModes[pin] = mode; }
 struct FakeSerial {
   int starts = 0;
@@ -29,7 +32,11 @@ struct FakeSerial {
 extern FakeSerial Serial, Serial2, Serial7;
 inline int analogRead(int pin) { return adcValues[pin]; }
 inline void digitalWrite(int pin, int value) {
-  if ((pin == 2 || pin == 9) && value == HIGH) ++stepPulses;
+  digitalValues[pin] = value;
+  if ((pin == 2 || pin == 9) && value == HIGH) {
+    ++stepPulses;
+    ++stepPulsesByPin[pin];
+  }
 }
 inline void delay(unsigned long) {}
 inline void delayMicroseconds(unsigned int) {}
@@ -49,6 +56,8 @@ struct TMC2209Stepper {
   uint8_t writes = 0;
   int reads = 0;
   uint32_t config = 0x181;
+  TMC2209Stepper() = default;
+  TMC2209Stepper(FakeSerial*, float, uint8_t) {}
   uint8_t version() { ++reads; return chipVersion; }
   bool ms1() { ++reads; return strap1; }
   bool ms2() { ++reads; return strap2; }
@@ -66,18 +75,43 @@ TEST = r"""
 #include <cmath>
 #include <iostream>
 #include "matcher_core.h"
+#include "app_state.h"
+#include "matching.h"
 
 int adcValues[64] = {};
 int stepPulses = 0;
 int pinModes[64];
+int digitalValues[64];
+int stepPulsesByPin[64];
 FakeSerial Serial, Serial2, Serial7;
+AppState state = S_HOME;
+OpMode opMode = MODE_AUTO;
+bool radioTX = false;
+long motor1Deg = 0, motor2Deg = 0;
 float motor1Rad = 0, motor2Rad = 0;
+float lossGrad1 = 0.1f, lossGrad2 = 0.1f;
 bool atMatch = false;
 float lastVSWR = 0, lastFwdV = 0, lastRevV = 0;
 bool csvStreamEnabled = false;
 
 int main() {
-  for (int &mode : pinModes) mode = -1;
+  for (int i = 0; i < 64; ++i) {
+    pinModes[i] = -1;
+    digitalValues[i] = -1;
+  }
+
+  // Startup states must agree with the board: the fan inverter is active-low,
+  // and transmitter control must begin disabled.
+  matching_init_motor_pins();
+  for (int pin : {FAN_PIN, STEP_PIN_1, DIR_PIN_1, STEP_PIN_2, DIR_PIN_2, TRANSMIT_PIN})
+    assert(pinModes[pin] == OUTPUT);
+  assert(digitalValues[FAN_PIN] == LOW);
+  assert(digitalValues[TRANSMIT_PIN] == LOW);
+  setRadioTX(true);
+  assert(digitalValues[TRANSMIT_PIN] == HIGH);
+  setRadioTX(false);
+  assert(digitalValues[TRANSMIT_PIN] == LOW);
+
   // The PCB routes the forward detector to pad 24 and reverse to pad 25.
   adcValues[24] = 3000;
   adcValues[25] = 1000;
@@ -86,10 +120,68 @@ int main() {
   assert(std::fabs(loss - 1.0f) < 0.001f);
   assert(lastFwdV > lastRevV);
 
+  // Known measurement states: perfect match, hysteresis band, and invalid ratio.
+  atMatch = false;
+  adcValues[24] = 3000;
+  adcValues[25] = 0;
+  measureLoss(FWD_PIN, REV_PIN);
+  assert(std::fabs(lastVSWR - 1.0f) < 0.001f && atMatch);
+  adcValues[25] = 390; // VSWR about 1.30: inside the 1.2--1.4 no-change band.
+  measureLoss(FWD_PIN, REV_PIN);
+  assert(lastVSWR > VSWR_MATCH_ENTER && lastVSWR < VSWR_MATCH_EXIT && atMatch);
+  adcValues[25] = 900; // VSWR about 1.86: leave matched state.
+  measureLoss(FWD_PIN, REV_PIN);
+  assert(lastVSWR > VSWR_MATCH_EXIT && !atMatch);
+  adcValues[25] = 390;
+  measureLoss(FWD_PIN, REV_PIN);
+  assert(!atMatch);
+  adcValues[25] = 3000;
+  measureLoss(FWD_PIN, REV_PIN);
+  assert(lastVSWR == 99.0f && !atMatch);
+
   // A 400-full-step motor at the PCB's 1/64 setting needs 6400 pulses/90 deg.
+  stepPulses = stepPulsesByPin[STEP_PIN_1] = stepPulsesByPin[STEP_PIN_2] = 0;
   turnByRad(STEP_PIN_1, DIR_PIN_1, PI / 2, motor1Rad);
   assert(stepPulses >= 6400 && stepPulses <= 6401);
   assert(std::fabs(motor1Rad - PI / 2) < 0.002f);
+  assert(digitalValues[DIR_PIN_1] == LOW);
+  turnByRad(STEP_PIN_1, DIR_PIN_1, -PI / 2, motor1Rad);
+  assert(std::fabs(motor1Rad) < 0.002f && digitalValues[DIR_PIN_1] == HIGH);
+  const int motor1Pulses = stepPulsesByPin[STEP_PIN_1];
+  turnByRad(STEP_PIN_2, DIR_PIN_2, PI / 2, motor2Rad);
+  assert(stepPulsesByPin[STEP_PIN_2] >= 6400 && stepPulsesByPin[STEP_PIN_1] == motor1Pulses);
+  motor1Rad = 0.0f;
+  assert(turnByRad(STEP_PIN_1, DIR_PIN_1, -0.1f, motor1Rad) == 0.0f);
+  motor1Rad = MAX_ROT;
+  assert(turnByRad(STEP_PIN_1, DIR_PIN_1, 0.1f, motor1Rad) == 0.0f);
+
+  // Exercise the application-level motor wrappers and homing state update.
+  motor1Rad = motor2Rad = 0.0f;
+  stepPulsesByPin[STEP_PIN_1] = stepPulsesByPin[STEP_PIN_2] = 0;
+  setMotor1Step(90);
+  assert(std::fabs(motor1Rad - PI / 2) < 0.002f);
+  assert(std::fabs(motor2Rad) < 0.002f);
+  assert(stepPulsesByPin[STEP_PIN_1] >= 6400 && stepPulsesByPin[STEP_PIN_2] == 0);
+  setMotor2Step(90);
+  assert(std::fabs(motor2Rad - PI / 2) < 0.002f);
+  assert(stepPulsesByPin[STEP_PIN_2] >= 6400);
+  matching_homing();
+  assert(std::fabs(motor1Rad - PI / 2) < 0.002f);
+  assert(std::fabs(motor2Rad - PI / 2) < 0.002f);
+  assert(motor1Deg == 90 && motor2Deg == 90);
+
+  // Auto mode samples only while matched; otherwise it commands both axes.
+  opMode = MODE_AUTO;
+  atMatch = true;
+  const int heldMotor1 = stepPulsesByPin[STEP_PIN_1];
+  const int heldMotor2 = stepPulsesByPin[STEP_PIN_2];
+  matching_tick();
+  assert(stepPulsesByPin[STEP_PIN_1] == heldMotor1 && stepPulsesByPin[STEP_PIN_2] == heldMotor2);
+  atMatch = false;
+  motor1Rad = motor2Rad = 0.0f;
+  lossGrad1 = lossGrad2 = 0.1f;
+  matching_tick();
+  assert(stepPulsesByPin[STEP_PIN_1] > heldMotor1 && stepPulsesByPin[STEP_PIN_2] > heldMotor2);
 
   TMC2209Stepper driver1, driver2;
 #if MATCHING_USE_DRIVER_UART
@@ -115,7 +207,7 @@ int main() {
   TMC2209Stepper badReadback;
   badReadback.acceptsWrite = false;
   assert(!initMotorDriver(badReadback));
-  std::cout << "PASS: sensor identity/VSWR, motor pulse count, separate UARTs, "
+  std::cout << "PASS: startup states, sensor identity/VSWR/hysteresis, motor wrappers/homing/auto behavior, separate UARTs, "
                "register preservation/counter wrap, missing chip, MS1/MS2, "
                "write acknowledgment and register readback\n";
 #else
@@ -128,7 +220,7 @@ int main() {
   assert(driver1.writes == 0 && driver2.writes == 0);
   assert(driver1.config == 0x181 && driver2.config == 0x181);
   for (int pin : {7, 8, 28, 29}) assert(pinModes[pin] == INPUT);
-  std::cout << "PASS: sensor identity/VSWR, motor pulse count, standalone startup "
+  std::cout << "PASS: startup states, sensor identity/VSWR/hysteresis, motor wrappers/homing/auto behavior, standalone startup "
                "without UART initialization, reads or writes\n";
 #endif
 }
@@ -150,7 +242,10 @@ def main():
             flags = [] if mode is None else [f"-DMATCHING_USE_DRIVER_UART={mode}"]
             subprocess.run(
                 [compiler, "-std=c++17", "-Wall", "-Wextra", *flags, f"-I{temp}",
-                 f"-I{core}", str(temp / "test.cpp"), "-o", str(temp / "test")],
+                 f"-I{core}", f"-I{core.parent / 'impedance_matcher' / 'include'}",
+                 str(temp / "test.cpp"),
+                 str(core.parent / "impedance_matcher" / "src" / "matching.cpp"),
+                 "-o", str(temp / "test")],
                 check=True,
             )
             subprocess.run([str(temp / "test")], check=True)
